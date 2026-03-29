@@ -31,6 +31,8 @@ enum Keys {
     static let toggleTrueToneShortcut = "toggleTrueToneShortcut"
     static let toggleDarkModeShortcut = "toggleDarkModeShortcut"
     
+    static let isMenuBarIconHidden = "isMenuBarIconHidden"
+    
     static let lastInstalledShiftyVersion = "lastInstalledShiftyVersion"
     static let hasSetupWindowShown = "hasSetupWindowShown"
 }
@@ -59,7 +61,8 @@ class PrefManager {
             Keys.currentAppDisableRules: NSData(),
             Keys.runningAppDisableRules: NSData(),
             Keys.browserRules: NSData(),
-            Keys.hasSetupWindowShown: NSNumber(value: false)
+            Keys.hasSetupWindowShown: NSNumber(value: false),
+            Keys.isMenuBarIconHidden: NSNumber(value: false)
             ] as [String : Any]
 
         userDefaults.register(defaults: factoryDefaults)

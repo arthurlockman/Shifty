@@ -46,6 +46,8 @@ class PrefGeneralViewController: NSViewController, MASPreferencesViewController 
     
     @IBOutlet weak var trueToneStackView: NSStackView!
     
+    var hideMenuBarIconButton: NSButton!
+    
     @IBOutlet weak var schedulePopup: NSPopUpButton!
     @IBOutlet weak var offMenuItem: NSMenuItem!
     @IBOutlet weak var customMenuItem: NSMenuItem!
@@ -84,6 +86,17 @@ class PrefGeneralViewController: NSViewController, MASPreferencesViewController 
         //Fix layer-backing issues in 10.12 that cause window corners to not be rounded.
         if !ProcessInfo().isOperatingSystemAtLeast(OperatingSystemVersion(majorVersion: 10, minorVersion: 13, patchVersion: 0)) {
             view.wantsLayer = false
+        }
+        
+        // Add "Hide menu bar icon" checkbox programmatically
+        hideMenuBarIconButton = NSButton(checkboxWithTitle: NSLocalizedString("prefs.hide_menu_bar_icon", comment: "Hide menu bar icon"),
+                                         target: self,
+                                         action: #selector(hideMenuBarIconClicked(_:)))
+        hideMenuBarIconButton.state = UserDefaults.standard.bool(forKey: Keys.isMenuBarIconHidden) ? .on : .off
+        hideMenuBarIconButton.translatesAutoresizingMaskIntoConstraints = false
+        
+        if let mainStackView = trueToneStackView.superview as? NSStackView {
+            mainStackView.addArrangedSubview(hideMenuBarIconButton)
         }
     }
 
@@ -171,6 +184,32 @@ class PrefGeneralViewController: NSViewController, MASPreferencesViewController 
             }
             logw("True Tone control set to \(sender.state.rawValue)")
         }
+    }
+    
+    @objc func hideMenuBarIconClicked(_ sender: NSButton) {
+        let shouldHide = sender.state == .on
+        
+        if shouldHide {
+            let alert = NSAlert()
+            alert.messageText = NSLocalizedString("prefs.hide_icon_alert.title",
+                comment: "Alert title when hiding menu bar icon")
+            alert.informativeText = NSLocalizedString("prefs.hide_icon_alert.message",
+                comment: "Alert message when hiding menu bar icon")
+            alert.alertStyle = .informational
+            alert.addButton(withTitle: NSLocalizedString("prefs.hide_icon_alert.confirm",
+                comment: "Confirm hiding menu bar icon"))
+            alert.addButton(withTitle: NSLocalizedString("prefs.hide_icon_alert.cancel",
+                comment: "Cancel hiding menu bar icon"))
+            
+            let response = alert.runModal()
+            if response == .alertSecondButtonReturn {
+                sender.state = .off
+                return
+            }
+        }
+        
+        UserDefaults.standard.set(shouldHide, forKey: Keys.isMenuBarIconHidden)
+        NotificationCenter.default.post(name: .menuBarIconVisibilityChanged, object: nil)
     }
     
     @IBAction func analyticsDetailClicked(_ sender: Any) {

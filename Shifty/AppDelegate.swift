@@ -31,6 +31,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             viewControllers: [
                 PrefGeneralViewController(),
                 PrefShortcutsViewController(),
+                PrefAppsViewController(),
                 PrefAboutViewController()],
             title: NSLocalizedString("prefs.title", comment: "Preferences"))
     }()
@@ -106,8 +107,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             self.updateMenuBarIcon()
         }
         
-        statusItem.behavior = .terminationOnRemoval
-        statusItem.isVisible = true
+        updateStatusItemVisibility()
+        
+        NotificationCenter.default.addObserver(forName: .menuBarIconVisibilityChanged, object: nil, queue: .main) { [weak self] _ in
+            self?.updateStatusItemVisibility()
+        }
         
         let hasSetupWindowShown = userDefaults.bool(forKey: Keys.hasSetupWindowShown)
 
@@ -253,6 +257,18 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         }
     }
 
+    func applicationShouldHandleReopen(_ sender: NSApplication, hasVisibleWindows flag: Bool) -> Bool {
+        if !flag {
+            NSApp.activate(ignoringOtherApps: true)
+            preferenceWindowController.showWindow(nil)
+        }
+        return true
+    }
+    
+    func updateStatusItemVisibility() {
+        statusItem.isVisible = !UserDefaults.standard.bool(forKey: Keys.isMenuBarIconHidden)
+    }
+    
     func applicationWillTerminate(_ aNotification: Notification) {
         logw("App terminated")
     }
