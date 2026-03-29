@@ -116,7 +116,10 @@ class PrefGeneralViewController: NSViewController, MASPreferencesViewController 
 
     @IBAction func setAutoLaunch(_ sender: NSButtonCell) {
         let launcherAppIdentifier = "io.natethompson.ShiftyHelper"
-        SMLoginItemSetEnabled(launcherAppIdentifier as CFString, sender.state == .on)
+        try? SMAppService.loginItem(identifier: launcherAppIdentifier).register()
+        if sender.state != .on {
+            try? SMAppService.loginItem(identifier: launcherAppIdentifier).unregister()
+        }
         logw("Auto launch on login set to \(sender.state.rawValue)")
     }
 
