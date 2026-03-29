@@ -763,6 +763,7 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = ShiftyHelper/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = io.natethompson.ShiftyHelper;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -788,6 +789,7 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = ShiftyHelper/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = io.natethompson.ShiftyHelper;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -930,6 +932,7 @@
 					"$(PROJECT_DIR)/Shifty",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/Shifty/Info.plist";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 26.0;
 				MARKETING_VERSION = 1.2;
@@ -961,6 +964,7 @@
 					"$(PROJECT_DIR)/Shifty",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/Shifty/Info.plist";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 26.0;
 				MARKETING_VERSION = 1.2;
