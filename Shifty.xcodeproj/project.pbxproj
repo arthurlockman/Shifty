@@ -64,6 +64,8 @@
 		8EEFC3DA2F7A02C50029B95D /* LogHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEFC3D92F7A02C50029B95D /* LogHelper.swift */; };
 		8EEFC3DD2F7A07E10029B95D /* KeyboardShortcuts in Frameworks */ = {isa = PBXBuildFile; productRef = 8EEFC3DC2F7A07E10029B95D /* KeyboardShortcuts */; };
 		8EEFC3DF2F7A08C80029B95D /* KeyboardShortcuts+Names.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEFC3DE2F7A08C80029B95D /* KeyboardShortcuts+Names.swift */; };
+		8EEFC3E12F7A28AF0029B95D /* Shifty.icon in Resources */ = {isa = PBXBuildFile; fileRef = 8EEFC3E02F7A28AF0029B95D /* Shifty.icon */; };
+		8EEFC3E22F7A28AF0029B95D /* Shifty.icon in Resources */ = {isa = PBXBuildFile; fileRef = 8EEFC3E02F7A28AF0029B95D /* Shifty.icon */; };
 		8EF67FE92F79EE9600E5C051 /* PrefAppsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF67FE82F79EE9600E5C051 /* PrefAppsViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -183,6 +185,7 @@
 		8EEFC3D72F7A020C0029B95D /* etld.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = etld.plist; path = Shifty/Vendor/PublicSuffix/etld.plist; sourceTree = "<group>"; };
 		8EEFC3D92F7A02C50029B95D /* LogHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LogHelper.swift; path = Shifty/LogHelper.swift; sourceTree = "<group>"; };
 		8EEFC3DE2F7A08C80029B95D /* KeyboardShortcuts+Names.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "KeyboardShortcuts+Names.swift"; sourceTree = "<group>"; };
+		8EEFC3E02F7A28AF0029B95D /* Shifty.icon */ = {isa = PBXFileReference; lastKnownFileType = folder.iconcomposer.icon; name = Shifty.icon; path = Icon/Shifty.icon; sourceTree = "<group>"; };
 		8EF67FE82F79EE9600E5C051 /* PrefAppsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PrefAppsViewController.swift; path = Shifty/PrefAppsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -299,6 +302,7 @@
 		436A0F3B1FBE911200E77D41 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				8EEFC3E02F7A28AF0029B95D /* Shifty.icon */,
 				4394DDA31EBE376F00F22908 /* Assets.xcassets */,
 				43FC498B1FF8936E00CD3196 /* credits.rtfd */,
 				433AD3001F2CED1F0003FBCD /* dsa_pub.pem */,
@@ -415,9 +419,7 @@
 				TargetAttributes = {
 					43C7A4841F19F2CB00A697C0 = {
 						CreatedOnToolsVersion = 8.3.2;
-						DevelopmentTeam = 7E57633U38;
 						LastSwiftMigration = 1020;
-						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.HardenedRuntime = {
 								enabled = 1;
@@ -429,9 +431,7 @@
 					};
 					43CC9E421EBAB19300983528 = {
 						CreatedOnToolsVersion = 8.3.1;
-						DevelopmentTeam = 7E57633U38;
 						LastSwiftMigration = 1020;
-						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.HardenedRuntime = {
 								enabled = 1;
@@ -479,6 +479,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				43C7A48C1F19F2CB00A697C0 /* Assets.xcassets in Resources */,
+				8EEFC3E22F7A28AF0029B95D /* Shifty.icon in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -493,6 +494,7 @@
 				43AA23CF1FFAC69A001DDF5A /* AccessibilityWindow.xib in Resources */,
 				433AD3011F2CED1F0003FBCD /* dsa_pub.pem in Resources */,
 				4394DDAA1EBE376F00F22908 /* Assets.xcassets in Resources */,
+				8EEFC3E12F7A28AF0029B95D /* Shifty.icon in Resources */,
 				43B612581FFC297400724DAE /* AccessibilityView.xib in Resources */,
 				43D5C2301FC2CECC00AF88E0 /* Localizable.strings in Resources */,
 				43D5C21E1FC2CACA00AF88E0 /* PrefAboutViewController.xib in Resources */,
@@ -663,12 +665,14 @@
 		43C7A4921F19F2CB00A697C0 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = Shifty;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_ENTITLEMENTS = ShiftyHelper/ShiftyHelper.entitlements;
-				CODE_SIGN_IDENTITY = "Mac Developer";
-				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEAD_CODE_STRIPPING = YES;
+				DEVELOPMENT_TEAM = 7E57633U38;
 				ENABLE_HARDENED_RUNTIME = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -691,12 +695,14 @@
 		43C7A4931F19F2CB00A697C0 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = Shifty;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_ENTITLEMENTS = ShiftyHelper/ShiftyHelper.entitlements;
-				CODE_SIGN_IDENTITY = "Mac Developer";
-				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEAD_CODE_STRIPPING = YES;
+				DEVELOPMENT_TEAM = 7E57633U38;
 				ENABLE_HARDENED_RUNTIME = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -840,15 +846,16 @@
 		43CC9E531EBAB19300983528 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = Shifty;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_ENTITLEMENTS = Shifty/Shifty.entitlements;
-				CODE_SIGN_IDENTITY = "Mac Developer";
-				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 100;
 				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = 7E57633U38;
 				ENABLE_HARDENED_RUNTIME = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -875,14 +882,15 @@
 		43CC9E541EBAB19300983528 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = Shifty;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_ENTITLEMENTS = Shifty/Shifty.entitlements;
-				CODE_SIGN_IDENTITY = "Mac Developer";
-				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 100;
 				DEAD_CODE_STRIPPING = YES;
+				DEVELOPMENT_TEAM = 7E57633U38;
 				ENABLE_HARDENED_RUNTIME = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
