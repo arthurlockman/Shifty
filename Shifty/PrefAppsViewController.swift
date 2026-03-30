@@ -7,6 +7,7 @@
 
 import Cocoa
 import MASPreferences_Shifty
+import UniformTypeIdentifiers
 
 
 @objcMembers
@@ -206,7 +207,7 @@ class PrefAppsViewController: NSViewController, MASPreferencesViewController {
     @objc private func addClicked(_ sender: Any) {
         if currentTab == .appRules {
             let panel = NSOpenPanel()
-            panel.allowedFileTypes = ["app"]
+            panel.allowedContentTypes = [.application]
             panel.directoryURL = URL(fileURLWithPath: "/Applications")
             panel.canChooseDirectories = false
             panel.canChooseFiles = true
@@ -353,7 +354,7 @@ class PrefAppsViewController: NSViewController, MASPreferencesViewController {
         if let url = NSWorkspace.shared.urlForApplication(withBundleIdentifier: bundleID) {
             return NSWorkspace.shared.icon(forFile: url.path)
         }
-        return NSWorkspace.shared.icon(forFileType: "app")
+        return NSWorkspace.shared.icon(for: UTType.application)
     }
 
     private func localizedRuleType(_ ruleType: String) -> String {

@@ -212,10 +212,6 @@ class PrefGeneralViewController: NSViewController, MASPreferencesViewController 
         NotificationCenter.default.post(name: .menuBarIconVisibilityChanged, object: nil)
     }
     
-    @IBAction func analyticsDetailClicked(_ sender: Any) {
-        self.presentAsSheet(AnalyticsDetailViewController())
-    }
-    
     @IBAction func schedulePopup(_ sender: NSPopUpButton) {
         if schedulePopup.selectedItem == offMenuItem {
             NightShiftManager.shared.schedule = .off
