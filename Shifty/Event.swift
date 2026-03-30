@@ -29,7 +29,7 @@ enum Event {
     case sliderMoved(value: Float)
 
     //Preferences
-    case preferences(autoLaunch: Bool, quickToggle: Bool, iconSwitching: Bool, websiteShifting: Bool, trueToneControl: Bool, schedule: ScheduleType)
+    case preferences(autoLaunch: Bool, quickToggle: Bool, iconSwitching: Bool, websiteShifting: Bool, trueToneControl: Bool)
     case shortcuts(toggleNightShift: Bool, increaseColorTemp: Bool, decreaseColorTemp: Bool, disableApp: Bool, disableDomain: Bool, disableSubdomain: Bool, disableHour: Bool, disableCustom: Bool, toggleTrueTone: Bool, toggleDarkMode: Bool)
     case websiteButtonClicked
     case feedbackButtonClicked

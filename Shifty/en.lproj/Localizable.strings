@@ -97,7 +97,7 @@
 "prefs.apps.add_domain_title" = "Add Domain Rule";
 "prefs.apps.add_domain_info" = "Enter a domain to disable Night Shift for.";
 
-"analytics.data_usage_list_title" = "What happens to the data?";
+"prefs.quit" = "Quit Shifty";
 "analytics.data_usage_list_1" = "None of this data is sold to anyone (and nobody would want to buy it anyways)";
 "analytics.data_usage_list_2" = "Helps to resolve problems and make Shifty better";
 

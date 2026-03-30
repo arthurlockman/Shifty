@@ -283,26 +283,22 @@ class RuleManager {
     func addCurrentAppDisableRule(forBundleID bundleID: String) {
         let rule = AppRule(bundleIdentifier: bundleID, fullScreenOnly: false)
         currentAppDisableRules.insert(rule)
-        NightShiftManager.shared.respond(to: .nightShiftDisableRuleActivated)
     }
     
     func addRunningAppDisableRule(forBundleID bundleID: String) {
         let rule = AppRule(bundleIdentifier: bundleID, fullScreenOnly: false)
         runningAppDisableRules.insert(rule)
-        NightShiftManager.shared.respond(to: .nightShiftDisableRuleActivated)
     }
     
     func removeCurrentAppDisableRule(forBundleID bundleID: String) {
         if let index = currentAppDisableRules.firstIndex(where: { $0.bundleIdentifier == bundleID }) {
             currentAppDisableRules.remove(at: index)
-            NightShiftManager.shared.respond(to: .nightShiftDisableRuleDeactivated)
         }
     }
     
     func removeRunningAppDisableRule(forBundleID bundleID: String) {
         if let index = runningAppDisableRules.firstIndex(where: { $0.bundleIdentifier == bundleID }) {
             runningAppDisableRules.remove(at: index)
-            NightShiftManager.shared.respond(to: .nightShiftDisableRuleDeactivated)
         }
     }
     

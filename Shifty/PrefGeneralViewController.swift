@@ -46,17 +46,6 @@ class PrefGeneralViewController: NSViewController, MASPreferencesViewController 
     @IBOutlet weak var trueToneStackView: NSStackView!
     
     var hideMenuBarIconButton: NSButton!
-    
-    @IBOutlet weak var schedulePopup: NSPopUpButton!
-    @IBOutlet weak var offMenuItem: NSMenuItem!
-    @IBOutlet weak var customMenuItem: NSMenuItem!
-    @IBOutlet weak var sunMenuItem: NSMenuItem!
-
-    @IBOutlet weak var fromTimePicker: NSDatePicker!
-    @IBOutlet weak var toTimePicker: NSDatePicker!
-    @IBOutlet weak var fromLabel: NSTextField!
-    @IBOutlet weak var toLabel: NSTextField!
-    @IBOutlet weak var customTimeStackView: NSStackView!
 
     var appDelegate: AppDelegate!
     var prefWindow: NSWindow!
@@ -67,10 +56,6 @@ class PrefGeneralViewController: NSViewController, MASPreferencesViewController 
         appDelegate = NSApplication.shared.delegate as? AppDelegate
         prefWindow = appDelegate.preferenceWindowController.window
         
-        NightShiftManager.shared.onNightShiftChange {
-            self.updateSchedule()
-        }
-
         //Hide True Tone settings on unsupported computers
         if #available(macOS 10.14, *) {
             trueToneStackView.isHidden = CBTrueToneClient.shared.state == .unsupported
@@ -93,32 +78,18 @@ class PrefGeneralViewController: NSViewController, MASPreferencesViewController 
         if let mainStackView = trueToneStackView.superview as? NSStackView {
             let trueToneIndex = mainStackView.arrangedSubviews.firstIndex(of: trueToneStackView) ?? mainStackView.arrangedSubviews.count - 1
             mainStackView.insertArrangedSubview(hideMenuBarIconButton, at: trueToneIndex + 1)
+            
+            // Add Quit button at bottom
+            let quitButton = NSButton(title: NSLocalizedString("prefs.quit", comment: "Quit Shifty"), target: self, action: #selector(quitApp))
+            quitButton.bezelStyle = .rounded
+            quitButton.translatesAutoresizingMaskIntoConstraints = false
+            mainStackView.addArrangedSubview(quitButton)
+            mainStackView.setCustomSpacing(16, after: hideMenuBarIconButton)
         }
     }
 
     override func viewWillAppear() {
         super.viewWillAppear()
-
-        updateSchedule()
-    }
-    
-    func updateSchedule() {
-        switch NightShiftManager.shared.schedule {
-        case .off:
-            self.schedulePopup.select(self.offMenuItem)
-            self.customTimeStackView.isHidden = true
-        case .custom(start: let startTime, end: let endTime):
-            self.schedulePopup.select(self.customMenuItem)
-            let startDate = Date(startTime)
-            let endDate = Date(endTime)
-            
-            self.fromTimePicker.dateValue = startDate
-            self.toTimePicker.dateValue = endDate
-            self.customTimeStackView.isHidden = false
-        case .solar:
-            self.schedulePopup.select(self.sunMenuItem)
-            self.customTimeStackView.isHidden = true
-        }
     }
 
     //MARK: IBActions
@@ -198,23 +169,12 @@ class PrefGeneralViewController: NSViewController, MASPreferencesViewController 
         NotificationCenter.default.post(name: .menuBarIconVisibilityChanged, object: nil)
     }
     
-    @IBAction func schedulePopup(_ sender: NSPopUpButton) {
-        if schedulePopup.selectedItem == offMenuItem {
-            NightShiftManager.shared.schedule = .off
-            customTimeStackView.isHidden = true
-        } else if schedulePopup.selectedItem == customMenuItem {
-            scheduleTimePickers(self)
-            customTimeStackView.isHidden = false
-        } else if schedulePopup.selectedItem == sunMenuItem {
-            NightShiftManager.shared.schedule = .solar
-            customTimeStackView.isHidden = true
-        }
+    @IBAction func openNightShiftSettings(_ sender: Any) {
+        NSWorkspace.shared.open(URL(string: "x-apple.systempreferences:com.apple.Displays-Settings.extension")!)
     }
-
-    @IBAction func scheduleTimePickers(_ sender: Any) {
-        let fromTime = Time(fromTimePicker.dateValue)
-        let toTime = Time(toTimePicker.dateValue)
-        NightShiftManager.shared.schedule = .custom(start: fromTime, end: toTime)
+    
+    @objc func quitApp() {
+        NSApp.terminate(nil)
     }
 
     override func viewWillDisappear() {
@@ -222,8 +182,7 @@ class PrefGeneralViewController: NSViewController, MASPreferencesViewController 
                           quickToggle: quickToggleButton.state == .on,
                           iconSwitching: iconSwitchingButton.state == .on,
                           websiteShifting: websiteShiftingButton.state == .on,
-                          trueToneControl: trueToneControlButton.state == .on,
-                          schedule: NightShiftManager.shared.schedule).record()
+                          trueToneControl: trueToneControlButton.state == .on).record()
     }
 }
 
@@ -237,7 +196,6 @@ class PrefWindowController: MASPreferencesWindowController {
             window?.toolbarStyle = .preference
         }
     }
-    
     
     override func keyDown(with event: NSEvent) {
         if event.keyCode == 13 && event.modifierFlags.contains(.command) {
