@@ -1,0 +1,68 @@
+{
+  "color-space-for-untagged-svg-colors" : "display-p3",
+  "fill" : {
+    "automatic-gradient" : "extended-srgb:0.00000,0.53333,1.00000,1.00000"
+  },
+  "groups" : [
+    {
+      "layers" : [
+
+      ],
+      "shadow" : {
+        "kind" : "neutral",
+        "opacity" : 0.5
+      },
+      "translucency" : {
+        "enabled" : true,
+        "value" : 0.5
+      }
+    },
+    {
+      "layers" : [
+        {
+          "fill" : "none",
+          "glass" : false,
+          "image-name" : "4.3 – layer 2.svg",
+          "name" : "4.3 – layer 2"
+        },
+        {
+          "fill" : "none",
+          "glass" : false,
+          "image-name" : "3.2 – layer 2.svg",
+          "name" : "3.2 – layer 2"
+        },
+        {
+          "fill" : "none",
+          "glass-specializations" : [
+            {
+              "appearance" : "light",
+              "value" : true
+            }
+          ],
+          "hidden" : false,
+          "image-name" : "2.1 – layer 3.svg",
+          "name" : "2.1 – layer 3"
+        },
+        {
+          "fill" : "none",
+          "glass" : false,
+          "image-name" : "1.background 2.svg",
+          "name" : "1.background 2"
+        }
+      ],
+      "shadow" : {
+        "kind" : "neutral",
+        "opacity" : 0.5
+      },
+      "translucency" : {
+        "enabled" : true,
+        "value" : 0.5
+      }
+    }
+  ],
+  "supported-platforms" : {
+    "squares" : [
+      "macOS"
+    ]
+  }
+}
