@@ -3,11 +3,10 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		41A3780894178C5C601604C7 /* Pods_ShiftyHelper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 060A0A5282083B67EEC6C05D /* Pods_ShiftyHelper.framework */; };
 		43041CC5207DB9FF0076E75C /* CoreBrightness.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43041CC4207DB9FF0076E75C /* CoreBrightness.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		431B7B5D2167C8740039D085 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43A934002164019300AFB708 /* Security.framework */; };
 		433AD3011F2CED1F0003FBCD /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = 433AD3001F2CED1F0003FBCD /* dsa_pub.pem */; };
@@ -56,8 +55,16 @@
 		4960957E200EB9CD00D966CA /* RuleManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4960957D200EB9CD00D966CA /* RuleManager.swift */; };
 		497B2395200B576700669DDE /* NightShiftManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497B2392200B576700669DDE /* NightShiftManager.swift */; };
 		497B2396200B576700669DDE /* NotificationName+Shifty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497B2393200B576700669DDE /* NotificationName+Shifty.swift */; };
+		8EEFC3C92F7A01640029B95D /* AXSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 8EEFC3C82F7A01640029B95D /* AXSwift */; };
+		8EEFC3CB2F7A01640029B95D /* MASPreferences in Frameworks */ = {isa = PBXBuildFile; productRef = 8EEFC3CA2F7A01640029B95D /* MASPreferences */; };
+		8EEFC3CD2F7A01640029B95D /* Sparkle in Frameworks */ = {isa = PBXBuildFile; productRef = 8EEFC3CC2F7A01640029B95D /* Sparkle */; };
+		8EEFC3CF2F7A01640029B95D /* Logging in Frameworks */ = {isa = PBXBuildFile; productRef = 8EEFC3CE2F7A01640029B95D /* Logging */; };
+		8EEFC3D12F7A01640029B95D /* MASShortcut in Frameworks */ = {isa = PBXBuildFile; productRef = 8EEFC3D02F7A01640029B95D /* MASShortcut */; };
+		8EEFC3D32F7A01A10029B95D /* InMemoryLogging in Frameworks */ = {isa = PBXBuildFile; productRef = 8EEFC3D22F7A01A10029B95D /* InMemoryLogging */; };
+		8EEFC3D52F7A01D50029B95D /* PublicSuffix.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEFC3D42F7A01D50029B95D /* PublicSuffix.swift */; };
+		8EEFC3D82F7A020C0029B95D /* etld.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8EEFC3D72F7A020C0029B95D /* etld.plist */; };
+		8EEFC3DA2F7A02C50029B95D /* LogHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEFC3D92F7A02C50029B95D /* LogHelper.swift */; };
 		8EF67FE92F79EE9600E5C051 /* PrefAppsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF67FE82F79EE9600E5C051 /* PrefAppsViewController.swift */; };
-		B2FB1D17C62BCFBF11038F46 /* Pods_Shifty.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0B4370CFA537EB219F40DC7 /* Pods_Shifty.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -74,8 +81,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		060A0A5282083B67EEC6C05D /* Pods_ShiftyHelper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ShiftyHelper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		19F2D7EBD8F305EB6F734D06 /* Pods-Shifty.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Shifty.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Shifty/Pods-Shifty.debug.xcconfig"; sourceTree = "<group>"; };
 		43041CB3207DB3440076E75C /* SkyLight.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SkyLight.framework; sourceTree = "<group>"; };
 		43041CC4207DB9FF0076E75C /* CoreBrightness.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBrightness.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/PrivateFrameworks/CoreBrightness.framework; sourceTree = DEVELOPER_DIR; };
 		43099BA81FC67B5000A0720B /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/CustomTimeWindow.strings"; sourceTree = "<group>"; };
@@ -178,11 +183,11 @@
 		4960957D200EB9CD00D966CA /* RuleManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RuleManager.swift; path = Shifty/RuleManager.swift; sourceTree = "<group>"; };
 		497B2392200B576700669DDE /* NightShiftManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NightShiftManager.swift; path = Shifty/NightShiftManager.swift; sourceTree = "<group>"; };
 		497B2393200B576700669DDE /* NotificationName+Shifty.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "NotificationName+Shifty.swift"; path = "Shifty/NotificationName+Shifty.swift"; sourceTree = "<group>"; };
+		8EEFC3D42F7A01D50029B95D /* PublicSuffix.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PublicSuffix.swift; path = Shifty/Vendor/PublicSuffix/PublicSuffix.swift; sourceTree = "<group>"; };
+		8EEFC3D62F7A02020029B95D /* etld.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = etld.plist; path = Shifty/Vendor/PublicSuffix/etld.plist; sourceTree = "<group>"; };
+		8EEFC3D72F7A020C0029B95D /* etld.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = etld.plist; path = Shifty/Vendor/PublicSuffix/etld.plist; sourceTree = "<group>"; };
+		8EEFC3D92F7A02C50029B95D /* LogHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LogHelper.swift; path = Shifty/LogHelper.swift; sourceTree = "<group>"; };
 		8EF67FE82F79EE9600E5C051 /* PrefAppsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PrefAppsViewController.swift; path = Shifty/PrefAppsViewController.swift; sourceTree = "<group>"; };
-		920E606CA99940B7E44F1914 /* Pods-Shifty.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Shifty.release.xcconfig"; path = "Pods/Target Support Files/Pods-Shifty/Pods-Shifty.release.xcconfig"; sourceTree = "<group>"; };
-		A54D41077F4E0570C078BAA2 /* Pods-ShiftyHelper.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShiftyHelper.release.xcconfig"; path = "Pods/Target Support Files/Pods-ShiftyHelper/Pods-ShiftyHelper.release.xcconfig"; sourceTree = "<group>"; };
-		AD3D5B933E033908748B2739 /* Pods-ShiftyHelper.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShiftyHelper.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ShiftyHelper/Pods-ShiftyHelper.debug.xcconfig"; sourceTree = "<group>"; };
-		D0B4370CFA537EB219F40DC7 /* Pods_Shifty.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Shifty.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -190,7 +195,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				41A3780894178C5C601604C7 /* Pods_ShiftyHelper.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -198,11 +202,16 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8EEFC3D12F7A01640029B95D /* MASShortcut in Frameworks */,
+				8EEFC3CF2F7A01640029B95D /* Logging in Frameworks */,
 				4353E56422136937008A26C4 /* CoreServices.framework in Frameworks */,
+				8EEFC3CD2F7A01640029B95D /* Sparkle in Frameworks */,
 				431B7B5D2167C8740039D085 /* Security.framework in Frameworks */,
+				8EEFC3CB2F7A01640029B95D /* MASPreferences in Frameworks */,
 				43C0838C1F19AEF900E73B84 /* ServiceManagement.framework in Frameworks */,
+				8EEFC3C92F7A01640029B95D /* AXSwift in Frameworks */,
+				8EEFC3D32F7A01A10029B95D /* InMemoryLogging in Frameworks */,
 				43041CC5207DB9FF0076E75C /* CoreBrightness.framework in Frameworks */,
-				B2FB1D17C62BCFBF11038F46 /* Pods_Shifty.framework in Frameworks */,
 				43CA44E126DB292F00537DED /* SkyLight.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -210,20 +219,10 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		2BAD531907046BA9FADE44E3 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				19F2D7EBD8F305EB6F734D06 /* Pods-Shifty.debug.xcconfig */,
-				920E606CA99940B7E44F1914 /* Pods-Shifty.release.xcconfig */,
-				AD3D5B933E033908748B2739 /* Pods-ShiftyHelper.debug.xcconfig */,
-				A54D41077F4E0570C078BAA2 /* Pods-ShiftyHelper.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 		433EE8501EBD8ECA007EA870 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8EEFC3D62F7A02020029B95D /* etld.plist */,
 				43CA44E026DB292F00537DED /* SkyLight.framework */,
 				4353E56322136937008A26C4 /* CoreServices.framework */,
 				43A934002164019300AFB708 /* Security.framework */,
@@ -236,8 +235,6 @@
 				434DE5C42161495F002AB147 /* MASShortcut.framework */,
 				434DE5C821614979002AB147 /* Sparkle.framework */,
 				434DE5CA21614984002AB147 /* SwiftLog.framework */,
-				D0B4370CFA537EB219F40DC7 /* Pods_Shifty.framework */,
-				060A0A5282083B67EEC6C05D /* Pods_ShiftyHelper.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -260,6 +257,9 @@
 		436A0F391FBE90BF00E77D41 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				8EEFC3D42F7A01D50029B95D /* PublicSuffix.swift */,
+				8EEFC3D72F7A020C0029B95D /* etld.plist */,
+				8EEFC3D92F7A02C50029B95D /* LogHelper.swift */,
 				43C0838D1F19BA6900E73B84 /* Shifty.entitlements */,
 				4394DDAE1EBE379900F22908 /* Shifty-Bridging-Header.h */,
 				4394DDA41EBE376F00F22908 /* CBBlueLightClient.h */,
@@ -295,8 +295,6 @@
 				43AA23CD1FFAC69A001DDF5A /* AccessibilityWindow.xib */,
 				43AA23C61FFABCD2001DDF5A /* AccessibilityView.swift */,
 				43B6125A1FFC297400724DAE /* AccessibilityView.xib */,
-				43F971B72156DD24001DBD45 /* AnalyticsDetailViewController.swift */,
-				43F971B52156CA80001DBD45 /* AnalyticsDetailView.xib */,
 				437556B31FF745A6001951AB /* Setup.swift */,
 				43B6125F1FFC298200724DAE /* Setup.storyboard */,
 			);
@@ -358,7 +356,6 @@
 				43C7A4861F19F2CB00A697C0 /* ShiftyHelper */,
 				43CC9E441EBAB19300983528 /* Products */,
 				433EE8501EBD8ECA007EA870 /* Frameworks */,
-				2BAD531907046BA9FADE44E3 /* Pods */,
 			);
 			sourceTree = "<group>";
 			usesTabs = 0;
@@ -379,7 +376,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 43C7A4911F19F2CB00A697C0 /* Build configuration list for PBXNativeTarget "ShiftyHelper" */;
 			buildPhases = (
-				F2E31D5662768A6309520DCF /* [CP] Check Pods Manifest.lock */,
 				43C7A4811F19F2CB00A697C0 /* Sources */,
 				43C7A4821F19F2CB00A697C0 /* Frameworks */,
 				43C7A4831F19F2CB00A697C0 /* Resources */,
@@ -397,12 +393,10 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 43CC9E521EBAB19300983528 /* Build configuration list for PBXNativeTarget "Shifty" */;
 			buildPhases = (
-				2AA597D2F11C551A7DFB4836 /* [CP] Check Pods Manifest.lock */,
 				43CC9E3F1EBAB19300983528 /* Sources */,
 				43CC9E401EBAB19300983528 /* Frameworks */,
 				43CC9E411EBAB19300983528 /* Resources */,
 				43C083891F19AEA600E73B84 /* CopyFiles */,
-				9A4D576B732E974148CA96C9 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -465,6 +459,13 @@
 				ru,
 			);
 			mainGroup = 43CC9E3A1EBAB19300983528;
+			packageReferences = (
+				8EEFC3C22F7A004D0029B95D /* XCRemoteSwiftPackageReference "AXSwift" */,
+				8EEFC3C42F7A00CC0029B95D /* XCRemoteSwiftPackageReference "MASPreferences" */,
+				8EEFC3C52F7A00EC0029B95D /* XCRemoteSwiftPackageReference "Sparkle" */,
+				8EEFC3C62F7A01000029B95D /* XCRemoteSwiftPackageReference "swift-log" */,
+				8EEFC3C72F7A01160029B95D /* XCRemoteSwiftPackageReference "MASShortcut" */,
+			);
 			productRefGroup = 43CC9E441EBAB19300983528 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -490,6 +491,7 @@
 			files = (
 				43B6125D1FFC298200724DAE /* Setup.storyboard in Resources */,
 				43FC498C1FF8936F00CD3196 /* credits.rtfd in Resources */,
+				8EEFC3D82F7A020C0029B95D /* etld.plist in Resources */,
 				43D5C2161FC2CA1300AF88E0 /* PrefGeneralViewController.xib in Resources */,
 				43AA23CF1FFAC69A001DDF5A /* AccessibilityWindow.xib in Resources */,
 				433AD3011F2CED1F0003FBCD /* dsa_pub.pem in Resources */,
@@ -507,75 +509,6 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		2AA597D2F11C551A7DFB4836 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Shifty-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		9A4D576B732E974148CA96C9 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Shifty/Pods-Shifty-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/AXSwift/AXSwift.framework",
-				"${BUILT_PRODUCTS_DIR}/LetsMove/LetsMove.framework",
-				"${BUILT_PRODUCTS_DIR}/MASPreferences+Shifty/MASPreferences_Shifty.framework",
-				"${BUILT_PRODUCTS_DIR}/MASShortcut/MASShortcut.framework",
-				"${BUILT_PRODUCTS_DIR}/PublicSuffix/PublicSuffix.framework",
-				"${PODS_ROOT}/Sparkle/Sparkle.framework",
-				"${BUILT_PRODUCTS_DIR}/SwiftLog/SwiftLog.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AXSwift.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LetsMove.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MASPreferences_Shifty.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MASShortcut.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PublicSuffix.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Sparkle.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftLog.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Shifty/Pods-Shifty-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		F2E31D5662768A6309520DCF /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-ShiftyHelper-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
 		43C7A4811F19F2CB00A697C0 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -592,6 +525,7 @@
 				43A8E69C2141DF7C00BD3870 /* CBTrueToneClient+Shifty.swift in Sources */,
 				433E60EC207D9995007BB55F /* BrightnessSystemClient+Shifty.swift in Sources */,
 				497B2396200B576700669DDE /* NotificationName+Shifty.swift in Sources */,
+				8EEFC3DA2F7A02C50029B95D /* LogHelper.swift in Sources */,
 				43CA44ED26DB53ED00537DED /* Intents.intentdefinition in Sources */,
 				43CA44F026DB53FB00537DED /* DateTime+Shifty.swift in Sources */,
 				43AA23C71FFABCD2001DDF5A /* AccessibilityView.swift in Sources */,
@@ -602,6 +536,7 @@
 				4351C7811FB5737900788CC9 /* PrefGeneralViewController.swift in Sources */,
 				4960957E200EB9CD00D966CA /* RuleManager.swift in Sources */,
 				43CE525C2037B720002EBF61 /* ScriptingBridge.swift in Sources */,
+				8EEFC3D52F7A01D50029B95D /* PublicSuffix.swift in Sources */,
 				437556B41FF745A6001951AB /* Setup.swift in Sources */,
 				4394DDAD1EBE376F00F22908 /* StatusMenuController.swift in Sources */,
 				8EF67FE92F79EE9600E5C051 /* PrefAppsViewController.swift in Sources */,
@@ -743,7 +678,6 @@
 /* Begin XCBuildConfiguration section */
 		43C7A4921F19F2CB00A697C0 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = AD3D5B933E033908748B2739 /* Pods-ShiftyHelper.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = ShiftyHelper/ShiftyHelper.entitlements;
@@ -758,7 +692,10 @@
 				);
 				INFOPLIST_FILE = ShiftyHelper/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = io.natethompson.ShiftyHelper;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -769,7 +706,6 @@
 		};
 		43C7A4931F19F2CB00A697C0 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A54D41077F4E0570C078BAA2 /* Pods-ShiftyHelper.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = ShiftyHelper/ShiftyHelper.entitlements;
@@ -784,7 +720,10 @@
 				);
 				INFOPLIST_FILE = ShiftyHelper/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = io.natethompson.ShiftyHelper;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -901,13 +840,13 @@
 				MACOSX_DEPLOYMENT_TARGET = 26.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = macosx;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 			};
 			name = Release;
 		};
 		43CC9E531EBAB19300983528 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 19F2D7EBD8F305EB6F734D06 /* Pods-Shifty.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Shifty/Shifty.entitlements;
@@ -927,7 +866,10 @@
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/Shifty/Info.plist";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
 				MACOSX_DEPLOYMENT_TARGET = 26.0;
 				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = io.natethompson.Shifty;
@@ -940,7 +882,6 @@
 		};
 		43CC9E541EBAB19300983528 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 920E606CA99940B7E44F1914 /* Pods-Shifty.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Shifty/Shifty.entitlements;
@@ -959,7 +900,10 @@
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/Shifty/Info.plist";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
 				MACOSX_DEPLOYMENT_TARGET = 26.0;
 				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = io.natethompson.Shifty;
@@ -1001,6 +945,82 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		8EEFC3C22F7A004D0029B95D /* XCRemoteSwiftPackageReference "AXSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/tmandry/AXSwift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.3.2;
+			};
+		};
+		8EEFC3C42F7A00CC0029B95D /* XCRemoteSwiftPackageReference "MASPreferences" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/cocoabits/MASPreferences";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.4.1;
+			};
+		};
+		8EEFC3C52F7A00EC0029B95D /* XCRemoteSwiftPackageReference "Sparkle" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/sparkle-project/Sparkle";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.9.1;
+			};
+		};
+		8EEFC3C62F7A01000029B95D /* XCRemoteSwiftPackageReference "swift-log" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apple/swift-log";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.10.1;
+			};
+		};
+		8EEFC3C72F7A01160029B95D /* XCRemoteSwiftPackageReference "MASShortcut" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/shpakovski/MASShortcut";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		8EEFC3C82F7A01640029B95D /* AXSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8EEFC3C22F7A004D0029B95D /* XCRemoteSwiftPackageReference "AXSwift" */;
+			productName = AXSwift;
+		};
+		8EEFC3CA2F7A01640029B95D /* MASPreferences */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8EEFC3C42F7A00CC0029B95D /* XCRemoteSwiftPackageReference "MASPreferences" */;
+			productName = MASPreferences;
+		};
+		8EEFC3CC2F7A01640029B95D /* Sparkle */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8EEFC3C52F7A00EC0029B95D /* XCRemoteSwiftPackageReference "Sparkle" */;
+			productName = Sparkle;
+		};
+		8EEFC3CE2F7A01640029B95D /* Logging */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8EEFC3C62F7A01000029B95D /* XCRemoteSwiftPackageReference "swift-log" */;
+			productName = Logging;
+		};
+		8EEFC3D02F7A01640029B95D /* MASShortcut */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8EEFC3C72F7A01160029B95D /* XCRemoteSwiftPackageReference "MASShortcut" */;
+			productName = MASShortcut;
+		};
+		8EEFC3D22F7A01A10029B95D /* InMemoryLogging */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8EEFC3C62F7A01000029B95D /* XCRemoteSwiftPackageReference "swift-log" */;
+			productName = InMemoryLogging;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 43CC9E3B1EBAB19300983528 /* Project object */;
 }

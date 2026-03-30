@@ -7,7 +7,7 @@
 
 import Cocoa
 import Sparkle
-import MASPreferences_Shifty
+import MASPreferences
 
 @objcMembers
 class PrefAboutViewController: NSViewController, MASPreferencesViewController {
@@ -28,7 +28,7 @@ class PrefAboutViewController: NSViewController, MASPreferencesViewController {
 
     var toolbarItemLabel: String? {
         get {
-            view.layoutSubtreeIfNeeded()
+            _ = view
             return NSLocalizedString("prefs.about", comment: "About")
         }
     }

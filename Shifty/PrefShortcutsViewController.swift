@@ -6,7 +6,7 @@
 //
 
 import Cocoa
-import MASPreferences_Shifty
+import MASPreferences
 import MASShortcut
 
 @objcMembers
@@ -29,7 +29,7 @@ class PrefShortcutsViewController: NSViewController, MASPreferencesViewControlle
     }
 
     var toolbarItemLabel: String? {
-        view.layoutSubtreeIfNeeded()
+        _ = view
         return NSLocalizedString("prefs.shortcuts", comment: "Shortcuts")
     }
 

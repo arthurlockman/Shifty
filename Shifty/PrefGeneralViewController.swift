@@ -6,10 +6,10 @@
 //
 
 import Cocoa
-import MASPreferences_Shifty
+import MASPreferences
 import ServiceManagement
 import AXSwift
-import SwiftLog
+import Logging
 
 
 @objcMembers
@@ -30,7 +30,7 @@ class PrefGeneralViewController: NSViewController, MASPreferencesViewController 
     }
 
     var toolbarItemLabel: String? {
-        view.layoutSubtreeIfNeeded()
+        _ = view
         return NSLocalizedString("prefs.general", comment: "General")
     }
 

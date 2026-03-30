@@ -6,7 +6,7 @@
 //
 
 import Cocoa
-import SwiftLog
+import Logging
 
 
 class NightShiftManager {

@@ -8,10 +8,9 @@
 
 import Cocoa
 import ServiceManagement
-import LetsMove
-import MASPreferences_Shifty
+import MASPreferences
 import AXSwift
-import SwiftLog
+import Logging
 import Sparkle
 import Intents
 
@@ -38,10 +37,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     var setupWindowController: NSWindowController!
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
-        #if !DEBUG
-        PFMoveToApplicationsFolderIfNecessary()
-        #endif
-        
         UserDefaults.standard.register(defaults: ["NSApplicationCrashOnExceptions": true])
         
         let userDefaults = UserDefaults.standard

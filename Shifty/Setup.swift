@@ -7,7 +7,7 @@
 
 import Cocoa
 import AXSwift
-import SwiftLog
+import Logging
 
 class SetupWindowController: NSWindowController {
     override var storyboard: NSStoryboard {

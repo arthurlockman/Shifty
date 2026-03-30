@@ -6,7 +6,7 @@
 //
 
 import Foundation
-import SwiftLog
+import Logging
 
 extension CBBlueLightClient {
     static var shared = CBBlueLightClient()

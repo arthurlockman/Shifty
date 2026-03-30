@@ -9,7 +9,7 @@
 import Cocoa
 import MASShortcut
 import AXSwift
-import SwiftLog
+import Logging
 
 class StatusMenuController: NSObject, NSMenuDelegate {
 
@@ -53,14 +53,7 @@ class StatusMenuController: NSObject, NSMenuDelegate {
     //MARK: Menu life cycle
 
     override func awakeFromNib() {
-        Log.logger.directory = "~/Library/Logs/Shifty"
-        #if DEBUG
-            Log.logger.name = "Shifty-debug"
-        #else
-            Log.logger.name = "Shifty"
-        #endif
-        //Edit printToConsole parameter in Edit Scheme > Run > Arguments > Environment Variables
-        Log.logger.printToConsole = ProcessInfo.processInfo.environment["print_log"] == "true"
+        // Logging configured via swift-log
 
         
         
@@ -418,7 +411,7 @@ class StatusMenuController: NSObject, NSMenuDelegate {
             let shortcut = try? NSKeyedUnarchiver.unarchivedObject(ofClass: MASShortcut.self, from: data) {
             let flags = shortcut.modifierFlags
             menuItem.keyEquivalentModifierMask = flags
-            menuItem.keyEquivalent = shortcut.keyCodeString.lowercased()
+            menuItem.keyEquivalent = (shortcut.keyCodeString ?? "").lowercased()
         } else {
             menuItem.keyEquivalentModifierMask = []
             menuItem.keyEquivalent = ""
