@@ -45,7 +45,6 @@
 		43CE525A20379A16002EBF61 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43CE525920379A16002EBF61 /* Event.swift */; };
 		43CE525C2037B720002EBF61 /* ScriptingBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43CE525B2037B720002EBF61 /* ScriptingBridge.swift */; };
 		43D5C2161FC2CA1300AF88E0 /* PrefGeneralViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 43D5C2181FC2CA1300AF88E0 /* PrefGeneralViewController.xib */; };
-		43D5C21B1FC2CAC300AF88E0 /* PrefShortcutsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 43D5C21D1FC2CAC300AF88E0 /* PrefShortcutsViewController.xib */; };
 		43D5C21E1FC2CACA00AF88E0 /* PrefAboutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 43D5C2201FC2CACA00AF88E0 /* PrefAboutViewController.xib */; };
 		43D5C2211FC2CACF00AF88E0 /* CustomTimeWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 43D5C2231FC2CACF00AF88E0 /* CustomTimeWindow.xib */; };
 		43D5C2301FC2CECC00AF88E0 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 43D5C2321FC2CECC00AF88E0 /* Localizable.strings */; };
@@ -59,11 +58,12 @@
 		8EEFC3CB2F7A01640029B95D /* MASPreferences in Frameworks */ = {isa = PBXBuildFile; productRef = 8EEFC3CA2F7A01640029B95D /* MASPreferences */; };
 		8EEFC3CD2F7A01640029B95D /* Sparkle in Frameworks */ = {isa = PBXBuildFile; productRef = 8EEFC3CC2F7A01640029B95D /* Sparkle */; };
 		8EEFC3CF2F7A01640029B95D /* Logging in Frameworks */ = {isa = PBXBuildFile; productRef = 8EEFC3CE2F7A01640029B95D /* Logging */; };
-		8EEFC3D12F7A01640029B95D /* MASShortcut in Frameworks */ = {isa = PBXBuildFile; productRef = 8EEFC3D02F7A01640029B95D /* MASShortcut */; };
 		8EEFC3D32F7A01A10029B95D /* InMemoryLogging in Frameworks */ = {isa = PBXBuildFile; productRef = 8EEFC3D22F7A01A10029B95D /* InMemoryLogging */; };
 		8EEFC3D52F7A01D50029B95D /* PublicSuffix.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEFC3D42F7A01D50029B95D /* PublicSuffix.swift */; };
 		8EEFC3D82F7A020C0029B95D /* etld.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8EEFC3D72F7A020C0029B95D /* etld.plist */; };
 		8EEFC3DA2F7A02C50029B95D /* LogHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEFC3D92F7A02C50029B95D /* LogHelper.swift */; };
+		8EEFC3DD2F7A07E10029B95D /* KeyboardShortcuts in Frameworks */ = {isa = PBXBuildFile; productRef = 8EEFC3DC2F7A07E10029B95D /* KeyboardShortcuts */; };
+		8EEFC3DF2F7A08C80029B95D /* KeyboardShortcuts+Names.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEFC3DE2F7A08C80029B95D /* KeyboardShortcuts+Names.swift */; };
 		8EF67FE92F79EE9600E5C051 /* PrefAppsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF67FE82F79EE9600E5C051 /* PrefAppsViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -85,13 +85,11 @@
 		43041CC4207DB9FF0076E75C /* CoreBrightness.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBrightness.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/PrivateFrameworks/CoreBrightness.framework; sourceTree = DEVELOPER_DIR; };
 		43099BA81FC67B5000A0720B /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/CustomTimeWindow.strings"; sourceTree = "<group>"; };
 		43099BA91FC67B5100A0720B /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/PrefGeneralViewController.strings"; sourceTree = "<group>"; };
-		43099BAA1FC67B5100A0720B /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/PrefShortcutsViewController.strings"; sourceTree = "<group>"; };
 		43099BAD1FC67B5C00A0720B /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		430E217322630360008E2874 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/CustomTimeWindow.strings; sourceTree = "<group>"; };
 		430E217422630360008E2874 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/AccessibilityView.strings; sourceTree = "<group>"; };
 		430E217522630361008E2874 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Setup.strings; sourceTree = "<group>"; };
 		430E217622630361008E2874 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/PrefGeneralViewController.strings; sourceTree = "<group>"; };
-		430E217722630361008E2874 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/PrefShortcutsViewController.strings; sourceTree = "<group>"; };
 		430E217922630361008E2874 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		430E217A22630361008E2874 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		430E217B22630361008E2874 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.stringsdict; name = fr; path = Shifty/fr.lproj/Localizable.stringsdict; sourceTree = "<group>"; };
@@ -99,7 +97,6 @@
 		430E217D22630370008E2874 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/AccessibilityView.strings; sourceTree = "<group>"; };
 		430E217E22630370008E2874 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Setup.strings; sourceTree = "<group>"; };
 		430E217F22630370008E2874 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/PrefGeneralViewController.strings; sourceTree = "<group>"; };
-		430E218022630370008E2874 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/PrefShortcutsViewController.strings; sourceTree = "<group>"; };
 		430E218222630370008E2874 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		430E218322630370008E2874 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		430E218422630370008E2874 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.stringsdict; name = ru; path = Shifty/ru.lproj/Localizable.stringsdict; sourceTree = "<group>"; };
@@ -110,7 +107,6 @@
 		4345ABA42165DB1600E2B7C7 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/AccessibilityView.strings; sourceTree = "<group>"; };
 		4345ABA52165DB1600E2B7C7 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Setup.strings; sourceTree = "<group>"; };
 		4345ABA62165DB1600E2B7C7 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/PrefGeneralViewController.strings; sourceTree = "<group>"; };
-		4345ABA72165DB1600E2B7C7 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/PrefShortcutsViewController.strings; sourceTree = "<group>"; };
 		4345ABA92165DB1700E2B7C7 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		4345ABAA2165DB1700E2B7C7 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 		4345ABAB2165DB1700E2B7C7 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.stringsdict; name = de; path = Shifty/de.lproj/Localizable.stringsdict; sourceTree = "<group>"; };
@@ -165,7 +161,6 @@
 		43CE525920379A16002EBF61 /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Event.swift; path = Shifty/Event.swift; sourceTree = "<group>"; };
 		43CE525B2037B720002EBF61 /* ScriptingBridge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ScriptingBridge.swift; path = Shifty/ScriptingBridge.swift; sourceTree = "<group>"; };
 		43D5C2171FC2CA1300AF88E0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/PrefGeneralViewController.xib; sourceTree = "<group>"; };
-		43D5C21C1FC2CAC300AF88E0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/PrefShortcutsViewController.xib; sourceTree = "<group>"; };
 		43D5C2221FC2CACF00AF88E0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/CustomTimeWindow.xib; sourceTree = "<group>"; };
 		43D5C2311FC2CECC00AF88E0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		43D5C2381FC35FB500AF88E0 /* MainMenu.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MainMenu.xib; path = Shifty/MainMenu.xib; sourceTree = "<group>"; };
@@ -187,6 +182,7 @@
 		8EEFC3D62F7A02020029B95D /* etld.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = etld.plist; path = Shifty/Vendor/PublicSuffix/etld.plist; sourceTree = "<group>"; };
 		8EEFC3D72F7A020C0029B95D /* etld.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = etld.plist; path = Shifty/Vendor/PublicSuffix/etld.plist; sourceTree = "<group>"; };
 		8EEFC3D92F7A02C50029B95D /* LogHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LogHelper.swift; path = Shifty/LogHelper.swift; sourceTree = "<group>"; };
+		8EEFC3DE2F7A08C80029B95D /* KeyboardShortcuts+Names.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "KeyboardShortcuts+Names.swift"; sourceTree = "<group>"; };
 		8EF67FE82F79EE9600E5C051 /* PrefAppsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PrefAppsViewController.swift; path = Shifty/PrefAppsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -202,11 +198,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8EEFC3D12F7A01640029B95D /* MASShortcut in Frameworks */,
 				8EEFC3CF2F7A01640029B95D /* Logging in Frameworks */,
 				4353E56422136937008A26C4 /* CoreServices.framework in Frameworks */,
 				8EEFC3CD2F7A01640029B95D /* Sparkle in Frameworks */,
 				431B7B5D2167C8740039D085 /* Security.framework in Frameworks */,
+				8EEFC3DD2F7A07E10029B95D /* KeyboardShortcuts in Frameworks */,
 				8EEFC3CB2F7A01640029B95D /* MASPreferences in Frameworks */,
 				43C0838C1F19AEF900E73B84 /* ServiceManagement.framework in Frameworks */,
 				8EEFC3C92F7A01640029B95D /* AXSwift in Frameworks */,
@@ -246,10 +242,10 @@
 				4351C7801FB5737900788CC9 /* PrefGeneralViewController.swift */,
 				43D5C2181FC2CA1300AF88E0 /* PrefGeneralViewController.xib */,
 				43B9DE131FB5924F002C4C29 /* PrefShortcutsViewController.swift */,
-				43D5C21D1FC2CAC300AF88E0 /* PrefShortcutsViewController.xib */,
 				43B9DE191FB592AE002C4C29 /* PrefAboutViewController.swift */,
 				43D5C2201FC2CACA00AF88E0 /* PrefAboutViewController.xib */,
 				8EF67FE82F79EE9600E5C051 /* PrefAppsViewController.swift */,
+				8EEFC3DE2F7A08C80029B95D /* KeyboardShortcuts+Names.swift */,
 			);
 			name = Preferences;
 			sourceTree = "<group>";
@@ -258,7 +254,6 @@
 			isa = PBXGroup;
 			children = (
 				8EEFC3D42F7A01D50029B95D /* PublicSuffix.swift */,
-				8EEFC3D72F7A020C0029B95D /* etld.plist */,
 				8EEFC3D92F7A02C50029B95D /* LogHelper.swift */,
 				43C0838D1F19BA6900E73B84 /* Shifty.entitlements */,
 				4394DDAE1EBE379900F22908 /* Shifty-Bridging-Header.h */,
@@ -312,6 +307,7 @@
 				43D5C2321FC2CECC00AF88E0 /* Localizable.strings */,
 				43B6126A1FFC413A00724DAE /* Localizable.stringsdict */,
 				436A0F3C1FBE913600E77D41 /* ShiftyAppcast.xml */,
+				8EEFC3D72F7A020C0029B95D /* etld.plist */,
 			);
 			name = Assets;
 			sourceTree = "<group>";
@@ -464,7 +460,7 @@
 				8EEFC3C42F7A00CC0029B95D /* XCRemoteSwiftPackageReference "MASPreferences" */,
 				8EEFC3C52F7A00EC0029B95D /* XCRemoteSwiftPackageReference "Sparkle" */,
 				8EEFC3C62F7A01000029B95D /* XCRemoteSwiftPackageReference "swift-log" */,
-				8EEFC3C72F7A01160029B95D /* XCRemoteSwiftPackageReference "MASShortcut" */,
+				8EEFC3DB2F7A07E10029B95D /* XCRemoteSwiftPackageReference "KeyboardShortcuts" */,
 			);
 			productRefGroup = 43CC9E441EBAB19300983528 /* Products */;
 			projectDirPath = "";
@@ -500,7 +496,6 @@
 				43D5C2301FC2CECC00AF88E0 /* Localizable.strings in Resources */,
 				43D5C21E1FC2CACA00AF88E0 /* PrefAboutViewController.xib in Resources */,
 				43D5C2211FC2CACF00AF88E0 /* CustomTimeWindow.xib in Resources */,
-				43D5C21B1FC2CAC300AF88E0 /* PrefShortcutsViewController.xib in Resources */,
 				43D5C2391FC35FB500AF88E0 /* MainMenu.xib in Resources */,
 				43965AC31FC68A19001A076D /* InfoPlist.strings in Resources */,
 				43B6126C1FFC413A00724DAE /* Localizable.stringsdict in Resources */,
@@ -537,6 +532,7 @@
 				4960957E200EB9CD00D966CA /* RuleManager.swift in Sources */,
 				43CE525C2037B720002EBF61 /* ScriptingBridge.swift in Sources */,
 				8EEFC3D52F7A01D50029B95D /* PublicSuffix.swift in Sources */,
+				8EEFC3DF2F7A08C80029B95D /* KeyboardShortcuts+Names.swift in Sources */,
 				437556B41FF745A6001951AB /* Setup.swift in Sources */,
 				4394DDAD1EBE376F00F22908 /* StatusMenuController.swift in Sources */,
 				8EF67FE92F79EE9600E5C051 /* PrefAppsViewController.swift in Sources */,
@@ -618,19 +614,6 @@
 				430E217F22630370008E2874 /* ru */,
 			);
 			name = PrefGeneralViewController.xib;
-			path = Shifty;
-			sourceTree = "<group>";
-		};
-		43D5C21D1FC2CAC300AF88E0 /* PrefShortcutsViewController.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				43D5C21C1FC2CAC300AF88E0 /* Base */,
-				43099BAA1FC67B5100A0720B /* zh-Hans */,
-				4345ABA72165DB1600E2B7C7 /* de */,
-				430E217722630361008E2874 /* fr */,
-				430E218022630370008E2874 /* ru */,
-			);
-			name = PrefShortcutsViewController.xib;
 			path = Shifty;
 			sourceTree = "<group>";
 		};
@@ -979,12 +962,12 @@
 				minimumVersion = 1.10.1;
 			};
 		};
-		8EEFC3C72F7A01160029B95D /* XCRemoteSwiftPackageReference "MASShortcut" */ = {
+		8EEFC3DB2F7A07E10029B95D /* XCRemoteSwiftPackageReference "KeyboardShortcuts" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/shpakovski/MASShortcut";
+			repositoryURL = "https://github.com/sindresorhus/KeyboardShortcuts";
 			requirement = {
-				branch = master;
-				kind = branch;
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.4.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
@@ -1010,15 +993,15 @@
 			package = 8EEFC3C62F7A01000029B95D /* XCRemoteSwiftPackageReference "swift-log" */;
 			productName = Logging;
 		};
-		8EEFC3D02F7A01640029B95D /* MASShortcut */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 8EEFC3C72F7A01160029B95D /* XCRemoteSwiftPackageReference "MASShortcut" */;
-			productName = MASShortcut;
-		};
 		8EEFC3D22F7A01A10029B95D /* InMemoryLogging */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 8EEFC3C62F7A01000029B95D /* XCRemoteSwiftPackageReference "swift-log" */;
 			productName = InMemoryLogging;
+		};
+		8EEFC3DC2F7A07E10029B95D /* KeyboardShortcuts */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8EEFC3DB2F7A07E10029B95D /* XCRemoteSwiftPackageReference "KeyboardShortcuts" */;
+			productName = KeyboardShortcuts;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

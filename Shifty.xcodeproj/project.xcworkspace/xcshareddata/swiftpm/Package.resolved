@@ -1,5 +1,5 @@
 {
-  "originHash" : "d0ef985be00dd9c21054565d77bb083478509d029efd3eb144db6848f1baa156",
+  "originHash" : "7d77f223212fa476e972c191fabcc32e948383d516101a1f6d81e39337400494",
   "pins" : [
     {
       "identity" : "axswift",
@@ -11,21 +11,21 @@
       }
     },
     {
+      "identity" : "keyboardshortcuts",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/sindresorhus/KeyboardShortcuts",
+      "state" : {
+        "revision" : "1aef85578fdd4f9eaeeb8d53b7b4fc31bf08fe27",
+        "version" : "2.4.0"
+      }
+    },
+    {
       "identity" : "maspreferences",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/cocoabits/MASPreferences",
       "state" : {
         "revision" : "56bafeeabffa78a18620f006f74efbbcde3c45e2",
         "version" : "1.4.1"
-      }
-    },
-    {
-      "identity" : "masshortcut",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/shpakovski/MASShortcut",
-      "state" : {
-        "branch" : "master",
-        "revision" : "6f2603c6b6cc18f64a799e5d2c9d3bbc467c413a"
       }
     },
     {

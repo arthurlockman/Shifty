@@ -40,7 +40,6 @@ class PrefGeneralViewController: NSViewController, MASPreferencesViewController 
     @IBOutlet weak var autoLaunchButton: NSButton!
     @IBOutlet weak var quickToggleButton: NSButton!
     @IBOutlet weak var iconSwitchingButton: NSButton!
-    @IBOutlet weak var darkModeSyncButton: NSButton!
     @IBOutlet weak var websiteShiftingButton: NSButton!
     @IBOutlet weak var trueToneControlButton: NSButton!
     
@@ -61,8 +60,6 @@ class PrefGeneralViewController: NSViewController, MASPreferencesViewController 
 
     var appDelegate: AppDelegate!
     var prefWindow: NSWindow!
-    
-    var defaultDarkModeState: Bool!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -80,8 +77,6 @@ class PrefGeneralViewController: NSViewController, MASPreferencesViewController 
         } else {
             trueToneStackView.isHidden = true
         }
-        
-        defaultDarkModeState = SLSGetAppearanceThemeLegacy()
 
         //Fix layer-backing issues in 10.12 that cause window corners to not be rounded.
         if !ProcessInfo().isOperatingSystemAtLeast(OperatingSystemVersion(majorVersion: 10, minorVersion: 13, patchVersion: 0)) {
@@ -96,7 +91,8 @@ class PrefGeneralViewController: NSViewController, MASPreferencesViewController 
         hideMenuBarIconButton.translatesAutoresizingMaskIntoConstraints = false
         
         if let mainStackView = trueToneStackView.superview as? NSStackView {
-            mainStackView.addArrangedSubview(hideMenuBarIconButton)
+            let trueToneIndex = mainStackView.arrangedSubviews.firstIndex(of: trueToneStackView) ?? mainStackView.arrangedSubviews.count - 1
+            mainStackView.insertArrangedSubview(hideMenuBarIconButton, at: trueToneIndex + 1)
         }
     }
 
@@ -146,16 +142,6 @@ class PrefGeneralViewController: NSViewController, MASPreferencesViewController 
         let appDelegate = NSApplication.shared.delegate as! AppDelegate
         appDelegate.updateMenuBarIcon()
         logw("Icon switching set to \(sender.state.rawValue)")
-    }
-
-    @IBAction func syncDarkMode(_ sender: NSButtonCell) {
-        if sender.state == .on {
-            defaultDarkModeState = SLSGetAppearanceThemeLegacy()
-            NightShiftManager.shared.updateDarkMode()
-        } else {
-            SLSSetAppearanceThemeLegacy(defaultDarkModeState)
-        }
-        logw("Dark mode sync preference set to \(sender.state.rawValue)")
     }
 
     @IBAction func setWebsiteControl(_ sender: NSButtonCell) {
@@ -235,7 +221,6 @@ class PrefGeneralViewController: NSViewController, MASPreferencesViewController 
         Event.preferences(autoLaunch: autoLaunchButton.state == .on,
                           quickToggle: quickToggleButton.state == .on,
                           iconSwitching: iconSwitchingButton.state == .on,
-                          syncDarkMode: darkModeSyncButton.state == .on,
                           websiteShifting: websiteShiftingButton.state == .on,
                           trueToneControl: trueToneControlButton.state == .on,
                           schedule: NightShiftManager.shared.schedule).record()

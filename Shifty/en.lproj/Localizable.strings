@@ -101,3 +101,15 @@
 "analytics.data_usage_list_1" = "None of this data is sold to anyone (and nobody would want to buy it anyways)";
 "analytics.data_usage_list_2" = "Helps to resolve problems and make Shifty better";
 
+/* Shortcuts preferences */
+"prefs.shortcuts.toggle_night_shift" = "Toggle Night Shift:";
+"prefs.shortcuts.increase_color_temp" = "Increase color temp:";
+"prefs.shortcuts.decrease_color_temp" = "Decrease color temp:";
+"prefs.shortcuts.disable_app" = "Disable for current app:";
+"prefs.shortcuts.disable_domain" = "Disable for domain:";
+"prefs.shortcuts.disable_subdomain" = "Disable for subdomain:";
+"prefs.shortcuts.disable_hour" = "Disable for an hour:";
+"prefs.shortcuts.disable_custom" = "Disable for custom time:";
+"prefs.shortcuts.toggle_true_tone" = "Toggle True Tone:";
+"prefs.shortcuts.toggle_dark_mode" = "Toggle Dark Mode:";
+

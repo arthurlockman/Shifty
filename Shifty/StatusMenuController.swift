@@ -7,7 +7,7 @@
 //
 
 import Cocoa
-import MASShortcut
+import KeyboardShortcuts
 import AXSwift
 import Logging
 
@@ -118,13 +118,13 @@ class StatusMenuController: NSObject, NSMenuDelegate {
         updateMenuItems()
         setDescriptionText()
         
-        assignKeyboardShortcutToMenuItem(powerMenuItem, userDefaultsKey: Keys.toggleNightShiftShortcut)
-        assignKeyboardShortcutToMenuItem(disableCurrentAppMenuItem, userDefaultsKey: Keys.disableAppShortcut)
-        assignKeyboardShortcutToMenuItem(disableDomainMenuItem, userDefaultsKey: Keys.disableDomainShortcut)
-        assignKeyboardShortcutToMenuItem(disableSubdomainMenuItem, userDefaultsKey: Keys.disableSubdomainShortcut)
-        assignKeyboardShortcutToMenuItem(disableHourMenuItem, userDefaultsKey: Keys.disableHourShortcut)
-        assignKeyboardShortcutToMenuItem(disableCustomMenuItem, userDefaultsKey: Keys.disableCustomShortcut)
-        assignKeyboardShortcutToMenuItem(trueToneMenuItem, userDefaultsKey: Keys.toggleTrueToneShortcut)
+        powerMenuItem.setShortcut(for: .toggleNightShift)
+        disableCurrentAppMenuItem.setShortcut(for: .disableApp)
+        disableDomainMenuItem.setShortcut(for: .disableDomain)
+        disableSubdomainMenuItem.setShortcut(for: .disableSubdomain)
+        disableHourMenuItem.setShortcut(for: .disableHour)
+        disableCustomMenuItem.setShortcut(for: .disableCustom)
+        trueToneMenuItem.setShortcut(for: .toggleTrueTone)
 
         Event.menuOpened.record()
     }
@@ -406,17 +406,6 @@ class StatusMenuController: NSObject, NSMenuDelegate {
     
     
     
-    func assignKeyboardShortcutToMenuItem(_ menuItem: NSMenuItem, userDefaultsKey: String) {
-        if let data = UserDefaults.standard.value(forKey: userDefaultsKey) as? Data,
-            let shortcut = try? NSKeyedUnarchiver.unarchivedObject(ofClass: MASShortcut.self, from: data) {
-            let flags = shortcut.modifierFlags
-            menuItem.keyEquivalentModifierMask = flags
-            menuItem.keyEquivalent = (shortcut.keyCodeString ?? "").lowercased()
-        } else {
-            menuItem.keyEquivalentModifierMask = []
-            menuItem.keyEquivalent = ""
-        }
-    }
     
     
 
