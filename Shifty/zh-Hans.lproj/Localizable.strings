@@ -80,3 +80,20 @@
 "about.checkForUpdates" = "检查更新...";
 "about.credits" = "致谢名单…";
 "about.includeBetaUpdates" = "包含测试版更新";
+
+/* General preferences */
+"general.autoLaunch" = "随登录自动打开 Shifty 夜览管家";
+"general.quickToggle" = "快速切换";
+"general.quickToggle.description" = "启用后，单击菜单栏图标以切换“夜览”模式。辅助点按以打开菜单。";
+"general.iconSwitching" = "随“夜览”模式的开关状态更新菜单栏图标";
+"general.websiteShifting" = "网站色温调节";
+"general.websiteShifting.description" = "开启后，您可以设置在访问特定网站时自动停用“夜览”模式。";
+"general.trueToneControl" = "控制“原彩显示”";
+"general.trueToneControl.description" = "开启后，“夜览”模式对应的应用程序和网站规则将同时适用于“原彩显示”。";
+"general.hideMenuBarIcon" = "隐藏菜单栏图标";
+"general.hideIconAlert.title" = "隐藏菜单栏图标？";
+"general.hideIconAlert.message" = "您可以通过聚焦搜索或启动台重新打开 Shifty。键盘快捷键将继续运作。";
+"general.hideIconAlert.confirm" = "隐藏图标";
+"general.hideIconAlert.cancel" = "取消";
+"general.openNightShiftSettings" = "打开“夜览”模式设置…";
+"general.quit" = "退出 Shifty 夜览管家";

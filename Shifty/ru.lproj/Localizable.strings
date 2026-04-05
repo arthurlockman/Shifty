@@ -80,3 +80,20 @@
 "about.checkForUpdates" = "Проверить наличие обновлений...";
 "about.credits" = "Сведения об авторах...";
 "about.includeBetaUpdates" = "Включить бета-обновления";
+
+/* General preferences */
+"general.autoLaunch" = "Запускать Shifty при старте";
+"general.quickToggle" = "Быстрое переключение";
+"general.quickToggle.description" = "Если включено, то нажмите на иконку в строку меню, чтобы включить Night Shift. Нажмите правой кнопкой мыши, чтобы открыть меню.";
+"general.iconSwitching" = "Установить значок в боковом меню в соответствии с Night Shift";
+"general.websiteShifting" = "Переключение на сайтах";
+"general.websiteShifting.description" = "Если включено, вы можете указать Night Shift автоматически отключаться при посещении определенных сайтов.";
+"general.trueToneControl" = "Контроль True Tone";
+"general.trueToneControl.description" = "Если включено, то правила Night Shift для приложений и сайтов затронут и True Tone.";
+"general.hideMenuBarIcon" = "Скрыть значок в строке меню";
+"general.hideIconAlert.title" = "Скрыть значок в строке меню?";
+"general.hideIconAlert.message" = "Вы можете снова открыть Shifty через Spotlight или Launchpad. Сочетания клавиш продолжат работать.";
+"general.hideIconAlert.confirm" = "Скрыть значок";
+"general.hideIconAlert.cancel" = "Отмена";
+"general.openNightShiftSettings" = "Открыть настройки Night Shift…";
+"general.quit" = "Завершить Shifty";

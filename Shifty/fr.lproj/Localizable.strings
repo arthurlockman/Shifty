@@ -80,3 +80,20 @@
 "about.checkForUpdates" = "Rechercher les mises à jour...";
 "about.credits" = "Crédits...";
 "about.includeBetaUpdates" = "Inclure les mises à jour bêta";
+
+/* General preferences */
+"general.autoLaunch" = "Lancer Shifty au démarrage";
+"general.quickToggle" = "Changement rapide";
+"general.quickToggle.description" = "Si activé, un clic sur l'icône dans la barre des menus changera l'état de Night Shift. Un clic droit ouvre le menu.";
+"general.iconSwitching" = "Changer l'icône de la barre des menus selon Night Shift";
+"general.websiteShifting" = "Permutation des sites web";
+"general.websiteShifting.description" = "Si activé, vous pouvez définir Night Shift pour désactiver automatiquement lorsque vous visitez certains sites Web.";
+"general.trueToneControl" = "Contrôle True Tone";
+"general.trueToneControl.description" = "Si activé, les règles Night Shift pour les applications et les sites web affecteront également True Tone.";
+"general.hideMenuBarIcon" = "Masquer l'icône de la barre des menus";
+"general.hideIconAlert.title" = "Masquer l'icône de la barre des menus ?";
+"general.hideIconAlert.message" = "Vous pouvez rouvrir Shifty depuis Spotlight ou le Launchpad. Les raccourcis clavier continueront de fonctionner.";
+"general.hideIconAlert.confirm" = "Masquer l'icône";
+"general.hideIconAlert.cancel" = "Annuler";
+"general.openNightShiftSettings" = "Ouvrir les réglages Night Shift…";
+"general.quit" = "Quitter Shifty";

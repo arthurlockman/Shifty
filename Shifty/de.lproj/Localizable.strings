@@ -80,3 +80,20 @@
 "about.checkForUpdates" = "Nach Updates suchen...";
 "about.credits" = "Danksagung...";
 "about.includeBetaUpdates" = "Beta-Updates einschließen";
+
+/* General preferences */
+"general.autoLaunch" = "Shifty beim Anmelden starten";
+"general.quickToggle" = "Schnelles Umschalten";
+"general.quickToggle.description" = "Wenn aktiviert kann Night Shift bei Klick auf das Menüleisten-Symbol schnell umgeschaltet werden. Ein Rechtsklick auf das Symbol öffnet das Menü.";
+"general.iconSwitching" = "Symbol in der Menüleiste mit Night Shift ändern";
+"general.websiteShifting" = "Webseiten-Shift";
+"general.websiteShifting.description" = "Wenn aktiviert wird Night Shift bei voreingestellten Internetseiten automatisch deaktiviert.";
+"general.trueToneControl" = "True Tone Kontrolle";
+"general.trueToneControl.description" = "Wenn aktiviert, gelten die Night Shift-Regeln für Apps und Webseiten auch für True Tone.";
+"general.hideMenuBarIcon" = "Menüleisten-Symbol ausblenden";
+"general.hideIconAlert.title" = "Menüleisten-Symbol ausblenden?";
+"general.hideIconAlert.message" = "Sie können Shifty über Spotlight oder das Launchpad erneut öffnen. Tastenkombinationen funktionieren weiterhin.";
+"general.hideIconAlert.confirm" = "Symbol ausblenden";
+"general.hideIconAlert.cancel" = "Abbrechen";
+"general.openNightShiftSettings" = "Night Shift Einstellungen öffnen…";
+"general.quit" = "Shifty beenden";
