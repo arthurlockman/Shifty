@@ -5,10 +5,10 @@
 //  Created by Enrico Ghirardi on 25/11/2017.
 //
 
+import Cocoa
 import ScriptingBridge
 import AXSwift
-import PublicSuffix
-import SwiftLog
+import Logging
 
 
 typealias BundleIdentifier = String

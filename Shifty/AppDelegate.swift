@@ -8,19 +8,16 @@
 
 import Cocoa
 import ServiceManagement
-import AppCenter
-import AppCenterAnalytics
-import AppCenterCrashes
-import LetsMove
-import MASPreferences_Shifty
+import MASPreferences
 import AXSwift
-import SwiftLog
+import Logging
 import Sparkle
 import Intents
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
 
+    let updaterController = SPUStandardUpdaterController(startingUpdater: false, updaterDelegate: nil, userDriverDelegate: nil)
     let prefs = UserDefaults.standard
     @IBOutlet weak var statusMenu: NSMenu!
     let statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
@@ -31,6 +28,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             viewControllers: [
                 PrefGeneralViewController(),
                 PrefShortcutsViewController(),
+                PrefAppsViewController(),
                 PrefAboutViewController()],
             title: NSLocalizedString("prefs.title", comment: "Preferences"))
     }()
@@ -39,34 +37,20 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     var setupWindowController: NSWindowController!
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
-        #if !DEBUG
-        PFMoveToApplicationsFolderIfNecessary()
-        #endif
-        
         UserDefaults.standard.register(defaults: ["NSApplicationCrashOnExceptions": true])
         
         let userDefaults = UserDefaults.standard
         
-        if userDefaults.bool(forKey: Keys.analyticsPermission) {
-            #if !DEBUG
-            AppCenter.start(withAppSecret: "a0d14d8b-fd4d-4512-8901-d5cfe5249548", services:[Analytics.self, Crashes.self])
-            #endif
-        } else if userDefaults.bool(forKey: Keys.hasSetupWindowShown)
-            && userDefaults.value(forKey: Keys.lastInstalledShiftyVersion) == nil {
-            // If updated from beta version
-            userDefaults.set(true, forKey: Keys.analyticsPermission)
-        }
-        
-        // Initialize Sparkle
-        SUUpdater.shared()
-        
-        
         let versionObject = Bundle.main.infoDictionary?["CFBundleShortVersionString"]
         userDefaults.set(versionObject as? String ?? "", forKey: Keys.lastInstalledShiftyVersion)
         
+        do {
+            try updaterController.updater.start()
+        } catch {
+            logw("Sparkle updater failed to start: \(error.localizedDescription)")
+        }
         
-        Event.appLaunched(preferredLocalization: Bundle.main.preferredLocalizations.first ?? "").record()
-
+        
         logw("")
         logw("App launched")
         logw("macOS \(ProcessInfo().operatingSystemVersionString)")
@@ -87,7 +71,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
         //Show alert if accessibility permissions have been revoked while app is not running
         if UserDefaults.standard.bool(forKey: Keys.isWebsiteControlEnabled) && !UIElement.isProcessTrusted() {
-            Event.accessibilityRevokedAlertShown.record()
             logw("Accessibility permissions revoked while app was not running")
             showAccessibilityDeniedAlert()
             UserDefaults.standard.set(false, forKey: Keys.isWebsiteControlEnabled)
@@ -106,8 +89,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             self.updateMenuBarIcon()
         }
         
-        statusItem.behavior = .terminationOnRemoval
-        statusItem.isVisible = true
+        updateStatusItemVisibility()
+        
+        NotificationCenter.default.addObserver(forName: .menuBarIconVisibilityChanged, object: nil, queue: .main) { [weak self] _ in
+            self?.updateStatusItemVisibility()
+        }
         
         let hasSetupWindowShown = userDefaults.bool(forKey: Keys.hasSetupWindowShown)
 
@@ -122,7 +108,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     func verifyOperatingSystemVersion() {
         if !ProcessInfo().isOperatingSystemAtLeast(OperatingSystemVersion(majorVersion: 10, minorVersion: 12, patchVersion: 4)) {
-            Event.oldMacOSVersion(version: ProcessInfo().operatingSystemVersionString).record()
             logw("Operating system version not supported")
             NSApplication.shared.activate(ignoringOtherApps: true)
             
@@ -139,7 +124,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     func verifySupportsNightShift() {
         if !NightShiftManager.supportsNightShift {
-            Event.unsupportedHardware.record()
             logw("System does not support Night Shift")
             NSApplication.shared.activate(ignoringOtherApps: true)
             
@@ -253,6 +237,18 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         }
     }
 
+    func applicationShouldHandleReopen(_ sender: NSApplication, hasVisibleWindows flag: Bool) -> Bool {
+        if !flag {
+            NSApp.activate(ignoringOtherApps: true)
+            preferenceWindowController.showWindow(nil)
+        }
+        return true
+    }
+    
+    func updateStatusItemVisibility() {
+        statusItem.isVisible = !UserDefaults.standard.bool(forKey: Keys.isMenuBarIconHidden)
+    }
+    
     func applicationWillTerminate(_ aNotification: Notification) {
         logw("App terminated")
     }

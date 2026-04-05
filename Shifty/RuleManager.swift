@@ -6,7 +6,7 @@
 //
 
 import Cocoa
-import SwiftLog
+import Logging
 import ScriptingBridge
 
 
@@ -267,6 +267,43 @@ class RuleManager {
         if let currentSubdomain = BrowserManager.shared.currentSubdomain {
             setSubdomainRule(.none, forSubdomain: currentSubdomain)
         }
+    }
+    
+    
+    // MARK: - Public accessors for preference pane
+    
+    var allCurrentAppDisableRules: Set<AppRule> {
+        return currentAppDisableRules
+    }
+    
+    var allRunningAppDisableRules: Set<AppRule> {
+        return runningAppDisableRules
+    }
+    
+    func addCurrentAppDisableRule(forBundleID bundleID: String) {
+        let rule = AppRule(bundleIdentifier: bundleID, fullScreenOnly: false)
+        currentAppDisableRules.insert(rule)
+    }
+    
+    func addRunningAppDisableRule(forBundleID bundleID: String) {
+        let rule = AppRule(bundleIdentifier: bundleID, fullScreenOnly: false)
+        runningAppDisableRules.insert(rule)
+    }
+    
+    func removeCurrentAppDisableRule(forBundleID bundleID: String) {
+        if let index = currentAppDisableRules.firstIndex(where: { $0.bundleIdentifier == bundleID }) {
+            currentAppDisableRules.remove(at: index)
+        }
+    }
+    
+    func removeRunningAppDisableRule(forBundleID bundleID: String) {
+        if let index = runningAppDisableRules.firstIndex(where: { $0.bundleIdentifier == bundleID }) {
+            runningAppDisableRules.remove(at: index)
+        }
+    }
+    
+    func removeBrowserRule(_ rule: BrowserRule) {
+        browserRules.remove(rule)
     }
     
     

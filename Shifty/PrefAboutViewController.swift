@@ -7,9 +7,7 @@
 
 import Cocoa
 import Sparkle
-import MASPreferences_Shifty
-
-let ShiftyUpdater = SUUpdater()
+import MASPreferences
 
 @objcMembers
 class PrefAboutViewController: NSViewController, MASPreferencesViewController {
@@ -30,7 +28,7 @@ class PrefAboutViewController: NSViewController, MASPreferencesViewController {
 
     var toolbarItemLabel: String? {
         get {
-            view.layoutSubtreeIfNeeded()
+            _ = view
             return NSLocalizedString("prefs.about", comment: "About")
         }
     }
@@ -57,7 +55,9 @@ class PrefAboutViewController: NSViewController, MASPreferencesViewController {
     }
 
     @IBAction func checkUpdateClicked(_ sender: NSButton) {
-        ShiftyUpdater.checkForUpdates(sender)
+        if let appDelegate = NSApplication.shared.delegate as? AppDelegate {
+            appDelegate.updaterController.checkForUpdates(sender)
+        }
         Event.checkForUpdatesClicked.record()
     }
 
@@ -93,7 +93,7 @@ class PrefAboutViewController: NSViewController, MASPreferencesViewController {
 
     @IBAction func creditsButtonClicked(_ sender: Any) {
         guard let path = Bundle.main.path(forResource: "credits", ofType: "rtfd") else { return }
-        NSWorkspace.shared.openFile(path)
+        NSWorkspace.shared.open(URL(fileURLWithPath: path))
         Event.creditsClicked.record()
     }
 }

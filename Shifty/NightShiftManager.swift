@@ -6,7 +6,7 @@
 //
 
 import Cocoa
-import SwiftLog
+import Logging
 
 
 class NightShiftManager {
@@ -70,8 +70,6 @@ class NightShiftManager {
     init() {
         var prevSchedule = client.schedule
         
-        updateDarkMode()
-        
         // @convention block called by CoreBrightness
         client.setStatusNotificationBlock {
             if self.schedule == prevSchedule {
@@ -81,8 +79,6 @@ class NightShiftManager {
                 self.respond(to: .scheduleChanged)
                 prevSchedule = CBBlueLightClient.shared.schedule
             }
-            
-            self.updateDarkMode()
             
             for listener in self.nightShiftChangeListeners {
                 DispatchQueue.main.async {
@@ -100,32 +96,11 @@ class NightShiftManager {
                 self.respond(to: CBBlueLightClient.shared.scheduledState
                         ? .enteredScheduledNightShift : .exitedScheduledNightShift)
             }
-            
-            self.updateDarkMode()
         }
     }
     
     func onNightShiftChange(_ listener: @escaping () -> Void) {
         nightShiftChangeListeners.append(listener)
-    }
-    
-    func updateDarkMode() {
-        if UserDefaults.standard.bool(forKey: Keys.isDarkModeSyncEnabled) {
-            let scheduledState = client.scheduledState
-            
-            switch client.schedule {
-            case .off:
-                let darkModeState = isNightShiftEnabled || isDisableRuleActive || isDisabledWithTimer || userSet == .on
-                SLSSetAppearanceThemeLegacy(darkModeState)
-                logw("Dark mode set to \(darkModeState)")
-            case .solar:
-                SLSSetAppearanceThemeLegacy(scheduledState)
-                logw("Dark mode set to \(scheduledState)")
-            case .custom(start: _, end: _):
-                SLSSetAppearanceThemeLegacy(scheduledState)
-                logw("Dark mode set to \(scheduledState)")
-            }
-        }
     }
     
     func setNightShiftEnabled(to state: Bool) {

@@ -6,7 +6,7 @@
 //
 
 import Foundation
-import SwiftLog
+import Logging
 
 enum State {
     case unsupported

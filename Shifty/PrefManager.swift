@@ -12,10 +12,8 @@ enum Keys {
     static let isStatusToggleEnabled = "isStatusToggleEnabled"
     static let isAutoLaunchEnabled = "isAutoLaunchEnabled"
     static let isIconSwitchingEnabled = "isIconSwitchingEnabled"
-    static let isDarkModeSyncEnabled = "isDarkModeSyncEnabled"
     static let isWebsiteControlEnabled = "isWebsiteControlEnabled"
     static let trueToneControl = "trueToneControl"
-    static let analyticsPermission = "fabricCrashlyticsPermission"
     static let currentAppDisableRules = "disabledApps"
     static let runningAppDisableRules = "disabledRunningApps"
     static let browserRules = "browserRules"
@@ -30,6 +28,8 @@ enum Keys {
     static let disableCustomShortcut = "disableCustomShortcut"
     static let toggleTrueToneShortcut = "toggleTrueToneShortcut"
     static let toggleDarkModeShortcut = "toggleDarkModeShortcut"
+    
+    static let isMenuBarIconHidden = "isMenuBarIconHidden"
     
     static let lastInstalledShiftyVersion = "lastInstalledShiftyVersion"
     static let hasSetupWindowShown = "hasSetupWindowShown"
@@ -52,14 +52,13 @@ class PrefManager {
             Keys.isAutoLaunchEnabled: NSNumber(value: false),
             Keys.isStatusToggleEnabled: NSNumber(value: false),
             Keys.isIconSwitchingEnabled: NSNumber(value: false),
-            Keys.isDarkModeSyncEnabled: NSNumber(value: false),
             Keys.isWebsiteControlEnabled: NSNumber(value: false),
             Keys.trueToneControl: NSNumber(value: false),
-            Keys.analyticsPermission: NSNumber(value: false),
             Keys.currentAppDisableRules: NSData(),
             Keys.runningAppDisableRules: NSData(),
             Keys.browserRules: NSData(),
-            Keys.hasSetupWindowShown: NSNumber(value: false)
+            Keys.hasSetupWindowShown: NSNumber(value: false),
+            Keys.isMenuBarIconHidden: NSNumber(value: false)
             ] as [String : Any]
 
         userDefaults.register(defaults: factoryDefaults)

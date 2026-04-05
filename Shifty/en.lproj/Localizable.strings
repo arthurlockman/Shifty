@@ -63,6 +63,12 @@
 
 
 
+"prefs.hide_menu_bar_icon" = "Hide menu bar icon";
+"prefs.hide_icon_alert.title" = "Hide Menu Bar Icon?";
+"prefs.hide_icon_alert.message" = "You can reopen Shifty from Spotlight or Launchpad. Keyboard shortcuts will continue to work.";
+"prefs.hide_icon_alert.confirm" = "Hide Icon";
+"prefs.hide_icon_alert.cancel" = "Cancel";
+
 "analytics.includes_list_title" = "What data is collected?";
 "analytics.includes_list_1" = "Information about what caused a crash";
 "analytics.includes_list_2" = "Data about the usage of various features in Shifty";
@@ -72,7 +78,38 @@
 "analytics.doesnt_include_list_1" = "Sensitive data Shifty is granted permission to access (e.g. web addresses used for Website Shifting)";
 "analytics.doesnt_include_list_2" = "Any device IDs or personally identifiable information";
 
-"analytics.data_usage_list_title" = "What happens to the data?";
+"prefs.apps" = "Apps";
+"prefs.apps.segment.app_rules" = "App Rules";
+"prefs.apps.segment.browser_rules" = "Browser Rules";
+"prefs.apps.column.name" = "App Name";
+"prefs.apps.column.type" = "Rule Type";
+"prefs.apps.column.domain" = "Domain";
+"prefs.apps.add_app_message" = "Select an application to add a rule for";
+"prefs.apps.rule_type_title" = "Choose Rule Type";
+"prefs.apps.rule_type_info" = "Select when Night Shift should be disabled for this app.";
+"prefs.apps.rule.focused" = "When focused";
+"prefs.apps.rule.running" = "When running";
+"prefs.apps.rule.domain" = "Domain";
+"prefs.apps.rule.subdomain_disabled" = "Subdomain disabled";
+"prefs.apps.rule.subdomain_enabled" = "Subdomain enabled";
+"prefs.apps.add" = "Add";
+"prefs.apps.cancel" = "Cancel";
+"prefs.apps.add_domain_title" = "Add Domain Rule";
+"prefs.apps.add_domain_info" = "Enter a domain to disable Night Shift for.";
+
+"prefs.quit" = "Quit Shifty";
 "analytics.data_usage_list_1" = "None of this data is sold to anyone (and nobody would want to buy it anyways)";
 "analytics.data_usage_list_2" = "Helps to resolve problems and make Shifty better";
+
+/* Shortcuts preferences */
+"prefs.shortcuts.toggle_night_shift" = "Toggle Night Shift:";
+"prefs.shortcuts.increase_color_temp" = "Increase color temp:";
+"prefs.shortcuts.decrease_color_temp" = "Decrease color temp:";
+"prefs.shortcuts.disable_app" = "Disable for current app:";
+"prefs.shortcuts.disable_domain" = "Disable for domain:";
+"prefs.shortcuts.disable_subdomain" = "Disable for subdomain:";
+"prefs.shortcuts.disable_hour" = "Disable for an hour:";
+"prefs.shortcuts.disable_custom" = "Disable for custom time:";
+"prefs.shortcuts.toggle_true_tone" = "Toggle True Tone:";
+"prefs.shortcuts.toggle_dark_mode" = "Toggle Dark Mode:";
 

@@ -58,6 +58,13 @@ class SwitchView: NSView {
             onSwitchToggle(false)
         }
     }
+    
+    override func viewDidMoveToWindow() {
+        super.viewDidMoveToWindow()
+        if let window = window {
+            toggleSwitch.appearance = window.effectiveAppearance
+        }
+    }
 }
 
 

@@ -50,7 +50,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             components.append("Shifty")
             
             let newPath = NSString.path(withComponents: components)
-            NSWorkspace.shared.launchApplication(newPath)
+            NSWorkspace.shared.openApplication(at: URL(fileURLWithPath: newPath), configuration: NSWorkspace.OpenConfiguration())
         } else {
             NSApp.terminate(self)
         }

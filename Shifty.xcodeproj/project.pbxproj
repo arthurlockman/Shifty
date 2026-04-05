@@ -3,11 +3,10 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		41A3780894178C5C601604C7 /* Pods_ShiftyHelper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 060A0A5282083B67EEC6C05D /* Pods_ShiftyHelper.framework */; };
 		43041CC5207DB9FF0076E75C /* CoreBrightness.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43041CC4207DB9FF0076E75C /* CoreBrightness.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		431B7B5D2167C8740039D085 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43A934002164019300AFB708 /* Security.framework */; };
 		433AD3011F2CED1F0003FBCD /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = 433AD3001F2CED1F0003FBCD /* dsa_pub.pem */; };
@@ -46,19 +45,28 @@
 		43CE525A20379A16002EBF61 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43CE525920379A16002EBF61 /* Event.swift */; };
 		43CE525C2037B720002EBF61 /* ScriptingBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43CE525B2037B720002EBF61 /* ScriptingBridge.swift */; };
 		43D5C2161FC2CA1300AF88E0 /* PrefGeneralViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 43D5C2181FC2CA1300AF88E0 /* PrefGeneralViewController.xib */; };
-		43D5C21B1FC2CAC300AF88E0 /* PrefShortcutsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 43D5C21D1FC2CAC300AF88E0 /* PrefShortcutsViewController.xib */; };
 		43D5C21E1FC2CACA00AF88E0 /* PrefAboutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 43D5C2201FC2CACA00AF88E0 /* PrefAboutViewController.xib */; };
 		43D5C2211FC2CACF00AF88E0 /* CustomTimeWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 43D5C2231FC2CACF00AF88E0 /* CustomTimeWindow.xib */; };
 		43D5C2301FC2CECC00AF88E0 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 43D5C2321FC2CECC00AF88E0 /* Localizable.strings */; };
 		43D5C2391FC35FB500AF88E0 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 43D5C2381FC35FB500AF88E0 /* MainMenu.xib */; };
-		43F971B62156CA80001DBD45 /* AnalyticsDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 43F971B52156CA80001DBD45 /* AnalyticsDetailView.xib */; };
-		43F971B82156DD24001DBD45 /* AnalyticsDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F971B72156DD24001DBD45 /* AnalyticsDetailViewController.swift */; };
 		43F974E72213D9D200224CF4 /* AppleEventsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 43F974E62213D9D200224CF4 /* AppleEventsManager.m */; };
 		43FC498C1FF8936F00CD3196 /* credits.rtfd in Resources */ = {isa = PBXBuildFile; fileRef = 43FC498B1FF8936E00CD3196 /* credits.rtfd */; };
 		4960957E200EB9CD00D966CA /* RuleManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4960957D200EB9CD00D966CA /* RuleManager.swift */; };
 		497B2395200B576700669DDE /* NightShiftManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497B2392200B576700669DDE /* NightShiftManager.swift */; };
 		497B2396200B576700669DDE /* NotificationName+Shifty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497B2393200B576700669DDE /* NotificationName+Shifty.swift */; };
-		B2FB1D17C62BCFBF11038F46 /* Pods_Shifty.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0B4370CFA537EB219F40DC7 /* Pods_Shifty.framework */; };
+		8EEFC3C92F7A01640029B95D /* AXSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 8EEFC3C82F7A01640029B95D /* AXSwift */; };
+		8EEFC3CB2F7A01640029B95D /* MASPreferences in Frameworks */ = {isa = PBXBuildFile; productRef = 8EEFC3CA2F7A01640029B95D /* MASPreferences */; };
+		8EEFC3CD2F7A01640029B95D /* Sparkle in Frameworks */ = {isa = PBXBuildFile; productRef = 8EEFC3CC2F7A01640029B95D /* Sparkle */; };
+		8EEFC3CF2F7A01640029B95D /* Logging in Frameworks */ = {isa = PBXBuildFile; productRef = 8EEFC3CE2F7A01640029B95D /* Logging */; };
+		8EEFC3D32F7A01A10029B95D /* InMemoryLogging in Frameworks */ = {isa = PBXBuildFile; productRef = 8EEFC3D22F7A01A10029B95D /* InMemoryLogging */; };
+		8EEFC3D52F7A01D50029B95D /* PublicSuffix.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEFC3D42F7A01D50029B95D /* PublicSuffix.swift */; };
+		8EEFC3D82F7A020C0029B95D /* etld.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8EEFC3D72F7A020C0029B95D /* etld.plist */; };
+		8EEFC3DA2F7A02C50029B95D /* LogHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEFC3D92F7A02C50029B95D /* LogHelper.swift */; };
+		8EEFC3DD2F7A07E10029B95D /* KeyboardShortcuts in Frameworks */ = {isa = PBXBuildFile; productRef = 8EEFC3DC2F7A07E10029B95D /* KeyboardShortcuts */; };
+		8EEFC3DF2F7A08C80029B95D /* KeyboardShortcuts+Names.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEFC3DE2F7A08C80029B95D /* KeyboardShortcuts+Names.swift */; };
+		8EEFC3E12F7A28AF0029B95D /* Shifty.icon in Resources */ = {isa = PBXBuildFile; fileRef = 8EEFC3E02F7A28AF0029B95D /* Shifty.icon */; };
+		8EEFC3E22F7A28AF0029B95D /* Shifty.icon in Resources */ = {isa = PBXBuildFile; fileRef = 8EEFC3E02F7A28AF0029B95D /* Shifty.icon */; };
+		8EF67FE92F79EE9600E5C051 /* PrefAppsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF67FE82F79EE9600E5C051 /* PrefAppsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -75,19 +83,15 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		060A0A5282083B67EEC6C05D /* Pods_ShiftyHelper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ShiftyHelper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		19F2D7EBD8F305EB6F734D06 /* Pods-Shifty.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Shifty.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Shifty/Pods-Shifty.debug.xcconfig"; sourceTree = "<group>"; };
 		43041CB3207DB3440076E75C /* SkyLight.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SkyLight.framework; sourceTree = "<group>"; };
 		43041CC4207DB9FF0076E75C /* CoreBrightness.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBrightness.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/PrivateFrameworks/CoreBrightness.framework; sourceTree = DEVELOPER_DIR; };
 		43099BA81FC67B5000A0720B /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/CustomTimeWindow.strings"; sourceTree = "<group>"; };
 		43099BA91FC67B5100A0720B /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/PrefGeneralViewController.strings"; sourceTree = "<group>"; };
-		43099BAA1FC67B5100A0720B /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/PrefShortcutsViewController.strings"; sourceTree = "<group>"; };
 		43099BAD1FC67B5C00A0720B /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		430E217322630360008E2874 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/CustomTimeWindow.strings; sourceTree = "<group>"; };
 		430E217422630360008E2874 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/AccessibilityView.strings; sourceTree = "<group>"; };
 		430E217522630361008E2874 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Setup.strings; sourceTree = "<group>"; };
 		430E217622630361008E2874 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/PrefGeneralViewController.strings; sourceTree = "<group>"; };
-		430E217722630361008E2874 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/PrefShortcutsViewController.strings; sourceTree = "<group>"; };
 		430E217922630361008E2874 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		430E217A22630361008E2874 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		430E217B22630361008E2874 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.stringsdict; name = fr; path = Shifty/fr.lproj/Localizable.stringsdict; sourceTree = "<group>"; };
@@ -95,7 +99,6 @@
 		430E217D22630370008E2874 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/AccessibilityView.strings; sourceTree = "<group>"; };
 		430E217E22630370008E2874 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Setup.strings; sourceTree = "<group>"; };
 		430E217F22630370008E2874 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/PrefGeneralViewController.strings; sourceTree = "<group>"; };
-		430E218022630370008E2874 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/PrefShortcutsViewController.strings; sourceTree = "<group>"; };
 		430E218222630370008E2874 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		430E218322630370008E2874 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		430E218422630370008E2874 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.stringsdict; name = ru; path = Shifty/ru.lproj/Localizable.stringsdict; sourceTree = "<group>"; };
@@ -106,7 +109,6 @@
 		4345ABA42165DB1600E2B7C7 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/AccessibilityView.strings; sourceTree = "<group>"; };
 		4345ABA52165DB1600E2B7C7 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Setup.strings; sourceTree = "<group>"; };
 		4345ABA62165DB1600E2B7C7 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/PrefGeneralViewController.strings; sourceTree = "<group>"; };
-		4345ABA72165DB1600E2B7C7 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/PrefShortcutsViewController.strings; sourceTree = "<group>"; };
 		4345ABA92165DB1700E2B7C7 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		4345ABAA2165DB1700E2B7C7 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 		4345ABAB2165DB1700E2B7C7 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.stringsdict; name = de; path = Shifty/de.lproj/Localizable.stringsdict; sourceTree = "<group>"; };
@@ -161,7 +163,6 @@
 		43CE525920379A16002EBF61 /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Event.swift; path = Shifty/Event.swift; sourceTree = "<group>"; };
 		43CE525B2037B720002EBF61 /* ScriptingBridge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ScriptingBridge.swift; path = Shifty/ScriptingBridge.swift; sourceTree = "<group>"; };
 		43D5C2171FC2CA1300AF88E0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/PrefGeneralViewController.xib; sourceTree = "<group>"; };
-		43D5C21C1FC2CAC300AF88E0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/PrefShortcutsViewController.xib; sourceTree = "<group>"; };
 		43D5C2221FC2CACF00AF88E0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/CustomTimeWindow.xib; sourceTree = "<group>"; };
 		43D5C2311FC2CECC00AF88E0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		43D5C2381FC35FB500AF88E0 /* MainMenu.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MainMenu.xib; path = Shifty/MainMenu.xib; sourceTree = "<group>"; };
@@ -172,8 +173,6 @@
 		43DE36A12288EDFC0089AA90 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/PrefAboutViewController.strings; sourceTree = "<group>"; };
 		43DE36A32288EDFD0089AA90 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/PrefAboutViewController.strings; sourceTree = "<group>"; };
 		43F71DB0213F48DA004F7E2B /* CBTrueToneClient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = CBTrueToneClient.h; path = Shifty/CBTrueToneClient.h; sourceTree = "<group>"; };
-		43F971B52156CA80001DBD45 /* AnalyticsDetailView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AnalyticsDetailView.xib; path = Shifty/AnalyticsDetailView.xib; sourceTree = "<group>"; };
-		43F971B72156DD24001DBD45 /* AnalyticsDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AnalyticsDetailViewController.swift; path = Shifty/AnalyticsDetailViewController.swift; sourceTree = "<group>"; };
 		43F974E62213D9D200224CF4 /* AppleEventsManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = AppleEventsManager.m; path = Shifty/AppleEventsManager.m; sourceTree = "<group>"; };
 		43F974EB221463C700224CF4 /* AppleEventsManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AppleEventsManager.h; path = Shifty/AppleEventsManager.h; sourceTree = "<group>"; };
 		43FC498B1FF8936E00CD3196 /* credits.rtfd */ = {isa = PBXFileReference; lastKnownFileType = wrapper.rtfd; path = credits.rtfd; sourceTree = "<group>"; };
@@ -181,10 +180,13 @@
 		4960957D200EB9CD00D966CA /* RuleManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RuleManager.swift; path = Shifty/RuleManager.swift; sourceTree = "<group>"; };
 		497B2392200B576700669DDE /* NightShiftManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NightShiftManager.swift; path = Shifty/NightShiftManager.swift; sourceTree = "<group>"; };
 		497B2393200B576700669DDE /* NotificationName+Shifty.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "NotificationName+Shifty.swift"; path = "Shifty/NotificationName+Shifty.swift"; sourceTree = "<group>"; };
-		920E606CA99940B7E44F1914 /* Pods-Shifty.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Shifty.release.xcconfig"; path = "Pods/Target Support Files/Pods-Shifty/Pods-Shifty.release.xcconfig"; sourceTree = "<group>"; };
-		A54D41077F4E0570C078BAA2 /* Pods-ShiftyHelper.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShiftyHelper.release.xcconfig"; path = "Pods/Target Support Files/Pods-ShiftyHelper/Pods-ShiftyHelper.release.xcconfig"; sourceTree = "<group>"; };
-		AD3D5B933E033908748B2739 /* Pods-ShiftyHelper.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShiftyHelper.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ShiftyHelper/Pods-ShiftyHelper.debug.xcconfig"; sourceTree = "<group>"; };
-		D0B4370CFA537EB219F40DC7 /* Pods_Shifty.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Shifty.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8EEFC3D42F7A01D50029B95D /* PublicSuffix.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PublicSuffix.swift; path = Shifty/Vendor/PublicSuffix/PublicSuffix.swift; sourceTree = "<group>"; };
+		8EEFC3D62F7A02020029B95D /* etld.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = etld.plist; path = Shifty/Vendor/PublicSuffix/etld.plist; sourceTree = "<group>"; };
+		8EEFC3D72F7A020C0029B95D /* etld.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = etld.plist; path = Shifty/Vendor/PublicSuffix/etld.plist; sourceTree = "<group>"; };
+		8EEFC3D92F7A02C50029B95D /* LogHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LogHelper.swift; path = Shifty/LogHelper.swift; sourceTree = "<group>"; };
+		8EEFC3DE2F7A08C80029B95D /* KeyboardShortcuts+Names.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "KeyboardShortcuts+Names.swift"; sourceTree = "<group>"; };
+		8EEFC3E02F7A28AF0029B95D /* Shifty.icon */ = {isa = PBXFileReference; lastKnownFileType = folder.iconcomposer.icon; name = Shifty.icon; path = Icon/Shifty.icon; sourceTree = "<group>"; };
+		8EF67FE82F79EE9600E5C051 /* PrefAppsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PrefAppsViewController.swift; path = Shifty/PrefAppsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -192,7 +194,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				41A3780894178C5C601604C7 /* Pods_ShiftyHelper.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -200,11 +201,16 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8EEFC3CF2F7A01640029B95D /* Logging in Frameworks */,
 				4353E56422136937008A26C4 /* CoreServices.framework in Frameworks */,
+				8EEFC3CD2F7A01640029B95D /* Sparkle in Frameworks */,
 				431B7B5D2167C8740039D085 /* Security.framework in Frameworks */,
+				8EEFC3DD2F7A07E10029B95D /* KeyboardShortcuts in Frameworks */,
+				8EEFC3CB2F7A01640029B95D /* MASPreferences in Frameworks */,
 				43C0838C1F19AEF900E73B84 /* ServiceManagement.framework in Frameworks */,
+				8EEFC3C92F7A01640029B95D /* AXSwift in Frameworks */,
+				8EEFC3D32F7A01A10029B95D /* InMemoryLogging in Frameworks */,
 				43041CC5207DB9FF0076E75C /* CoreBrightness.framework in Frameworks */,
-				B2FB1D17C62BCFBF11038F46 /* Pods_Shifty.framework in Frameworks */,
 				43CA44E126DB292F00537DED /* SkyLight.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -212,20 +218,10 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		2BAD531907046BA9FADE44E3 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				19F2D7EBD8F305EB6F734D06 /* Pods-Shifty.debug.xcconfig */,
-				920E606CA99940B7E44F1914 /* Pods-Shifty.release.xcconfig */,
-				AD3D5B933E033908748B2739 /* Pods-ShiftyHelper.debug.xcconfig */,
-				A54D41077F4E0570C078BAA2 /* Pods-ShiftyHelper.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 		433EE8501EBD8ECA007EA870 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8EEFC3D62F7A02020029B95D /* etld.plist */,
 				43CA44E026DB292F00537DED /* SkyLight.framework */,
 				4353E56322136937008A26C4 /* CoreServices.framework */,
 				43A934002164019300AFB708 /* Security.framework */,
@@ -238,8 +234,6 @@
 				434DE5C42161495F002AB147 /* MASShortcut.framework */,
 				434DE5C821614979002AB147 /* Sparkle.framework */,
 				434DE5CA21614984002AB147 /* SwiftLog.framework */,
-				D0B4370CFA537EB219F40DC7 /* Pods_Shifty.framework */,
-				060A0A5282083B67EEC6C05D /* Pods_ShiftyHelper.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -251,9 +245,10 @@
 				4351C7801FB5737900788CC9 /* PrefGeneralViewController.swift */,
 				43D5C2181FC2CA1300AF88E0 /* PrefGeneralViewController.xib */,
 				43B9DE131FB5924F002C4C29 /* PrefShortcutsViewController.swift */,
-				43D5C21D1FC2CAC300AF88E0 /* PrefShortcutsViewController.xib */,
 				43B9DE191FB592AE002C4C29 /* PrefAboutViewController.swift */,
 				43D5C2201FC2CACA00AF88E0 /* PrefAboutViewController.xib */,
+				8EF67FE82F79EE9600E5C051 /* PrefAppsViewController.swift */,
+				8EEFC3DE2F7A08C80029B95D /* KeyboardShortcuts+Names.swift */,
 			);
 			name = Preferences;
 			sourceTree = "<group>";
@@ -261,6 +256,8 @@
 		436A0F391FBE90BF00E77D41 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				8EEFC3D42F7A01D50029B95D /* PublicSuffix.swift */,
+				8EEFC3D92F7A02C50029B95D /* LogHelper.swift */,
 				43C0838D1F19BA6900E73B84 /* Shifty.entitlements */,
 				4394DDAE1EBE379900F22908 /* Shifty-Bridging-Header.h */,
 				4394DDA41EBE376F00F22908 /* CBBlueLightClient.h */,
@@ -296,8 +293,6 @@
 				43AA23CD1FFAC69A001DDF5A /* AccessibilityWindow.xib */,
 				43AA23C61FFABCD2001DDF5A /* AccessibilityView.swift */,
 				43B6125A1FFC297400724DAE /* AccessibilityView.xib */,
-				43F971B72156DD24001DBD45 /* AnalyticsDetailViewController.swift */,
-				43F971B52156CA80001DBD45 /* AnalyticsDetailView.xib */,
 				437556B31FF745A6001951AB /* Setup.swift */,
 				43B6125F1FFC298200724DAE /* Setup.storyboard */,
 			);
@@ -307,6 +302,7 @@
 		436A0F3B1FBE911200E77D41 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				8EEFC3E02F7A28AF0029B95D /* Shifty.icon */,
 				4394DDA31EBE376F00F22908 /* Assets.xcassets */,
 				43FC498B1FF8936E00CD3196 /* credits.rtfd */,
 				433AD3001F2CED1F0003FBCD /* dsa_pub.pem */,
@@ -315,6 +311,7 @@
 				43D5C2321FC2CECC00AF88E0 /* Localizable.strings */,
 				43B6126A1FFC413A00724DAE /* Localizable.stringsdict */,
 				436A0F3C1FBE913600E77D41 /* ShiftyAppcast.xml */,
+				8EEFC3D72F7A020C0029B95D /* etld.plist */,
 			);
 			name = Assets;
 			sourceTree = "<group>";
@@ -359,7 +356,6 @@
 				43C7A4861F19F2CB00A697C0 /* ShiftyHelper */,
 				43CC9E441EBAB19300983528 /* Products */,
 				433EE8501EBD8ECA007EA870 /* Frameworks */,
-				2BAD531907046BA9FADE44E3 /* Pods */,
 			);
 			sourceTree = "<group>";
 			usesTabs = 0;
@@ -380,7 +376,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 43C7A4911F19F2CB00A697C0 /* Build configuration list for PBXNativeTarget "ShiftyHelper" */;
 			buildPhases = (
-				F2E31D5662768A6309520DCF /* [CP] Check Pods Manifest.lock */,
 				43C7A4811F19F2CB00A697C0 /* Sources */,
 				43C7A4821F19F2CB00A697C0 /* Frameworks */,
 				43C7A4831F19F2CB00A697C0 /* Resources */,
@@ -398,12 +393,10 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 43CC9E521EBAB19300983528 /* Build configuration list for PBXNativeTarget "Shifty" */;
 			buildPhases = (
-				2AA597D2F11C551A7DFB4836 /* [CP] Check Pods Manifest.lock */,
 				43CC9E3F1EBAB19300983528 /* Sources */,
 				43CC9E401EBAB19300983528 /* Frameworks */,
 				43CC9E411EBAB19300983528 /* Resources */,
 				43C083891F19AEA600E73B84 /* CopyFiles */,
-				9A4D576B732E974148CA96C9 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -420,14 +413,13 @@
 		43CC9E3B1EBAB19300983528 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				BuildIndependentTargetsInParallel = YES;
 				LastSwiftUpdateCheck = 0830;
-				LastUpgradeCheck = 1300;
+				LastUpgradeCheck = 2640;
 				TargetAttributes = {
 					43C7A4841F19F2CB00A697C0 = {
 						CreatedOnToolsVersion = 8.3.2;
-						DevelopmentTeam = 3Q7XKEDZ36;
 						LastSwiftMigration = 1020;
-						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.HardenedRuntime = {
 								enabled = 1;
@@ -439,9 +431,7 @@
 					};
 					43CC9E421EBAB19300983528 = {
 						CreatedOnToolsVersion = 8.3.1;
-						DevelopmentTeam = 3Q7XKEDZ36;
 						LastSwiftMigration = 1020;
-						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.HardenedRuntime = {
 								enabled = 1;
@@ -466,6 +456,13 @@
 				ru,
 			);
 			mainGroup = 43CC9E3A1EBAB19300983528;
+			packageReferences = (
+				8EEFC3C22F7A004D0029B95D /* XCRemoteSwiftPackageReference "AXSwift" */,
+				8EEFC3C42F7A00CC0029B95D /* XCRemoteSwiftPackageReference "MASPreferences" */,
+				8EEFC3C52F7A00EC0029B95D /* XCRemoteSwiftPackageReference "Sparkle" */,
+				8EEFC3C62F7A01000029B95D /* XCRemoteSwiftPackageReference "swift-log" */,
+				8EEFC3DB2F7A07E10029B95D /* XCRemoteSwiftPackageReference "KeyboardShortcuts" */,
+			);
 			productRefGroup = 43CC9E441EBAB19300983528 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -482,6 +479,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				43C7A48C1F19F2CB00A697C0 /* Assets.xcassets in Resources */,
+				8EEFC3E22F7A28AF0029B95D /* Shifty.icon in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -491,16 +489,16 @@
 			files = (
 				43B6125D1FFC298200724DAE /* Setup.storyboard in Resources */,
 				43FC498C1FF8936F00CD3196 /* credits.rtfd in Resources */,
+				8EEFC3D82F7A020C0029B95D /* etld.plist in Resources */,
 				43D5C2161FC2CA1300AF88E0 /* PrefGeneralViewController.xib in Resources */,
 				43AA23CF1FFAC69A001DDF5A /* AccessibilityWindow.xib in Resources */,
 				433AD3011F2CED1F0003FBCD /* dsa_pub.pem in Resources */,
 				4394DDAA1EBE376F00F22908 /* Assets.xcassets in Resources */,
+				8EEFC3E12F7A28AF0029B95D /* Shifty.icon in Resources */,
 				43B612581FFC297400724DAE /* AccessibilityView.xib in Resources */,
 				43D5C2301FC2CECC00AF88E0 /* Localizable.strings in Resources */,
 				43D5C21E1FC2CACA00AF88E0 /* PrefAboutViewController.xib in Resources */,
 				43D5C2211FC2CACF00AF88E0 /* CustomTimeWindow.xib in Resources */,
-				43F971B62156CA80001DBD45 /* AnalyticsDetailView.xib in Resources */,
-				43D5C21B1FC2CAC300AF88E0 /* PrefShortcutsViewController.xib in Resources */,
 				43D5C2391FC35FB500AF88E0 /* MainMenu.xib in Resources */,
 				43965AC31FC68A19001A076D /* InfoPlist.strings in Resources */,
 				43B6126C1FFC413A00724DAE /* Localizable.stringsdict in Resources */,
@@ -508,75 +506,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		2AA597D2F11C551A7DFB4836 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Shifty-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		9A4D576B732E974148CA96C9 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Shifty/Pods-Shifty-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/AXSwift/AXSwift.framework",
-				"${BUILT_PRODUCTS_DIR}/LetsMove/LetsMove.framework",
-				"${BUILT_PRODUCTS_DIR}/MASPreferences+Shifty/MASPreferences_Shifty.framework",
-				"${BUILT_PRODUCTS_DIR}/MASShortcut/MASShortcut.framework",
-				"${BUILT_PRODUCTS_DIR}/PublicSuffix/PublicSuffix.framework",
-				"${PODS_ROOT}/Sparkle/Sparkle.framework",
-				"${BUILT_PRODUCTS_DIR}/SwiftLog/SwiftLog.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AXSwift.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LetsMove.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MASPreferences_Shifty.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MASShortcut.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PublicSuffix.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Sparkle.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftLog.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Shifty/Pods-Shifty-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		F2E31D5662768A6309520DCF /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-ShiftyHelper-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		43C7A4811F19F2CB00A697C0 /* Sources */ = {
@@ -594,6 +523,7 @@
 				43A8E69C2141DF7C00BD3870 /* CBTrueToneClient+Shifty.swift in Sources */,
 				433E60EC207D9995007BB55F /* BrightnessSystemClient+Shifty.swift in Sources */,
 				497B2396200B576700669DDE /* NotificationName+Shifty.swift in Sources */,
+				8EEFC3DA2F7A02C50029B95D /* LogHelper.swift in Sources */,
 				43CA44ED26DB53ED00537DED /* Intents.intentdefinition in Sources */,
 				43CA44F026DB53FB00537DED /* DateTime+Shifty.swift in Sources */,
 				43AA23C71FFABCD2001DDF5A /* AccessibilityView.swift in Sources */,
@@ -604,14 +534,16 @@
 				4351C7811FB5737900788CC9 /* PrefGeneralViewController.swift in Sources */,
 				4960957E200EB9CD00D966CA /* RuleManager.swift in Sources */,
 				43CE525C2037B720002EBF61 /* ScriptingBridge.swift in Sources */,
+				8EEFC3D52F7A01D50029B95D /* PublicSuffix.swift in Sources */,
+				8EEFC3DF2F7A08C80029B95D /* KeyboardShortcuts+Names.swift in Sources */,
 				437556B41FF745A6001951AB /* Setup.swift in Sources */,
 				4394DDAD1EBE376F00F22908 /* StatusMenuController.swift in Sources */,
+				8EF67FE92F79EE9600E5C051 /* PrefAppsViewController.swift in Sources */,
 				43CE525A20379A16002EBF61 /* Event.swift in Sources */,
 				43B9DE1B1FB592AE002C4C29 /* PrefAboutViewController.swift in Sources */,
 				437B7179273E0889006AD485 /* SwitchView.swift in Sources */,
 				43F974E72213D9D200224CF4 /* AppleEventsManager.m in Sources */,
 				4350191D1F21E99F0001324F /* CustomTimeWindow.swift in Sources */,
-				43F971B82156DD24001DBD45 /* AnalyticsDetailViewController.swift in Sources */,
 				43B9DE151FB5924F002C4C29 /* PrefShortcutsViewController.swift in Sources */,
 				4394DDA91EBE376F00F22908 /* AppDelegate.swift in Sources */,
 				43CA44EE26DB53ED00537DED /* IntentHandlers.swift in Sources */,
@@ -688,19 +620,6 @@
 			path = Shifty;
 			sourceTree = "<group>";
 		};
-		43D5C21D1FC2CAC300AF88E0 /* PrefShortcutsViewController.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				43D5C21C1FC2CAC300AF88E0 /* Base */,
-				43099BAA1FC67B5100A0720B /* zh-Hans */,
-				4345ABA72165DB1600E2B7C7 /* de */,
-				430E217722630361008E2874 /* fr */,
-				430E218022630370008E2874 /* ru */,
-			);
-			name = PrefShortcutsViewController.xib;
-			path = Shifty;
-			sourceTree = "<group>";
-		};
 		43D5C2201FC2CACA00AF88E0 /* PrefAboutViewController.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -745,20 +664,26 @@
 /* Begin XCBuildConfiguration section */
 		43C7A4921F19F2CB00A697C0 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = AD3D5B933E033908748B2739 /* Pods-ShiftyHelper.debug.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = Shifty;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_ENTITLEMENTS = ShiftyHelper/ShiftyHelper.entitlements;
-				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = 3Q7XKEDZ36;
+				DEAD_CODE_STRIPPING = YES;
+				DEVELOPMENT_TEAM = 7E57633U38;
 				ENABLE_HARDENED_RUNTIME = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = ShiftyHelper/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = io.natethompson.ShiftyHelper;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -769,20 +694,26 @@
 		};
 		43C7A4931F19F2CB00A697C0 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A54D41077F4E0570C078BAA2 /* Pods-ShiftyHelper.release.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = Shifty;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_ENTITLEMENTS = ShiftyHelper/ShiftyHelper.entitlements;
-				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = 3Q7XKEDZ36;
+				DEAD_CODE_STRIPPING = YES;
+				DEVELOPMENT_TEAM = 7E57633U38;
 				ENABLE_HARDENED_RUNTIME = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = ShiftyHelper/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = io.natethompson.ShiftyHelper;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -825,9 +756,12 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "-";
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = 7E57633U38;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -842,12 +776,14 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MACOSX_DEPLOYMENT_TARGET = 26.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
 		};
@@ -885,9 +821,12 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "-";
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = 7E57633U38;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -896,25 +835,29 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MACOSX_DEPLOYMENT_TARGET = 26.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = macosx;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;
 		};
 		43CC9E531EBAB19300983528 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 19F2D7EBD8F305EB6F734D06 /* Pods-Shifty.debug.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = Shifty;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_ENTITLEMENTS = Shifty/Shifty.entitlements;
-				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 66;
+				CURRENT_PROJECT_VERSION = 101;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = 3Q7XKEDZ36;
+				DEVELOPMENT_TEAM = 7E57633U38;
 				ENABLE_HARDENED_RUNTIME = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -923,9 +866,13 @@
 					"$(PROJECT_DIR)/Shifty",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/Shifty/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.12;
-				MARKETING_VERSION = 1.2;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 26.0;
+				MARKETING_VERSION = 2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = io.natethompson.Shifty;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -936,15 +883,16 @@
 		};
 		43CC9E541EBAB19300983528 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 920E606CA99940B7E44F1914 /* Pods-Shifty.release.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = Shifty;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_ENTITLEMENTS = Shifty/Shifty.entitlements;
-				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 66;
-				DEVELOPMENT_TEAM = 3Q7XKEDZ36;
+				CURRENT_PROJECT_VERSION = 101;
+				DEAD_CODE_STRIPPING = YES;
+				DEVELOPMENT_TEAM = 7E57633U38;
 				ENABLE_HARDENED_RUNTIME = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -953,9 +901,13 @@
 					"$(PROJECT_DIR)/Shifty",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/Shifty/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.12;
-				MARKETING_VERSION = 1.2;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 26.0;
+				MARKETING_VERSION = 2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = io.natethompson.Shifty;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -995,6 +947,82 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		8EEFC3C22F7A004D0029B95D /* XCRemoteSwiftPackageReference "AXSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/tmandry/AXSwift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.3.2;
+			};
+		};
+		8EEFC3C42F7A00CC0029B95D /* XCRemoteSwiftPackageReference "MASPreferences" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/cocoabits/MASPreferences";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.4.1;
+			};
+		};
+		8EEFC3C52F7A00EC0029B95D /* XCRemoteSwiftPackageReference "Sparkle" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/sparkle-project/Sparkle";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.9.1;
+			};
+		};
+		8EEFC3C62F7A01000029B95D /* XCRemoteSwiftPackageReference "swift-log" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apple/swift-log";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.10.1;
+			};
+		};
+		8EEFC3DB2F7A07E10029B95D /* XCRemoteSwiftPackageReference "KeyboardShortcuts" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/sindresorhus/KeyboardShortcuts";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.4.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		8EEFC3C82F7A01640029B95D /* AXSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8EEFC3C22F7A004D0029B95D /* XCRemoteSwiftPackageReference "AXSwift" */;
+			productName = AXSwift;
+		};
+		8EEFC3CA2F7A01640029B95D /* MASPreferences */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8EEFC3C42F7A00CC0029B95D /* XCRemoteSwiftPackageReference "MASPreferences" */;
+			productName = MASPreferences;
+		};
+		8EEFC3CC2F7A01640029B95D /* Sparkle */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8EEFC3C52F7A00EC0029B95D /* XCRemoteSwiftPackageReference "Sparkle" */;
+			productName = Sparkle;
+		};
+		8EEFC3CE2F7A01640029B95D /* Logging */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8EEFC3C62F7A01000029B95D /* XCRemoteSwiftPackageReference "swift-log" */;
+			productName = Logging;
+		};
+		8EEFC3D22F7A01A10029B95D /* InMemoryLogging */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8EEFC3C62F7A01000029B95D /* XCRemoteSwiftPackageReference "swift-log" */;
+			productName = InMemoryLogging;
+		};
+		8EEFC3DC2F7A07E10029B95D /* KeyboardShortcuts */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8EEFC3DB2F7A07E10029B95D /* XCRemoteSwiftPackageReference "KeyboardShortcuts" */;
+			productName = KeyboardShortcuts;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 43CC9E3B1EBAB19300983528 /* Project object */;
 }

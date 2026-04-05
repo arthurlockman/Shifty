@@ -22,20 +22,6 @@
 	<string>$(MARKETING_VERSION)</string>
 	<key>CFBundleVersion</key>
 	<string>$(CURRENT_PROJECT_VERSION)</string>
-	<key>Fabric</key>
-	<dict>
-		<key>APIKey</key>
-		<string>57ca2a767468cd93801f5cea46dd15311882575b</string>
-		<key>Kits</key>
-		<array>
-			<dict>
-				<key>KitInfo</key>
-				<dict/>
-				<key>KitName</key>
-				<string>Crashlytics</string>
-			</dict>
-		</array>
-	</dict>
 	<key>INIntentsSupported</key>
 	<array>
 		<string>GetColorTemperatureIntent</string>
@@ -75,8 +61,10 @@
 	<key>SUEnableAutomaticChecks</key>
 	<true/>
 	<key>SUFeedURL</key>
-	<string>https://shifty.natethompson.io/ShiftyAppcast.xml</string>
+	<string>https://shifty.arosa.dev/ShiftyAppcast.xml</string>
 	<key>SUPublicDSAKeyFile</key>
 	<string>dsa_pub.pem</string>
+	<key>SUPublicEDKey</key>
+	<string>N6D+c0gw175zjNUwrainvyCIkbKwChLL77MhND9DKrw=</string>
 </dict>
 </plist>

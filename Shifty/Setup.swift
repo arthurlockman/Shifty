@@ -7,7 +7,7 @@
 
 import Cocoa
 import AXSwift
-import SwiftLog
+import Logging
 
 class SetupWindowController: NSWindowController {
     override var storyboard: NSStoryboard {
@@ -74,10 +74,10 @@ class WebsiteShiftingSetupViewController: NSViewController {
     override func viewDidLoad() {
         var imageName: String
         
-        if let language = NSLocale.current.languageCode {
+        if let language = Locale.current.language.languageCode?.identifier {
             imageName = "websiteShiftingScreenshot-\(language)"
             
-            if let script = NSLocale.current.scriptCode {
+            if let script = Locale.current.language.script?.identifier {
                 imageName.append("-\(script)")
             }
         } else {
@@ -137,12 +137,7 @@ class AccessibilityViewController: NSViewController {
 class FinalViewController: NSViewController {
     @IBOutlet weak var analyticsPermissionButton: NSButton!
     
-    @IBAction func analyticsDetailClicked(_ sender: Any) {
-        presentAsSheet(AnalyticsDetailViewController())
-    }
-    
     override func viewWillDisappear() {
-        UserDefaults.standard.set(analyticsPermissionButton.state == .on, forKey: Keys.analyticsPermission)
     }
 }
 
