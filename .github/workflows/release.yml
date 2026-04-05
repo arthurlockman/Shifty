@@ -216,30 +216,25 @@ jobs:
 
       # ── Update Sparkle appcast ─────────────────────────────────
       - name: Update appcast
+        env:
+          RELEASE_VERSION: ${{ steps.version.outputs.value }}
+          RELEASE_TAG: ${{ steps.version.outputs.tag }}
+          ED_SIGNATURE: ${{ steps.sparkle.outputs.ed_signature }}
+          ZIP_LENGTH: ${{ steps.sparkle.outputs.length }}
         run: |
-          version="${{ steps.version.outputs.value }}"
-          tag="${{ steps.version.outputs.tag }}"
-          build_number="${{ steps.version.outputs.value }}"
-          ed_signature="${{ steps.sparkle.outputs.ed_signature }}"
-          length="${{ steps.sparkle.outputs.length }}"
           pub_date=$(date -u '+%a, %d %b %Y %H:%M:%S %z')
-          url="https://github.com/arthurlockman/Shifty/releases/download/${tag}/Shifty-${version}.zip"
-          min_os="26.0"
+          url="https://github.com/arthurlockman/Shifty/releases/download/${RELEASE_TAG}/Shifty-${RELEASE_VERSION}.zip"
 
-          new_item=$(cat <<ITEM
-        <item>
-            <title>Version ${version}</title>
-            <pubDate>${pub_date}</pubDate>
-            <enclosure url="${url}" sparkle:version="${version}" sparkle:shortVersionString="${version}" length="${length}" type="application/octet-stream" sparkle:edSignature="${ed_signature}" />
-            <sparkle:minimumSystemVersion>${min_os}</sparkle:minimumSystemVersion>
-        </item>
-ITEM
-          )
+          new_item="        <item>\n"
+          new_item+="            <title>Version ${RELEASE_VERSION}<\/title>\n"
+          new_item+="            <pubDate>${pub_date}<\/pubDate>\n"
+          new_item+="            <enclosure url=\"${url}\" sparkle:version=\"${RELEASE_VERSION}\" sparkle:shortVersionString=\"${RELEASE_VERSION}\" length=\"${ZIP_LENGTH}\" type=\"application\/octet-stream\" sparkle:edSignature=\"${ED_SIGNATURE}\" \/>\n"
+          new_item+="            <sparkle:minimumSystemVersion>26.0<\/sparkle:minimumSystemVersion>\n"
+          new_item+="        <\/item>"
 
-          # Insert new item at the top of the channel (after <language> line)
           sed -i '' "/<language>en<\/language>/a\\
-${new_item}
-" docs/ShiftyAppcast.xml
+          ${new_item}
+          " docs/ShiftyAppcast.xml
 
       - name: Commit appcast update
         run: |
