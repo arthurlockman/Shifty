@@ -4,6 +4,7 @@
         <title>Shifty Changelog</title>
         <description>Most recent changes with links to updates.</description>
         <language>en</language>
+        <item>n            <title>Version 2.0-beta2.1</title>n            <pubDate>Sun, 05 Apr 2026 22:02:55 +0000</pubDate>n            <enclosure url="https://github.com/arthurlockman/Shifty/releases/download/v2.0-beta2.1/Shifty-2.0-beta2.1.zip" sparkle:version="2.0-beta2.1" sparkle:shortVersionString="2.0-beta2.1" length="14215833" type="application/octet-stream" sparkle:edSignature="INsagagpcd2tZwuTfuxlYmtme1dbUM035ypJC9SPHSicFlcFGSq7d/ye6UvoJT+2yHib/+ypqfJbzYB6Y3WQBQ==" />n            <sparkle:minimumSystemVersion>26.0</sparkle:minimumSystemVersion>n        </item>
         <item>
             <title>Version 1.2</title>
             <description><![CDATA[
