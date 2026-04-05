@@ -73,3 +73,10 @@
 "analytics.data_usage_list_title" = "Was geschieht mit den Daten?";
 "analytics.data_usage_list_1" = "Keine dieser Daten wird an Dritte verkauft (und niemand würde sie sowieso kaufen wollen)";
 "analytics.data_usage_list_2" = "Hilft, Probleme zu lösen und Shifty besser machen";
+
+/* About preferences */
+"about.website" = "Webseite:";
+"about.contact" = "Kontakt:";
+"about.checkForUpdates" = "Nach Updates suchen...";
+"about.credits" = "Danksagung...";
+"about.includeBetaUpdates" = "Beta-Updates einschließen";

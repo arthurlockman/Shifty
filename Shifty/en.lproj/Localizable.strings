@@ -113,3 +113,10 @@
 "prefs.shortcuts.toggle_true_tone" = "Toggle True Tone:";
 "prefs.shortcuts.toggle_dark_mode" = "Toggle Dark Mode:";
 
+
+/* About preferences */
+"about.website" = "website:";
+"about.contact" = "contact:";
+"about.checkForUpdates" = "Check for Updates…";
+"about.credits" = "Credits…";
+"about.includeBetaUpdates" = "Include beta updates";

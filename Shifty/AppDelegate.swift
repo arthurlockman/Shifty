@@ -15,9 +15,9 @@ import Sparkle
 import Intents
 
 @NSApplicationMain
-class AppDelegate: NSObject, NSApplicationDelegate {
+class AppDelegate: NSObject, NSApplicationDelegate, SPUStandardUserDriverDelegate, SPUUpdaterDelegate {
 
-    let updaterController = SPUStandardUpdaterController(startingUpdater: false, updaterDelegate: nil, userDriverDelegate: nil)
+    lazy var updaterController = SPUStandardUpdaterController(startingUpdater: false, updaterDelegate: self, userDriverDelegate: self)
     let prefs = UserDefaults.standard
     @IBOutlet weak var statusMenu: NSMenu!
     let statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
@@ -278,5 +278,27 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             return SetTrueToneStateIntentHandler()
         }
         return nil
+    }
+
+    // MARK: - SPUStandardUserDriverDelegate
+
+    var supportsGentleScheduledUpdateReminders: Bool { true }
+
+    func standardUserDriverWillHandleShowingUpdate(_ handleShowingUpdate: Bool, forUpdate update: SUAppcastItem, state: SPUUserUpdateState) {
+        // Bring the app to the foreground when an update is available
+        // so background-only menu bar apps don't miss the alert.
+        NSApp.setActivationPolicy(.regular)
+        NSApp.activate(ignoringOtherApps: true)
+    }
+
+    func standardUserDriverDidReceiveUserAttention(forUpdate update: SUAppcastItem) {
+        // Return to accessory (menu bar only) mode after the user has seen the update
+        NSApp.setActivationPolicy(.accessory)
+    }
+
+    // MARK: - SPUUpdaterDelegate
+
+    func allowedChannels(for updater: SPUUpdater) -> Set<String> {
+        UserDefaults.standard.bool(forKey: Keys.includeBetaUpdates) ? ["beta"] : []
     }
 }

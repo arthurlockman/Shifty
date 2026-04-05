@@ -73,3 +73,10 @@
 "analytics.data_usage_list_title" = "收集的数据将有哪些用途？";
 "analytics.data_usage_list_1" = "任何数据都不会被出售至第三方（况且也不会有第三方想要购买）";
 "analytics.data_usage_list_2" = "帮助解决问题并完善 Shifty 夜览管家";
+
+/* About preferences */
+"about.website" = "网站:";
+"about.contact" = "邮箱:";
+"about.checkForUpdates" = "检查更新...";
+"about.credits" = "致谢名单…";
+"about.includeBetaUpdates" = "包含测试版更新";

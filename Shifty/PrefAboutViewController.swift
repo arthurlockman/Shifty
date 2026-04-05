@@ -27,7 +27,9 @@ class PrefAboutViewController: NSViewController, MASPreferencesViewController {
 
     override func loadView() {
         let hostingView = NSHostingView(rootView: PrefAboutView())
-        hostingView.translatesAutoresizingMaskIntoConstraints = false
+        let size = hostingView.fittingSize
+        hostingView.frame = NSRect(origin: .zero, size: size)
+        self.preferredContentSize = size
         self.view = hostingView
     }
 }

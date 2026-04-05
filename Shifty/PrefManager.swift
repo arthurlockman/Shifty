@@ -30,6 +30,7 @@ enum Keys {
     static let toggleDarkModeShortcut = "toggleDarkModeShortcut"
     
     static let isMenuBarIconHidden = "isMenuBarIconHidden"
+    static let includeBetaUpdates = "includeBetaUpdates"
     
     static let lastInstalledShiftyVersion = "lastInstalledShiftyVersion"
     static let hasSetupWindowShown = "hasSetupWindowShown"

@@ -12,6 +12,7 @@ struct PrefAboutView: View {
     private let appName: String
     private let version: String
     private let checkForUpdates: () -> Void
+    @AppStorage(Keys.includeBetaUpdates) private var includeBetaUpdates = false
 
     init() {
         appName = Bundle.main.localizedInfoDictionary?["CFBundleDisplayName"] as? String
@@ -43,14 +44,14 @@ struct PrefAboutView: View {
             Grid(alignment: .leading, horizontalSpacing: 8, verticalSpacing: 10) {
                 linkRow(
                     emoji: "🌍",
-                    label: String(localized: "about.website", defaultValue: "website:"),
+                    label: String(localized: "about.website"),
                     linkText: "shifty.arosa.dev",
                     url: "https://shifty.arosa.dev"
                 )
 
                 linkRow(
                     emoji: "📬",
-                    label: String(localized: "about.contact", defaultValue: "contact:"),
+                    label: String(localized: "about.contact"),
                     linkText: "arthur@rosafamily.net",
                     url: "mailto:arthur@rosafamily.net?subject=Shifty%20Feedback"
                 )
@@ -60,18 +61,21 @@ struct PrefAboutView: View {
 
             // Buttons
             HStack {
-                Button(String(localized: "about.checkForUpdates", defaultValue: "Check for Updates…")) {
+                Button(String(localized: "about.checkForUpdates")) {
                     checkForUpdates()
                     Event.checkForUpdatesClicked.record()
                 }
 
-                Button(String(localized: "about.credits", defaultValue: "Credits…")) {
+                Button(String(localized: "about.credits")) {
                     if let path = Bundle.main.path(forResource: "credits", ofType: "rtfd") {
                         NSWorkspace.shared.open(URL(fileURLWithPath: path))
                     }
                     Event.creditsClicked.record()
                 }
             }
+
+            Toggle(String(localized: "about.includeBetaUpdates"),
+                   isOn: $includeBetaUpdates)
 
             // Copyright
             Text("Original © 2017-2021 Nate Thompson\nRevived in 2026 by Arthur Rosa")
