@@ -227,19 +227,35 @@ jobs:
           git fetch origin main
           git checkout main
 
-          pub_date=$(date -u '+%a, %d %b %Y %H:%M:%S %z')
-          url="https://github.com/arthurlockman/Shifty/releases/download/${RELEASE_TAG}/Shifty-${RELEASE_VERSION}.zip"
+          python3 - <<'PYEOF'
+          import os, datetime, xml.etree.ElementTree as ET
 
-          new_item="        <item>\n"
-          new_item+="            <title>Version ${RELEASE_VERSION}<\/title>\n"
-          new_item+="            <pubDate>${pub_date}<\/pubDate>\n"
-          new_item+="            <enclosure url=\"${url}\" sparkle:version=\"${RELEASE_VERSION}\" sparkle:shortVersionString=\"${RELEASE_VERSION}\" length=\"${ZIP_LENGTH}\" type=\"application\/octet-stream\" sparkle:edSignature=\"${ED_SIGNATURE}\" \/>\n"
-          new_item+="            <sparkle:minimumSystemVersion>26.0<\/sparkle:minimumSystemVersion>\n"
-          new_item+="        <\/item>"
+          version = os.environ["RELEASE_VERSION"]
+          tag = os.environ["RELEASE_TAG"]
+          sig = os.environ["ED_SIGNATURE"]
+          length = os.environ["ZIP_LENGTH"]
+          url = f"https://github.com/arthurlockman/Shifty/releases/download/{tag}/Shifty-{version}.zip"
+          pub_date = datetime.datetime.now(datetime.timezone.utc).strftime("%a, %d %b %Y %H:%M:%S %z")
 
-          sed -i '' "/<language>en<\/language>/a\\
-          ${new_item}
-          " docs/ShiftyAppcast.xml
+          # Read raw XML to preserve formatting
+          with open("docs/ShiftyAppcast.xml", "r") as f:
+              content = f.read()
+
+          new_item = f"""        <item>
+              <title>Version {version}</title>
+              <pubDate>{pub_date}</pubDate>
+              <enclosure url="{url}" sparkle:version="{version}" sparkle:shortVersionString="{version}" length="{length}" type="application/octet-stream" sparkle:edSignature="{sig}" />
+              <sparkle:minimumSystemVersion>26.0</sparkle:minimumSystemVersion>
+          </item>"""
+
+          marker = "<language>en</language>"
+          content = content.replace(marker, marker + "\n" + new_item)
+
+          with open("docs/ShiftyAppcast.xml", "w") as f:
+              f.write(content)
+
+          print(f"Appcast updated for v{version}")
+          PYEOF
 
           git add docs/ShiftyAppcast.xml
           git commit -m "Update appcast for v${RELEASE_VERSION}"
