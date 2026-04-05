@@ -61,8 +61,10 @@
 	<key>SUEnableAutomaticChecks</key>
 	<true/>
 	<key>SUFeedURL</key>
-	<string>https://shifty.natethompson.io/ShiftyAppcast.xml</string>
+	<string>https://shifty.arosa.dev/ShiftyAppcast.xml</string>
 	<key>SUPublicDSAKeyFile</key>
 	<string>dsa_pub.pem</string>
+	<key>SUPublicEDKey</key>
+	<string>N6D+c0gw175zjNUwrainvyCIkbKwChLL77MhND9DKrw=</string>
 </dict>
 </plist>
