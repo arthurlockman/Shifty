@@ -215,13 +215,18 @@ jobs:
             --generate-notes
 
       # ── Update Sparkle appcast ─────────────────────────────────
-      - name: Update appcast
+      - name: Update and publish appcast
         env:
           RELEASE_VERSION: ${{ steps.version.outputs.value }}
           RELEASE_TAG: ${{ steps.version.outputs.tag }}
           ED_SIGNATURE: ${{ steps.sparkle.outputs.ed_signature }}
           ZIP_LENGTH: ${{ steps.sparkle.outputs.length }}
         run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git fetch origin main
+          git checkout main
+
           pub_date=$(date -u '+%a, %d %b %Y %H:%M:%S %z')
           url="https://github.com/arthurlockman/Shifty/releases/download/${RELEASE_TAG}/Shifty-${RELEASE_VERSION}.zip"
 
@@ -236,11 +241,6 @@ jobs:
           ${new_item}
           " docs/ShiftyAppcast.xml
 
-      - name: Commit appcast update
-        run: |
-          version="${{ steps.version.outputs.value }}"
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add docs/ShiftyAppcast.xml
-          git commit -m "Update appcast for v${version}"
-          git push origin HEAD:main
+          git commit -m "Update appcast for v${RELEASE_VERSION}"
+          git push origin main
