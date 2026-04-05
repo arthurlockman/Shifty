@@ -86,6 +86,7 @@ jobs:
       # ── Archive ────────────────────────────────────────────────
       - name: Archive
         run: |
+          set -o pipefail
           xcodebuild archive \
             -project "${{ env.SCHEME }}.xcodeproj" \
             -scheme "${{ env.SCHEME }}" \
@@ -96,7 +97,8 @@ jobs:
             CODE_SIGN_IDENTITY="Developer ID Application" \
             DEVELOPMENT_TEAM="7E57633U38" \
             OTHER_CODE_SIGN_FLAGS="--timestamp --options runtime" \
-            | xcpretty || exit ${PIPESTATUS[0]}
+            2>&1 | tee build/archive.log | xcpretty
+          echo "Archive succeeded"
 
       # ── Export ─────────────────────────────────────────────────
       - name: Export archive
@@ -119,11 +121,19 @@ jobs:
           </plist>
           EOF
 
+          set -o pipefail
           xcodebuild -exportArchive \
             -archivePath "${{ env.ARCHIVE_PATH }}" \
             -exportOptionsPlist /tmp/ExportOptions.plist \
             -exportPath "${{ env.EXPORT_PATH }}" \
-            | xcpretty || exit ${PIPESTATUS[0]}
+            2>&1 | tee build/export.log | xcpretty
+
+      - name: Upload build logs
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: build-logs
+          path: build/*.log
 
       # ── Notarize ───────────────────────────────────────────────
       - name: Create zip for notarization
