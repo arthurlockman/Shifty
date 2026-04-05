@@ -1,0 +1,184 @@
+name: Build, Notarize & Release
+
+on:
+  push:
+    tags:
+      - "v*"
+  workflow_dispatch:
+    inputs:
+      version:
+        description: "Version to release (e.g. 2.0.1). A 'v'-prefixed tag will be created."
+        required: true
+        type: string
+
+permissions:
+  contents: write
+
+# Required repository secrets:
+#
+#   DEVELOPER_ID_P12_BASE64     Base64-encoded Developer ID Application .p12 certificate.
+#                                Export from Keychain Access → "Developer ID Application: …"
+#                                then: base64 -i Certificate.p12 | pbcopy
+#
+#   DEVELOPER_ID_P12_PASSWORD   Password used when exporting the .p12.
+#
+#   NOTARY_KEY                  App Store Connect API private key (.p8 file contents).
+#                                Generate at https://appstoreconnect.apple.com/access/integrations/api
+#                                Must be a Team key (not Individual) with "Developer" permission.
+#
+#   NOTARY_KEY_ID               The 10-character Key ID from App Store Connect.
+#
+#   NOTARY_ISSUER_ID            The Issuer ID (UUID) from App Store Connect.
+
+jobs:
+  release:
+    name: Build & Release
+    runs-on: macos-26
+    env:
+      SCHEME: Shifty
+      APP_NAME: Shifty
+      ARCHIVE_PATH: build/Shifty.xcarchive
+      EXPORT_PATH: build/export
+    steps:
+      # ── Check out ──────────────────────────────────────────────
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      # ── Determine version ──────────────────────────────────────
+      - name: Determine version
+        id: version
+        run: |
+          if [[ "${{ github.event_name }}" == "workflow_dispatch" ]]; then
+            version="${{ inputs.version }}"
+          else
+            version="${GITHUB_REF#refs/tags/v}"
+          fi
+          echo "value=$version" >> "$GITHUB_OUTPUT"
+          echo "tag=v$version"  >> "$GITHUB_OUTPUT"
+          echo "Version: $version"
+
+      # ── Select Xcode ───────────────────────────────────────────
+      - name: Select latest Xcode
+        run: |
+          latest=$(ls -d /Applications/Xcode_*.app 2>/dev/null | sort -V | tail -1)
+          if [[ -n "$latest" ]]; then
+            echo "Selecting $latest"
+            sudo xcode-select -s "$latest/Contents/Developer"
+          fi
+          echo "Active SDK: $(xcrun --show-sdk-version)"
+          echo "Swift: $(swift --version 2>&1 | head -1)"
+
+      # ── Import signing certificate ─────────────────────────────
+      - name: Import signing certificate
+        uses: apple-actions/import-codesign-certs@v3
+        with:
+          p12-file-base64: ${{ secrets.DEVELOPER_ID_P12_BASE64 }}
+          p12-password: ${{ secrets.DEVELOPER_ID_P12_PASSWORD }}
+
+      # ── Resolve packages ───────────────────────────────────────
+      - name: Resolve Swift packages
+        run: |
+          xcodebuild -resolvePackageDependencies \
+            -project "${{ env.SCHEME }}.xcodeproj" \
+            -scheme "${{ env.SCHEME }}" \
+            -clonedSourcePackagesDirPath build/SourcePackages
+
+      # ── Archive ────────────────────────────────────────────────
+      - name: Archive
+        run: |
+          xcodebuild archive \
+            -project "${{ env.SCHEME }}.xcodeproj" \
+            -scheme "${{ env.SCHEME }}" \
+            -configuration Release \
+            -archivePath "${{ env.ARCHIVE_PATH }}" \
+            -clonedSourcePackagesDirPath build/SourcePackages \
+            CODE_SIGN_STYLE=Manual \
+            CODE_SIGN_IDENTITY="Developer ID Application" \
+            DEVELOPMENT_TEAM="7E57633U38" \
+            OTHER_CODE_SIGN_FLAGS="--timestamp --options runtime" \
+            | xcpretty || exit ${PIPESTATUS[0]}
+
+      # ── Export ─────────────────────────────────────────────────
+      - name: Export archive
+        run: |
+          cat > /tmp/ExportOptions.plist <<'EOF'
+          <?xml version="1.0" encoding="UTF-8"?>
+          <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN"
+            "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+          <plist version="1.0">
+          <dict>
+            <key>method</key>
+            <string>developer-id</string>
+            <key>teamID</key>
+            <string>7E57633U38</string>
+            <key>signingStyle</key>
+            <string>manual</string>
+            <key>signingCertificate</key>
+            <string>Developer ID Application</string>
+          </dict>
+          </plist>
+          EOF
+
+          xcodebuild -exportArchive \
+            -archivePath "${{ env.ARCHIVE_PATH }}" \
+            -exportOptionsPlist /tmp/ExportOptions.plist \
+            -exportPath "${{ env.EXPORT_PATH }}" \
+            | xcpretty || exit ${PIPESTATUS[0]}
+
+      # ── Notarize ───────────────────────────────────────────────
+      - name: Create zip for notarization
+        run: |
+          ditto -c -k --sequesterRsrc --keepParent \
+            "${{ env.EXPORT_PATH }}/${{ env.APP_NAME }}.app" \
+            build/Shifty-notarize.zip
+
+      - name: Write API key for notarization
+        run: |
+          mkdir -p ~/.private_keys
+          echo '${{ secrets.NOTARY_KEY }}' > ~/.private_keys/AuthKey_${{ secrets.NOTARY_KEY_ID }}.p8
+
+      - name: Submit for notarization
+        run: |
+          xcrun notarytool submit build/Shifty-notarize.zip \
+            --key ~/.private_keys/AuthKey_${{ secrets.NOTARY_KEY_ID }}.p8 \
+            --key-id "${{ secrets.NOTARY_KEY_ID }}" \
+            --issuer "${{ secrets.NOTARY_ISSUER_ID }}" \
+            --wait --timeout 30m
+
+      - name: Staple notarization ticket
+        run: |
+          xcrun stapler staple "${{ env.EXPORT_PATH }}/${{ env.APP_NAME }}.app"
+
+      - name: Verify notarization
+        run: |
+          xcrun stapler validate "${{ env.EXPORT_PATH }}/${{ env.APP_NAME }}.app"
+          spctl -a -vvv --type exec "${{ env.EXPORT_PATH }}/${{ env.APP_NAME }}.app"
+
+      # ── Package final artifact ─────────────────────────────────
+      - name: Create release zip
+        run: |
+          version="${{ steps.version.outputs.value }}"
+          ditto -c -k --sequesterRsrc --keepParent \
+            "${{ env.EXPORT_PATH }}/${{ env.APP_NAME }}.app" \
+            "build/Shifty-${version}.zip"
+
+      # ── Create tag (workflow_dispatch only) ────────────────────
+      - name: Create tag (manual dispatch)
+        if: github.event_name == 'workflow_dispatch'
+        run: |
+          tag="${{ steps.version.outputs.tag }}"
+          git tag "$tag"
+          git push origin "$tag"
+
+      # ── Publish release ────────────────────────────────────────
+      - name: Publish GitHub release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          version="${{ steps.version.outputs.value }}"
+          tag="${{ steps.version.outputs.tag }}"
+          asset="build/Shifty-${version}.zip"
+
+          gh release create "$tag" "$asset" \
+            --title "Shifty $version" \
+            --generate-notes
