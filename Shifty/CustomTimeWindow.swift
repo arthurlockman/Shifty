@@ -7,64 +7,58 @@
 //
 
 import Cocoa
-
-class OnlyIntValueFormatter: NumberFormatter, @unchecked Sendable {
-    override func isPartialStringValid(_ partialString: String, newEditingString newString: AutoreleasingUnsafeMutablePointer<NSString?>?, errorDescription error: AutoreleasingUnsafeMutablePointer<NSString?>?) -> Bool {
-        if partialString.isEmpty {
-            return true
-        }
-        if partialString.count > 3 {
-            return false
-        }
-        return Int(partialString) != nil
-    }
-}
+import SwiftUI
 
 class CustomTimeWindow: NSWindowController {
 
     var disableCustomTime: ((Int) -> Void)?
-    var customTimeWindowIsOpen: ((Bool) -> Void)?
-    let onlyIntValueFormatter = OnlyIntValueFormatter()
 
-    override var windowNibName: NSNib.Name {
-        return "CustomTimeWindow"
+    convenience init() {
+        self.init(window: nil)
     }
 
-    override func windowDidLoad() {
-        super.windowDidLoad()
-
-        if UserDefaults.standard.value(forKey: "customTimeWindowFrame") == nil {
-            window?.center()
+    override func showWindow(_ sender: Any?) {
+        if window == nil {
+            createWindow()
         }
+        super.showWindow(sender)
+    }
+
+    private func createWindow() {
+        let view = CustomTimeView(
+            onConfirm: { [weak self] seconds in
+                self?.disableCustomTime?(seconds)
+                self?.window?.close()
+            },
+            onCancel: { [weak self] in
+                self?.window?.close()
+            }
+        )
+
+        let hostingView = NSHostingView(rootView: view)
+        let size = hostingView.fittingSize
+
+        let win = NSWindow(
+            contentRect: NSRect(origin: .zero, size: size),
+            styleMask: [.titled, .closable],
+            backing: .buffered,
+            defer: false
+        )
+        win.contentView = hostingView
+        win.titleVisibility = .hidden
+        win.level = .floating
+        win.isReleasedWhenClosed = false
 
         let saveName = "customTimeWindowFrame"
+        if UserDefaults.standard.value(forKey: saveName) == nil {
+            win.center()
+        }
+        win.setFrameUsingName(saveName)
 
-        window?.setFrameUsingName(saveName)
-
-        NotificationCenter.default.addObserver(forName: NSNotification.Name("NSWindowWillCloseNotification"), object: nil, queue: nil) { _ in
-            self.window?.saveFrame(usingName: saveName)
+        NotificationCenter.default.addObserver(forName: NSWindow.willCloseNotification, object: win, queue: nil) { _ in
+            win.saveFrame(usingName: saveName)
         }
 
-        window?.level = .floating
-        window?.titleVisibility = .hidden
-
-        hoursTextField.formatter = onlyIntValueFormatter
-        minutesTextField.formatter = onlyIntValueFormatter
-    }
-
-    @IBOutlet weak var hoursTextField: NSTextField!
-    @IBOutlet weak var minutesTextField: NSTextField!
-
-    @IBAction func cancelButtonClicked(_ sender: NSButton) {
-        window?.close()
-    }
-
-    @IBAction func okButtonClicked(_ sender: NSButton) {
-        let hours = hoursTextField.intValue
-        let minutes = minutesTextField.intValue
-        let timeIntervalInSeconds = hours * 3600 + minutes * 60
-        disableCustomTime?(Int(timeIntervalInSeconds))
-
-        window?.close()
+        self.window = win
     }
 }

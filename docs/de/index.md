@@ -32,8 +32,5 @@ Shifty erweitert die Möglichkeiten der Night-Shift-Funktion in macOS. Night Shi
 * Webseiten-Shift unterstützt Safari, Chrome und Vivaldi
 * True Tone Funktionen benötigt einen [unterstützten Mac](https://support.apple.com/HT208909) und macOS 10.14 oder höher
 
-<br /> Shifty unterstützen und [spenden]({{ site.donate_link_usd }}), um es noch besser zu machen.
-
 Shifty ist gratis und als Open-Source unter der [GPLv3]({{ site.license_link }}) lizenziert. [Bei GitHub mitwirken]({{ site.repository_link }})
 
-Bei Verbesserungsvorschlägen zu Übersetzungen auf der Webseite oder in der App <a href="/translate">bitte hier mithelfen</a>.

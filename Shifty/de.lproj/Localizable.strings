@@ -67,6 +67,11 @@
 "accessibility.step3" = "Kehren Sie zu Shifty zurück — die Änderung wird automatisch erkannt";
 "accessibility.help" = "Benötigen Sie Hilfe?";
 
+/* Custom time window */
+"customtime.title" = "Night Shift deaktivieren für";
+"customtime.hours" = "Stunden";
+"customtime.minutes" = "Minuten";
+
 
 
 "analytics.includes_list_title" = "Welche Daten werden erfasst?";

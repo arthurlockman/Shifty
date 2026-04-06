@@ -67,6 +67,11 @@
 "accessibility.step3" = "返回 Shifty——它会自动检测更改";
 "accessibility.help" = "需要帮助？";
 
+/* Custom time window */
+"customtime.title" = "在以下时间内关闭“夜览”模式";
+"customtime.hours" = "小时";
+"customtime.minutes" = "分钟";
+
 
 
 "analytics.includes_list_title" = "哪些数据会被收集？";

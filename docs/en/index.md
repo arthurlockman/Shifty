@@ -32,8 +32,6 @@ Shifty was made to expand the capabilities of the built in Night Shift feature i
 * True Tone features require a [supported Mac](https://support.apple.com/HT208909) and macOS 10.14 or later
 
 <br>
-If you love Shifty, consider [donating]({{ site.donate_link_usd }}) to help me make it better.
 
 Shifty is free and open source, licensed under [GPLv3]({{ site.license_link }}). [Contribute on GitHub]({{ site.repository_link }})
 
-If you would like to help translate Shifty into other languages, you can contribute [here]({{ site.translate_link }}).

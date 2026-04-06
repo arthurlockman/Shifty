@@ -67,6 +67,11 @@
 "accessibility.step3" = "Revenez à Shifty — le changement sera détecté automatiquement";
 "accessibility.help" = "Besoin d'aide ?";
 
+/* Custom time window */
+"customtime.title" = "Désactiver Night Shift pendant";
+"customtime.hours" = "heures";
+"customtime.minutes" = "minutes";
+
 
 
 "analytics.includes_list_title" = "Quelles données recueillons-nous ?";

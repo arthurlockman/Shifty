@@ -67,6 +67,11 @@
 "accessibility.step3" = "Вернитесь в Shifty — изменение будет обнаружено автоматически";
 "accessibility.help" = "Нужна помощь?";
 
+/* Custom time window */
+"customtime.title" = "Выключить Night Shift на";
+"customtime.hours" = "часов";
+"customtime.minutes" = "минут";
+
 
 
 "analytics.includes_list_title" = "Какие данные собираются?";

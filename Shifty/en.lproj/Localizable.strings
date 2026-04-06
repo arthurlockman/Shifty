@@ -69,6 +69,11 @@
 "accessibility.step3" = "Return to Shifty — it will detect the change automatically";
 "accessibility.help" = "Need help?";
 
+/* Custom time window */
+"customtime.title" = "Disable Night Shift for";
+"customtime.hours" = "hours";
+"customtime.minutes" = "minutes";
+
 
 
 "prefs.hide_menu_bar_icon" = "Hide menu bar icon";
