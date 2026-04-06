@@ -36,6 +36,20 @@ struct AccessibilityPromptView: View {
             }
             .frame(maxWidth: 340)
 
+            // Draggable app icon — drop into the Accessibility list in System Settings
+            VStack(spacing: 6) {
+                Image(nsImage: NSApp.applicationIconImage)
+                    .resizable()
+                    .frame(width: 48, height: 48)
+                    .shadow(radius: 2)
+                    .onDrag {
+                        NSItemProvider(object: Bundle.main.bundleURL as NSURL)
+                    }
+                Text(NSLocalizedString("accessibility.drag_hint", comment: ""))
+                    .font(.caption)
+                    .foregroundStyle(.secondary)
+            }
+
             if showButtons {
                 HStack(spacing: 12) {
                     Button(NSLocalizedString("alert.not_now", comment: "")) {

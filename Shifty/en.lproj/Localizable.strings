@@ -68,6 +68,7 @@
 "accessibility.step2" = "Find Shifty in the list and toggle it on";
 "accessibility.step3" = "Return to Shifty — it will detect the change automatically";
 "accessibility.help" = "Need help?";
+"accessibility.drag_hint" = "Drag this icon into the Accessibility list";
 
 /* Custom time window */
 "customtime.title" = "Disable Night Shift for";

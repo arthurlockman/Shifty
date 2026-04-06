@@ -66,6 +66,7 @@
 "accessibility.step2" = "在列表中找到 Shifty 并开启它";
 "accessibility.step3" = "返回 Shifty——它会自动检测更改";
 "accessibility.help" = "需要帮助？";
+"accessibility.drag_hint" = "将此图标拖入辅助功能列表";
 
 /* Custom time window */
 "customtime.title" = "在以下时间内关闭“夜览”模式";

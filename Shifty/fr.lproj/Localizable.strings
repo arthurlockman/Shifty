@@ -66,6 +66,7 @@
 "accessibility.step2" = "Trouvez Shifty dans la liste et activez-le";
 "accessibility.step3" = "Revenez à Shifty — le changement sera détecté automatiquement";
 "accessibility.help" = "Besoin d'aide ?";
+"accessibility.drag_hint" = "Glissez cette icône dans la liste Accessibilité";
 
 /* Custom time window */
 "customtime.title" = "Désactiver Night Shift pendant";

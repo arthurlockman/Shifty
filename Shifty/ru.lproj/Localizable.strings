@@ -66,6 +66,7 @@
 "accessibility.step2" = "Найдите Shifty в списке и включите его";
 "accessibility.step3" = "Вернитесь в Shifty — изменение будет обнаружено автоматически";
 "accessibility.help" = "Нужна помощь?";
+"accessibility.drag_hint" = "Перетащите этот значок в список Универсального доступа";
 
 /* Custom time window */
 "customtime.title" = "Выключить Night Shift на";

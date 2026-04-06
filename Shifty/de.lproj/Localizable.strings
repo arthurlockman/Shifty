@@ -66,6 +66,7 @@
 "accessibility.step2" = "Suchen Sie Shifty in der Liste und aktivieren Sie es";
 "accessibility.step3" = "Kehren Sie zu Shifty zurück — die Änderung wird automatisch erkannt";
 "accessibility.help" = "Benötigen Sie Hilfe?";
+"accessibility.drag_hint" = "Dieses Symbol in die Bedienungshilfen-Liste ziehen";
 
 /* Custom time window */
 "customtime.title" = "Night Shift deaktivieren für";
