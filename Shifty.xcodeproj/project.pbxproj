@@ -52,6 +52,8 @@
 		497B2395200B576700669DDE /* NightShiftManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497B2392200B576700669DDE /* NightShiftManager.swift */; };
 		497B2396200B576700669DDE /* NotificationName+Shifty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497B2393200B576700669DDE /* NotificationName+Shifty.swift */; };
 		8EE1F9572F832A5A002EE3A4 /* PrefGeneralView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE1F9562F832A5A002EE3A4 /* PrefGeneralView.swift */; };
+		8EE1F9592F8333BD002EE3A4 /* PrefShortcutsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE1F9582F8333BD002EE3A4 /* PrefShortcutsView.swift */; };
+		8EE1F95B2F8333E4002EE3A4 /* PrefAppsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE1F95A2F8333E4002EE3A4 /* PrefAppsView.swift */; };
 		8EEFC3C92F7A01640029B95D /* AXSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 8EEFC3C82F7A01640029B95D /* AXSwift */; };
 		8EEFC3CB2F7A01640029B95D /* Settings in Frameworks */ = {isa = PBXBuildFile; productRef = 8EEFC3CA2F7A01640029B95D /* Settings */; };
 		8EEFC3CD2F7A01640029B95D /* Sparkle in Frameworks */ = {isa = PBXBuildFile; productRef = 8EEFC3CC2F7A01640029B95D /* Sparkle */; };
@@ -170,6 +172,8 @@
 		497B2393200B576700669DDE /* NotificationName+Shifty.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "NotificationName+Shifty.swift"; path = "Shifty/NotificationName+Shifty.swift"; sourceTree = "<group>"; };
 		80BA7F12D7DAD4F11FF8D3E6 /* PrefAboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PrefAboutView.swift; path = Shifty/PrefAboutView.swift; sourceTree = "<group>"; };
 		8EE1F9562F832A5A002EE3A4 /* PrefGeneralView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PrefGeneralView.swift; path = Shifty/PrefGeneralView.swift; sourceTree = "<group>"; };
+		8EE1F9582F8333BD002EE3A4 /* PrefShortcutsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrefShortcutsView.swift; sourceTree = "<group>"; };
+		8EE1F95A2F8333E4002EE3A4 /* PrefAppsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrefAppsView.swift; sourceTree = "<group>"; };
 		8EEFC3D42F7A01D50029B95D /* PublicSuffix.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PublicSuffix.swift; path = Shifty/Vendor/PublicSuffix/PublicSuffix.swift; sourceTree = "<group>"; };
 		8EEFC3D62F7A02020029B95D /* etld.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = etld.plist; path = Shifty/Vendor/PublicSuffix/etld.plist; sourceTree = "<group>"; };
 		8EEFC3D72F7A020C0029B95D /* etld.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = etld.plist; path = Shifty/Vendor/PublicSuffix/etld.plist; sourceTree = "<group>"; };
@@ -239,6 +243,8 @@
 				80BA7F12D7DAD4F11FF8D3E6 /* PrefAboutView.swift */,
 				8EF67FE82F79EE9600E5C051 /* PrefAppsViewController.swift */,
 				8EEFC3DE2F7A08C80029B95D /* KeyboardShortcuts+Names.swift */,
+				8EE1F9582F8333BD002EE3A4 /* PrefShortcutsView.swift */,
+				8EE1F95A2F8333E4002EE3A4 /* PrefAppsView.swift */,
 			);
 			name = Preferences;
 			sourceTree = "<group>";
@@ -506,6 +512,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8EE1F9592F8333BD002EE3A4 /* PrefShortcutsView.swift in Sources */,
 				43A8E69C2141DF7C00BD3870 /* CBTrueToneClient+Shifty.swift in Sources */,
 				433E60EC207D9995007BB55F /* BrightnessSystemClient+Shifty.swift in Sources */,
 				497B2396200B576700669DDE /* NotificationName+Shifty.swift in Sources */,
@@ -536,6 +543,7 @@
 				4394DDA91EBE376F00F22908 /* AppDelegate.swift in Sources */,
 				43CA44EE26DB53ED00537DED /* IntentHandlers.swift in Sources */,
 				435F0384208027C600ABA2EB /* BrowserManager.swift in Sources */,
+				8EE1F95B2F8333E4002EE3A4 /* PrefAppsView.swift in Sources */,
 				43AA23CE1FFAC69A001DDF5A /* AccessibilityWindow.swift in Sources */,
 				43CA44EA26DB53DA00537DED /* CBBlueLightClient+Shifty.swift in Sources */,
 			);

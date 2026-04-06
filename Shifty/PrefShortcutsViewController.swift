@@ -7,15 +7,14 @@
 
 import Cocoa
 import Settings
+import SwiftUI
 import KeyboardShortcuts
 
 @objcMembers
 class PrefShortcutsViewController: NSViewController, SettingsPane {
 
-    let statusMenuController = (NSApplication.shared.delegate as? AppDelegate)?.statusMenu.delegate as? StatusMenuController
-
-    override var nibName: NSNib.Name? {
-        return nil
+    var statusMenuController: StatusMenuController? {
+        (NSApplication.shared.delegate as? AppDelegate)?.statusMenu.delegate as? StatusMenuController
     }
 
     let paneIdentifier = Settings.PaneIdentifier("shortcuts")
@@ -29,68 +28,12 @@ class PrefShortcutsViewController: NSViewController, SettingsPane {
         }
     }
 
-    private var trueToneLabel: NSTextField!
-    private var trueToneRecorder: KeyboardShortcuts.RecorderCocoa!
-
     override func loadView() {
-        let container = NSView()
-
-        let pairs: [(String, KeyboardShortcuts.Name)] = [
-            (NSLocalizedString("prefs.shortcuts.toggle_night_shift", comment: "Toggle Night Shift:"), .toggleNightShift),
-            (NSLocalizedString("prefs.shortcuts.increase_color_temp", comment: "Increase color temp:"), .incrementColorTemp),
-            (NSLocalizedString("prefs.shortcuts.decrease_color_temp", comment: "Decrease color temp:"), .decrementColorTemp),
-            (NSLocalizedString("prefs.shortcuts.disable_app", comment: "Disable for current app:"), .disableApp),
-            (NSLocalizedString("prefs.shortcuts.disable_domain", comment: "Disable for domain:"), .disableDomain),
-            (NSLocalizedString("prefs.shortcuts.disable_subdomain", comment: "Disable for subdomain:"), .disableSubdomain),
-            (NSLocalizedString("prefs.shortcuts.disable_hour", comment: "Disable for an hour:"), .disableHour),
-            (NSLocalizedString("prefs.shortcuts.disable_custom", comment: "Disable for custom time:"), .disableCustom),
-            (NSLocalizedString("prefs.shortcuts.toggle_true_tone", comment: "Toggle True Tone:"), .toggleTrueTone),
-            (NSLocalizedString("prefs.shortcuts.toggle_dark_mode", comment: "Toggle Dark Mode:"), .toggleDarkMode),
-        ]
-
-        let grid = NSGridView(numberOfColumns: 2, rows: 0)
-        grid.translatesAutoresizingMaskIntoConstraints = false
-        grid.rowSpacing = 12
-        grid.columnSpacing = 10
-        grid.column(at: 0).xPlacement = .trailing
-
-        for (labelText, name) in pairs {
-            let label = NSTextField(labelWithString: labelText)
-            label.alignment = .right
-            label.font = NSFont.systemFont(ofSize: NSFont.systemFontSize)
-            let recorder = KeyboardShortcuts.RecorderCocoa(for: name)
-            grid.addRow(with: [label, recorder])
-            if name == .toggleTrueTone {
-                trueToneLabel = label
-                trueToneRecorder = recorder
-            }
-        }
-
-        container.addSubview(grid)
-
-        NSLayoutConstraint.activate([
-            grid.topAnchor.constraint(equalTo: container.topAnchor, constant: 20),
-            grid.centerXAnchor.constraint(equalTo: container.centerXAnchor),
-            grid.bottomAnchor.constraint(lessThanOrEqualTo: container.bottomAnchor, constant: -20),
-        ])
-
-        container.setFrameSize(NSSize(width: 480, height: 380))
-        self.preferredContentSize = NSSize(width: 480, height: 380)
-        self.view = container
-    }
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Hide True Tone settings on unsupported computers
-        if #available(macOS 10.14, *) {
-            let trueToneUnsupported = CBTrueToneClient.shared.state == .unsupported
-            trueToneLabel?.isHidden = trueToneUnsupported
-            trueToneRecorder?.isHidden = trueToneUnsupported
-        } else {
-            trueToneLabel?.isHidden = true
-            trueToneRecorder?.isHidden = true
-        }
+        let hostingView = NSHostingView(rootView: PrefShortcutsView())
+        let size = hostingView.fittingSize
+        hostingView.frame = NSRect(origin: .zero, size: size)
+        self.preferredContentSize = size
+        self.view = hostingView
     }
 
     func bindShortcuts() {
