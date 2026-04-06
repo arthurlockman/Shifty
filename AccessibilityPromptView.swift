@@ -9,6 +9,7 @@ import SwiftUI
 import AXSwift
 
 struct AccessibilityPromptView: View {
+    var showButtons = true
 
     var body: some View {
         VStack(spacing: 20) {
@@ -35,30 +36,32 @@ struct AccessibilityPromptView: View {
             }
             .frame(maxWidth: 340)
 
-            HStack(spacing: 12) {
-                Button(NSLocalizedString("alert.not_now", comment: "")) {
-                    NSApp.keyWindow?.close()
-                }
-                .keyboardShortcut(.cancelAction)
+            if showButtons {
+                HStack(spacing: 12) {
+                    Button(NSLocalizedString("alert.not_now", comment: "")) {
+                        NSApp.keyWindow?.close()
+                    }
+                    .keyboardShortcut(.cancelAction)
 
-                Button(NSLocalizedString("alert.open_preferences", comment: "")) {
+                    Button(NSLocalizedString("alert.open_preferences", comment: "")) {
+                        NSWorkspace.shared.open(
+                            URL(string: "x-apple.systempreferences:com.apple.preference.security?Privacy_Accessibility")!
+                        )
+                    }
+                    .keyboardShortcut(.defaultAction)
+                }
+
+                Button(NSLocalizedString("accessibility.help", comment: "")) {
                     NSWorkspace.shared.open(
-                        URL(string: "x-apple.systempreferences:com.apple.preference.security?Privacy_Accessibility")!
+                        URL(string: "https://support.apple.com/guide/mac-help/allow-accessibility-apps-to-access-your-mac-mh43185")!
                     )
                 }
-                .keyboardShortcut(.defaultAction)
+                .buttonStyle(.link)
+                .font(.caption)
             }
-
-            Button(NSLocalizedString("accessibility.help", comment: "")) {
-                NSWorkspace.shared.open(
-                    URL(string: "https://support.apple.com/guide/mac-help/allow-accessibility-apps-to-access-your-mac-mh43185")!
-                )
-            }
-            .buttonStyle(.link)
-            .font(.caption)
         }
         .padding(24)
-        .frame(width: 400)
+        .frame(maxWidth: showButtons ? 400 : .infinity)
     }
 
     private func instructionRow(number: String, text: String) -> some View {
