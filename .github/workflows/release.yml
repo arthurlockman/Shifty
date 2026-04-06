@@ -86,6 +86,17 @@ jobs:
             -scheme "${{ env.SCHEME }}" \
             -clonedSourcePackagesDirPath build/SourcePackages
 
+      # ── Compute build number ─────────────────────────────────
+      # Uses GitHub's auto-incrementing run number + offset to ensure
+      # the build number always exceeds the last manually-set value (101)
+      # and all prior upstream releases (max was 66).
+      - name: Compute build number
+        id: buildnum
+        run: |
+          build_number=$(( ${{ github.run_number }} + 100 ))
+          echo "value=$build_number" >> "$GITHUB_OUTPUT"
+          echo "Build number: $build_number"
+
       # ── Archive ────────────────────────────────────────────────
       - name: Archive
         run: |
@@ -100,6 +111,7 @@ jobs:
             CODE_SIGN_IDENTITY="Developer ID Application" \
             DEVELOPMENT_TEAM="7E57633U38" \
             OTHER_CODE_SIGN_FLAGS="--timestamp --options runtime" \
+            CURRENT_PROJECT_VERSION="${{ steps.buildnum.outputs.value }}" \
             2>&1 | tee build/archive.log | xcpretty
           echo "Archive succeeded"
 
@@ -219,6 +231,7 @@ jobs:
         env:
           RELEASE_VERSION: ${{ steps.version.outputs.value }}
           RELEASE_TAG: ${{ steps.version.outputs.tag }}
+          BUILD_NUMBER: ${{ steps.buildnum.outputs.value }}
           ED_SIGNATURE: ${{ steps.sparkle.outputs.ed_signature }}
           ZIP_LENGTH: ${{ steps.sparkle.outputs.length }}
         run: |
@@ -232,6 +245,7 @@ jobs:
 
           version = os.environ["RELEASE_VERSION"]
           tag = os.environ["RELEASE_TAG"]
+          build = os.environ["BUILD_NUMBER"]
           sig = os.environ["ED_SIGNATURE"]
           length = os.environ["ZIP_LENGTH"]
           url = f"https://github.com/arthurlockman/Shifty/releases/download/{tag}/Shifty-{version}.zip"
@@ -245,10 +259,12 @@ jobs:
           is_prerelease = bool(re.search(r'-(alpha|beta|rc)', version, re.IGNORECASE))
           channel_line = "\n            <sparkle:channel>beta</sparkle:channel>" if is_prerelease else ""
 
+          # sparkle:version = CFBundleVersion (integer build number, must be > 66 for existing users)
+          # sparkle:shortVersionString = CFBundleShortVersionString (marketing version)
           new_item = f"""        <item>
               <title>Version {version}</title>
               <pubDate>{pub_date}</pubDate>{channel_line}
-              <enclosure url="{url}" sparkle:version="{version}" sparkle:shortVersionString="{version}" length="{length}" type="application/octet-stream" sparkle:edSignature="{sig}" />
+              <enclosure url="{url}" sparkle:version="{build}" sparkle:shortVersionString="{version}" length="{length}" type="application/octet-stream" sparkle:edSignature="{sig}" />
               <sparkle:minimumSystemVersion>26.0</sparkle:minimumSystemVersion>
           </item>"""
 
@@ -258,7 +274,7 @@ jobs:
           with open("docs/ShiftyAppcast.xml", "w") as f:
               f.write(content)
 
-          print(f"Appcast updated for v{version}")
+          print(f"Appcast updated for v{version} (build {build})")
           PYEOF
 
           git add docs/ShiftyAppcast.xml

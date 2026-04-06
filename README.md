@@ -7,11 +7,9 @@ Shifty is customizable! Make it easier to toggle Night Shift with Quick Toggle o
 <img src="docs/en/images/prefs-general-screenshot-shadow.png" width=60%/>
 
 ### System requirements:
-* macOS 10.12.4 or later
+* macOS 26.0 or later
 * System meets the [requirements for Night Shift](https://support.apple.com/en-us/HT207513#requirements)
 * Website shifting supports Safari, Chrome, and Vivaldi.
 
 <br>
 Shifty is free and open source, licensed under GPLv3. Feel free to make a pull request!
-
-If you'd like to help translate Shifty into other languages, you can contribute [here](https://shifty.natethompson.io/translate).
