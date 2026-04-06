@@ -101,7 +101,7 @@ class PrefGeneralViewController: NSViewController, SettingsPane {
             if !UIElement.isProcessTrusted() {
                 logw("Accessibility permissions alert shown")
                 UserDefaults.standard.set(false, forKey: Keys.isWebsiteControlEnabled)
-                NSApp.runModal(for: AccessibilityWindow().window!)
+                AccessibilityPrompt.showModal()
             }
         } else {
             BrowserManager.shared.stopBrowserWatcher()

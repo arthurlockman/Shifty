@@ -55,9 +55,17 @@
 "alert.accessibility_disabled_informative" = "您必须先授权 Shifty 夜览管家通过“辅助功能”控制您的电脑，才能调节网站色温。您可在系统偏好设置的安全性与隐私面板中提供授权。";
 
 
-"alert.open_preferences" = "打开系统偏好设置";
+"alert.open_preferences" = "打开系统设置";
 "alert.not_now" = "以后再说";
 "alert.close" = "关闭";
+
+/* Accessibility prompt */
+"accessibility.title" = "需要辅助功能权限";
+"accessibility.message" = "Shifty 需要辅助功能访问权限来控制各个网站的“夜览”模式。";
+"accessibility.step1" = "点击下方的“打开系统设置”";
+"accessibility.step2" = "在列表中找到 Shifty 并开启它";
+"accessibility.step3" = "返回 Shifty——它会自动检测更改";
+"accessibility.help" = "需要帮助？";
 
 
 

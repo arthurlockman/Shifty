@@ -25,10 +25,6 @@
 		4394DDAD1EBE376F00F22908 /* StatusMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4394DDA81EBE376F00F22908 /* StatusMenuController.swift */; };
 		43965AC31FC68A19001A076D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 43965AC51FC68A19001A076D /* InfoPlist.strings */; };
 		43A8E69C2141DF7C00BD3870 /* CBTrueToneClient+Shifty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A8E69B2141DF7C00BD3870 /* CBTrueToneClient+Shifty.swift */; };
-		43AA23C71FFABCD2001DDF5A /* AccessibilityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43AA23C61FFABCD2001DDF5A /* AccessibilityView.swift */; };
-		43AA23CE1FFAC69A001DDF5A /* AccessibilityWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43AA23CC1FFAC69A001DDF5A /* AccessibilityWindow.swift */; };
-		43AA23CF1FFAC69A001DDF5A /* AccessibilityWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 43AA23CD1FFAC69A001DDF5A /* AccessibilityWindow.xib */; };
-		43B612581FFC297400724DAE /* AccessibilityView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 43B6125A1FFC297400724DAE /* AccessibilityView.xib */; };
 		43B6125D1FFC298200724DAE /* Setup.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43B6125F1FFC298200724DAE /* Setup.storyboard */; };
 		43B6126C1FFC413A00724DAE /* Localizable.stringsdict in Resources */ = {isa = PBXBuildFile; fileRef = 43B6126A1FFC413A00724DAE /* Localizable.stringsdict */; };
 		43B9DE151FB5924F002C4C29 /* PrefShortcutsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43B9DE131FB5924F002C4C29 /* PrefShortcutsViewController.swift */; };
@@ -54,6 +50,7 @@
 		8EE1F9572F832A5A002EE3A4 /* PrefGeneralView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE1F9562F832A5A002EE3A4 /* PrefGeneralView.swift */; };
 		8EE1F9592F8333BD002EE3A4 /* PrefShortcutsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE1F9582F8333BD002EE3A4 /* PrefShortcutsView.swift */; };
 		8EE1F95B2F8333E4002EE3A4 /* PrefAppsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE1F95A2F8333E4002EE3A4 /* PrefAppsView.swift */; };
+		8EE1F95D2F833AFA002EE3A4 /* AccessibilityPromptView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE1F95C2F833AFA002EE3A4 /* AccessibilityPromptView.swift */; };
 		8EEFC3C92F7A01640029B95D /* AXSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 8EEFC3C82F7A01640029B95D /* AXSwift */; };
 		8EEFC3CB2F7A01640029B95D /* Settings in Frameworks */ = {isa = PBXBuildFile; productRef = 8EEFC3CA2F7A01640029B95D /* Settings */; };
 		8EEFC3CD2F7A01640029B95D /* Sparkle in Frameworks */ = {isa = PBXBuildFile; productRef = 8EEFC3CC2F7A01640029B95D /* Sparkle */; };
@@ -89,13 +86,11 @@
 		43099BA81FC67B5000A0720B /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/CustomTimeWindow.strings"; sourceTree = "<group>"; };
 		43099BAD1FC67B5C00A0720B /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		430E217322630360008E2874 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/CustomTimeWindow.strings; sourceTree = "<group>"; };
-		430E217422630360008E2874 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/AccessibilityView.strings; sourceTree = "<group>"; };
 		430E217522630361008E2874 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Setup.strings; sourceTree = "<group>"; };
 		430E217922630361008E2874 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		430E217A22630361008E2874 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		430E217B22630361008E2874 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.stringsdict; name = fr; path = Shifty/fr.lproj/Localizable.stringsdict; sourceTree = "<group>"; };
 		430E217C22630370008E2874 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/CustomTimeWindow.strings; sourceTree = "<group>"; };
-		430E217D22630370008E2874 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/AccessibilityView.strings; sourceTree = "<group>"; };
 		430E217E22630370008E2874 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Setup.strings; sourceTree = "<group>"; };
 		430E218222630370008E2874 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		430E218322630370008E2874 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -104,7 +99,6 @@
 		433E60EA207D9994007BB55F /* BrightnessSystemClient+Shifty.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "BrightnessSystemClient+Shifty.swift"; path = "Shifty/BrightnessSystemClient+Shifty.swift"; sourceTree = "<group>"; };
 		433E60EB207D9995007BB55F /* BrightnessSystemClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BrightnessSystemClient.h; path = Shifty/BrightnessSystemClient.h; sourceTree = "<group>"; };
 		4345ABA32165DB1600E2B7C7 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/CustomTimeWindow.strings; sourceTree = "<group>"; };
-		4345ABA42165DB1600E2B7C7 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/AccessibilityView.strings; sourceTree = "<group>"; };
 		4345ABA52165DB1600E2B7C7 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Setup.strings; sourceTree = "<group>"; };
 		4345ABA92165DB1700E2B7C7 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		4345ABAA2165DB1700E2B7C7 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -133,11 +127,6 @@
 		43965AC61FC68A1B001A076D /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		43A8E69B2141DF7C00BD3870 /* CBTrueToneClient+Shifty.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "CBTrueToneClient+Shifty.swift"; path = "Shifty/CBTrueToneClient+Shifty.swift"; sourceTree = "<group>"; };
 		43A934002164019300AFB708 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
-		43AA23C61FFABCD2001DDF5A /* AccessibilityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AccessibilityView.swift; path = Shifty/AccessibilityView.swift; sourceTree = "<group>"; };
-		43AA23CC1FFAC69A001DDF5A /* AccessibilityWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AccessibilityWindow.swift; path = Shifty/AccessibilityWindow.swift; sourceTree = "<group>"; };
-		43AA23CD1FFAC69A001DDF5A /* AccessibilityWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = AccessibilityWindow.xib; path = Shifty/AccessibilityWindow.xib; sourceTree = "<group>"; };
-		43B612591FFC297400724DAE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/AccessibilityView.xib; sourceTree = "<group>"; };
-		43B6125C1FFC297B00724DAE /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/AccessibilityView.strings"; sourceTree = "<group>"; };
 		43B6125E1FFC298200724DAE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Setup.storyboard; sourceTree = "<group>"; };
 		43B612611FFC298400724DAE /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Setup.strings"; sourceTree = "<group>"; };
 		43B6126B1FFC413A00724DAE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.stringsdict; name = en; path = Shifty/en.lproj/Localizable.stringsdict; sourceTree = "<group>"; };
@@ -174,6 +163,7 @@
 		8EE1F9562F832A5A002EE3A4 /* PrefGeneralView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PrefGeneralView.swift; path = Shifty/PrefGeneralView.swift; sourceTree = "<group>"; };
 		8EE1F9582F8333BD002EE3A4 /* PrefShortcutsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrefShortcutsView.swift; sourceTree = "<group>"; };
 		8EE1F95A2F8333E4002EE3A4 /* PrefAppsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrefAppsView.swift; sourceTree = "<group>"; };
+		8EE1F95C2F833AFA002EE3A4 /* AccessibilityPromptView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessibilityPromptView.swift; sourceTree = "<group>"; };
 		8EEFC3D42F7A01D50029B95D /* PublicSuffix.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PublicSuffix.swift; path = Shifty/Vendor/PublicSuffix/PublicSuffix.swift; sourceTree = "<group>"; };
 		8EEFC3D62F7A02020029B95D /* etld.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = etld.plist; path = Shifty/Vendor/PublicSuffix/etld.plist; sourceTree = "<group>"; };
 		8EEFC3D72F7A020C0029B95D /* etld.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = etld.plist; path = Shifty/Vendor/PublicSuffix/etld.plist; sourceTree = "<group>"; };
@@ -284,12 +274,9 @@
 				43D5C2381FC35FB500AF88E0 /* MainMenu.xib */,
 				4350191C1F21E99F0001324F /* CustomTimeWindow.swift */,
 				43D5C2231FC2CACF00AF88E0 /* CustomTimeWindow.xib */,
-				43AA23CC1FFAC69A001DDF5A /* AccessibilityWindow.swift */,
-				43AA23CD1FFAC69A001DDF5A /* AccessibilityWindow.xib */,
-				43AA23C61FFABCD2001DDF5A /* AccessibilityView.swift */,
-				43B6125A1FFC297400724DAE /* AccessibilityView.xib */,
 				437556B31FF745A6001951AB /* Setup.swift */,
 				43B6125F1FFC298200724DAE /* Setup.storyboard */,
+				8EE1F95C2F833AFA002EE3A4 /* AccessibilityPromptView.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -485,11 +472,9 @@
 				43B6125D1FFC298200724DAE /* Setup.storyboard in Resources */,
 				43FC498C1FF8936F00CD3196 /* credits.rtfd in Resources */,
 				8EEFC3D82F7A020C0029B95D /* etld.plist in Resources */,
-				43AA23CF1FFAC69A001DDF5A /* AccessibilityWindow.xib in Resources */,
 				433AD3011F2CED1F0003FBCD /* dsa_pub.pem in Resources */,
 				4394DDAA1EBE376F00F22908 /* Assets.xcassets in Resources */,
 				8EEFC3E12F7A28AF0029B95D /* Shifty.icon in Resources */,
-				43B612581FFC297400724DAE /* AccessibilityView.xib in Resources */,
 				43D5C2301FC2CECC00AF88E0 /* Localizable.strings in Resources */,
 				43D5C2391FC35FB500AF88E0 /* MainMenu.xib in Resources */,
 				43965AC31FC68A19001A076D /* InfoPlist.strings in Resources */,
@@ -519,7 +504,7 @@
 				8EEFC3DA2F7A02C50029B95D /* LogHelper.swift in Sources */,
 				43CA44ED26DB53ED00537DED /* Intents.intentdefinition in Sources */,
 				43CA44F026DB53FB00537DED /* DateTime+Shifty.swift in Sources */,
-				43AA23C71FFABCD2001DDF5A /* AccessibilityView.swift in Sources */,
+				8EE1F95D2F833AFA002EE3A4 /* AccessibilityPromptView.swift in Sources */,
 				437556B61FF746BD001951AB /* SlideSegue.swift in Sources */,
 				4368E3031EBEBA6C00D53310 /* PrefManager.swift in Sources */,
 				437D7E161EC015CB00544FC8 /* SliderView.swift in Sources */,
@@ -544,7 +529,6 @@
 				43CA44EE26DB53ED00537DED /* IntentHandlers.swift in Sources */,
 				435F0384208027C600ABA2EB /* BrowserManager.swift in Sources */,
 				8EE1F95B2F8333E4002EE3A4 /* PrefAppsView.swift in Sources */,
-				43AA23CE1FFAC69A001DDF5A /* AccessibilityWindow.swift in Sources */,
 				43CA44EA26DB53DA00537DED /* CBBlueLightClient+Shifty.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -562,19 +546,6 @@
 				430E218222630370008E2874 /* ru */,
 			);
 			name = InfoPlist.strings;
-			path = Shifty;
-			sourceTree = "<group>";
-		};
-		43B6125A1FFC297400724DAE /* AccessibilityView.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				43B612591FFC297400724DAE /* Base */,
-				43B6125C1FFC297B00724DAE /* zh-Hans */,
-				4345ABA42165DB1600E2B7C7 /* de */,
-				430E217422630360008E2874 /* fr */,
-				430E217D22630370008E2874 /* ru */,
-			);
-			name = AccessibilityView.xib;
 			path = Shifty;
 			sourceTree = "<group>";
 		};
@@ -696,6 +667,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
@@ -761,6 +733,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;

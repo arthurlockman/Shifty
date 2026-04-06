@@ -55,9 +55,17 @@
 "alert.accessibility_disabled_informative" = "Универсальный доступ должен быть предоставлен для использования переключения на сайтах. Обеспечьте Shifty доступ в настройках Защиты и безопасности, расположенных в Системных настройках.";
 
 
-"alert.open_preferences" = "Откройте Системные настройки";
+"alert.open_preferences" = "Открыть Системные настройки";
 "alert.not_now" = "Не сейчас";
 "alert.close" = "Закрыть";
+
+/* Accessibility prompt */
+"accessibility.title" = "Требуется разрешение Универсального доступа";
+"accessibility.message" = "Shifty необходим доступ к Универсальному доступу для управления Night Shift на отдельных сайтах.";
+"accessibility.step1" = "Нажмите «Открыть Системные настройки» ниже";
+"accessibility.step2" = "Найдите Shifty в списке и включите его";
+"accessibility.step3" = "Вернитесь в Shifty — изменение будет обнаружено автоматически";
+"accessibility.help" = "Нужна помощь?";
 
 
 

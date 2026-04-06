@@ -59,6 +59,14 @@
 "alert.not_now" = "Nicht jetzt";
 "alert.close" = "Schließen";
 
+/* Accessibility prompt */
+"accessibility.title" = "Bedienungshilfen-Berechtigung erforderlich";
+"accessibility.message" = "Shifty benötigt Bedienungshilfen-Zugriff, um Night Shift für einzelne Webseiten zu steuern.";
+"accessibility.step1" = "Klicken Sie unten auf „Systemeinstellungen öffnen";
+"accessibility.step2" = "Suchen Sie Shifty in der Liste und aktivieren Sie es";
+"accessibility.step3" = "Kehren Sie zu Shifty zurück — die Änderung wird automatisch erkannt";
+"accessibility.help" = "Benötigen Sie Hilfe?";
+
 
 
 "analytics.includes_list_title" = "Welche Daten werden erfasst?";

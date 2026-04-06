@@ -81,7 +81,7 @@ struct PrefAppsView: View {
         .padding(.vertical, 16)
         .frame(width: 500, height: 350)
         .onAppear { reloadData() }
-        .onChange(of: selectedTab) { _ in
+        .onChange(of: selectedTab) {
             appSelection = nil
             browserSelection = nil
             reloadData()
