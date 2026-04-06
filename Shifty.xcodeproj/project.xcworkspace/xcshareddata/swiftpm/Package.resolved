@@ -1,5 +1,5 @@
 {
-  "originHash" : "7d77f223212fa476e972c191fabcc32e948383d516101a1f6d81e39337400494",
+  "originHash" : "680604a48be2dfc06c07b86d4a5c990729795704207ab25012e5e3a12a7300e7",
   "pins" : [
     {
       "identity" : "axswift",
@@ -20,12 +20,12 @@
       }
     },
     {
-      "identity" : "maspreferences",
+      "identity" : "settings",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/cocoabits/MASPreferences",
+      "location" : "https://github.com/sindresorhus/Settings",
       "state" : {
-        "revision" : "56bafeeabffa78a18620f006f74efbbcde3c45e2",
-        "version" : "1.4.1"
+        "revision" : "f41475771f65379ca10852c95119a7f53f0de5a5",
+        "version" : "3.1.2"
       }
     },
     {

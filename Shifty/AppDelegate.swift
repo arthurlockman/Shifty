@@ -8,7 +8,7 @@
 
 import Cocoa
 import ServiceManagement
-import MASPreferences
+import Settings
 import AXSwift
 import Logging
 import Sparkle
@@ -23,15 +23,19 @@ class AppDelegate: NSObject, NSApplicationDelegate, SPUStandardUserDriverDelegat
     let statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
     var statusItemClicked: (() -> Void)?
 
-    lazy var preferenceWindowController: PrefWindowController = {
-        return PrefWindowController(
-            viewControllers: [
-                PrefGeneralViewController(),
-                PrefShortcutsViewController(),
-                PrefAppsViewController(),
-                PrefAboutViewController()],
-            title: NSLocalizedString("prefs.title", comment: "Preferences"))
-    }()
+    let generalPane = PrefGeneralViewController()
+    let shortcutsPane = PrefShortcutsViewController()
+
+    lazy var settingsWindowController = SettingsWindowController(
+        panes: [
+            generalPane,
+            shortcutsPane,
+            PrefAppsViewController(),
+            PrefAboutViewController()
+        ],
+        style: .toolbarItems,
+        animated: true
+    )
 
     var setupWindow: NSWindow!
     var setupWindowController: NSWindowController!
@@ -240,7 +244,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, SPUStandardUserDriverDelegat
     func applicationShouldHandleReopen(_ sender: NSApplication, hasVisibleWindows flag: Bool) -> Bool {
         if !flag {
             NSApp.activate(ignoringOtherApps: true)
-            preferenceWindowController.showWindow(nil)
+            settingsWindowController.show()
         }
         return true
     }

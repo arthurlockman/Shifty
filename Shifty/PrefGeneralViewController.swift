@@ -6,7 +6,7 @@
 //
 
 import Cocoa
-import MASPreferences
+import Settings
 import ServiceManagement
 import SwiftUI
 import AXSwift
@@ -14,25 +14,18 @@ import Logging
 
 
 @objcMembers
-class PrefGeneralViewController: NSViewController, MASPreferencesViewController {
+class PrefGeneralViewController: NSViewController, SettingsPane {
 
-    var viewIdentifier: String = "PrefGeneralViewController"
+    let paneIdentifier = Settings.PaneIdentifier("general")
+    let paneTitle = NSLocalizedString("prefs.general", comment: "General")
 
-    var toolbarItemImage: NSImage? {
+    var toolbarItemIcon: NSImage {
         if #available(macOS 11.0, *) {
-            return NSImage(systemSymbolName: "gearshape", accessibilityDescription: nil)
+            return NSImage(systemSymbolName: "gearshape", accessibilityDescription: nil)!
         } else {
-            return NSImage(named: NSImage.preferencesGeneralName)
+            return NSImage(named: NSImage.preferencesGeneralName)!
         }
     }
-
-    var toolbarItemLabel: String? {
-        _ = view
-        return NSLocalizedString("prefs.general", comment: "General")
-    }
-
-    var hasResizableWidth = false
-    var hasResizableHeight = false
 
     var appDelegate: AppDelegate!
 
@@ -125,23 +118,5 @@ class PrefGeneralViewController: NSViewController, MASPreferencesViewController 
             websiteShifting: UserDefaults.standard.bool(forKey: Keys.isWebsiteControlEnabled),
             trueToneControl: UserDefaults.standard.bool(forKey: Keys.trueToneControl)
         ).record()
-    }
-}
-
-
-class PrefWindowController: MASPreferencesWindowController {
-    override func windowDidLoad() {
-        super.windowDidLoad()
-        window?.styleMask = [.titled, .closable]
-        
-        if #available(macOS 11.0, *) {
-            window?.toolbarStyle = .preference
-        }
-    }
-    
-    override func keyDown(with event: NSEvent) {
-        if event.keyCode == 13 && event.modifierFlags.contains(.command) {
-            window?.close()
-        }
     }
 }

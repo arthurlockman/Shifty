@@ -7,23 +7,17 @@
 
 import Cocoa
 import SwiftUI
-import MASPreferences
+import Settings
 
 @objcMembers
-class PrefAboutViewController: NSViewController, MASPreferencesViewController {
+class PrefAboutViewController: NSViewController, SettingsPane {
 
-    var viewIdentifier: String = "PrefAboutViewController"
+    let paneIdentifier = Settings.PaneIdentifier("about")
+    let paneTitle = NSLocalizedString("prefs.about", comment: "About")
 
-    var toolbarItemImage: NSImage? {
-        return NSImage(systemSymbolName: "info.circle", accessibilityDescription: nil)
+    var toolbarItemIcon: NSImage {
+        return NSImage(systemSymbolName: "info.circle", accessibilityDescription: nil)!
     }
-
-    var toolbarItemLabel: String? {
-        return NSLocalizedString("prefs.about", comment: "About")
-    }
-
-    var hasResizableWidth = false
-    var hasResizableHeight = false
 
     override func loadView() {
         let hostingView = NSHostingView(rootView: PrefAboutView())

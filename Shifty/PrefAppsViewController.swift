@@ -6,31 +6,25 @@
 //
 
 import Cocoa
-import MASPreferences
+import Settings
 import UniformTypeIdentifiers
 
 
 @objcMembers
-class PrefAppsViewController: NSViewController, MASPreferencesViewController {
+class PrefAppsViewController: NSViewController, SettingsPane {
 
-    // MARK: - MASPreferencesViewController
+    // MARK: - SettingsPane
 
-    var viewIdentifier: String = "PrefAppsViewController"
+    let paneIdentifier = Settings.PaneIdentifier("apps")
+    let paneTitle = NSLocalizedString("prefs.apps", comment: "Apps")
 
-    var toolbarItemImage: NSImage? {
+    var toolbarItemIcon: NSImage {
         if #available(macOS 11.0, *) {
-            return NSImage(systemSymbolName: "app.badge.checkmark", accessibilityDescription: nil)
+            return NSImage(systemSymbolName: "app.badge.checkmark", accessibilityDescription: nil)!
         } else {
-            return NSImage(named: NSImage.applicationIconName)
+            return NSImage(named: NSImage.applicationIconName)!
         }
     }
-
-    var toolbarItemLabel: String? {
-        return NSLocalizedString("prefs.apps", comment: "Apps")
-    }
-
-    var hasResizableWidth = false
-    var hasResizableHeight = false
 
     // MARK: - UI Elements
 

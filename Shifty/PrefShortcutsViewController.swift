@@ -6,11 +6,11 @@
 //
 
 import Cocoa
-import MASPreferences
+import Settings
 import KeyboardShortcuts
 
 @objcMembers
-class PrefShortcutsViewController: NSViewController, MASPreferencesViewController {
+class PrefShortcutsViewController: NSViewController, SettingsPane {
 
     let statusMenuController = (NSApplication.shared.delegate as? AppDelegate)?.statusMenu.delegate as? StatusMenuController
 
@@ -18,23 +18,16 @@ class PrefShortcutsViewController: NSViewController, MASPreferencesViewControlle
         return nil
     }
 
-    var viewIdentifier: String = "PrefShortcutsViewController"
+    let paneIdentifier = Settings.PaneIdentifier("shortcuts")
+    let paneTitle = NSLocalizedString("prefs.shortcuts", comment: "Shortcuts")
 
-    var toolbarItemImage: NSImage? {
+    var toolbarItemIcon: NSImage {
         if #available(macOS 11.0, *) {
-            return NSImage(systemSymbolName: "command", accessibilityDescription: nil)
+            return NSImage(systemSymbolName: "command", accessibilityDescription: nil)!
         } else {
             return #imageLiteral(resourceName: "shortcutsIcon")
         }
     }
-
-    var toolbarItemLabel: String? {
-        _ = view
-        return NSLocalizedString("prefs.shortcuts", comment: "Shortcuts")
-    }
-
-    var hasResizableWidth = false
-    var hasResizableHeight = false
 
     private var trueToneLabel: NSTextField!
     private var trueToneRecorder: KeyboardShortcuts.RecorderCocoa!
@@ -82,6 +75,7 @@ class PrefShortcutsViewController: NSViewController, MASPreferencesViewControlle
         ])
 
         container.setFrameSize(NSSize(width: 480, height: 380))
+        self.preferredContentSize = NSSize(width: 480, height: 380)
         self.view = container
     }
 

@@ -53,7 +53,7 @@
 		497B2396200B576700669DDE /* NotificationName+Shifty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497B2393200B576700669DDE /* NotificationName+Shifty.swift */; };
 		8EE1F9572F832A5A002EE3A4 /* PrefGeneralView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE1F9562F832A5A002EE3A4 /* PrefGeneralView.swift */; };
 		8EEFC3C92F7A01640029B95D /* AXSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 8EEFC3C82F7A01640029B95D /* AXSwift */; };
-		8EEFC3CB2F7A01640029B95D /* MASPreferences in Frameworks */ = {isa = PBXBuildFile; productRef = 8EEFC3CA2F7A01640029B95D /* MASPreferences */; };
+		8EEFC3CB2F7A01640029B95D /* Settings in Frameworks */ = {isa = PBXBuildFile; productRef = 8EEFC3CA2F7A01640029B95D /* Settings */; };
 		8EEFC3CD2F7A01640029B95D /* Sparkle in Frameworks */ = {isa = PBXBuildFile; productRef = 8EEFC3CC2F7A01640029B95D /* Sparkle */; };
 		8EEFC3CF2F7A01640029B95D /* Logging in Frameworks */ = {isa = PBXBuildFile; productRef = 8EEFC3CE2F7A01640029B95D /* Logging */; };
 		8EEFC3D32F7A01A10029B95D /* InMemoryLogging in Frameworks */ = {isa = PBXBuildFile; productRef = 8EEFC3D22F7A01A10029B95D /* InMemoryLogging */; };
@@ -107,7 +107,7 @@
 		4345ABA92165DB1700E2B7C7 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		4345ABAA2165DB1700E2B7C7 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 		4345ABAB2165DB1700E2B7C7 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.stringsdict; name = de; path = Shifty/de.lproj/Localizable.stringsdict; sourceTree = "<group>"; };
-		434DE5C221614954002AB147 /* MASPreferences.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MASPreferences.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		434DE5C221614954002AB147 /* Settings.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Settings.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		434DE5C42161495F002AB147 /* MASShortcut.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MASShortcut.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		434DE5C621614969002AB147 /* PublicSuffix.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = PublicSuffix.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		434DE5C821614979002AB147 /* Sparkle.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Sparkle.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -196,7 +196,7 @@
 				8EEFC3CD2F7A01640029B95D /* Sparkle in Frameworks */,
 				431B7B5D2167C8740039D085 /* Security.framework in Frameworks */,
 				8EEFC3DD2F7A07E10029B95D /* KeyboardShortcuts in Frameworks */,
-				8EEFC3CB2F7A01640029B95D /* MASPreferences in Frameworks */,
+				8EEFC3CB2F7A01640029B95D /* Settings in Frameworks */,
 				43C0838C1F19AEF900E73B84 /* ServiceManagement.framework in Frameworks */,
 				8EEFC3C92F7A01640029B95D /* AXSwift in Frameworks */,
 				8EEFC3D32F7A01A10029B95D /* InMemoryLogging in Frameworks */,
@@ -219,7 +219,7 @@
 				43041CC4207DB9FF0076E75C /* CoreBrightness.framework */,
 				43041CB3207DB3440076E75C /* SkyLight.framework */,
 				43C0838B1F19AEF900E73B84 /* ServiceManagement.framework */,
-				434DE5C221614954002AB147 /* MASPreferences.framework */,
+				434DE5C221614954002AB147 /* Settings.framework */,
 				43FFD9402161655000DD6C83 /* AXSwift.framework */,
 				434DE5C42161495F002AB147 /* MASShortcut.framework */,
 				434DE5C821614979002AB147 /* Sparkle.framework */,
@@ -447,7 +447,7 @@
 			mainGroup = 43CC9E3A1EBAB19300983528;
 			packageReferences = (
 				8EEFC3C22F7A004D0029B95D /* XCRemoteSwiftPackageReference "AXSwift" */,
-				8EEFC3C42F7A00CC0029B95D /* XCRemoteSwiftPackageReference "MASPreferences" */,
+				8EEFC3C42F7A00CC0029B95D /* XCRemoteSwiftPackageReference "Settings" */,
 				8EEFC3C52F7A00EC0029B95D /* XCRemoteSwiftPackageReference "Sparkle" */,
 				8EEFC3C62F7A01000029B95D /* XCRemoteSwiftPackageReference "swift-log" */,
 				8EEFC3DB2F7A07E10029B95D /* XCRemoteSwiftPackageReference "KeyboardShortcuts" */,
@@ -919,12 +919,12 @@
 				minimumVersion = 0.3.2;
 			};
 		};
-		8EEFC3C42F7A00CC0029B95D /* XCRemoteSwiftPackageReference "MASPreferences" */ = {
+		8EEFC3C42F7A00CC0029B95D /* XCRemoteSwiftPackageReference "Settings" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/cocoabits/MASPreferences";
+			repositoryURL = "https://github.com/sindresorhus/Settings";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 1.4.1;
+				minimumVersion = 3.0.0;
 			};
 		};
 		8EEFC3C52F7A00EC0029B95D /* XCRemoteSwiftPackageReference "Sparkle" */ = {
@@ -959,10 +959,10 @@
 			package = 8EEFC3C22F7A004D0029B95D /* XCRemoteSwiftPackageReference "AXSwift" */;
 			productName = AXSwift;
 		};
-		8EEFC3CA2F7A01640029B95D /* MASPreferences */ = {
+		8EEFC3CA2F7A01640029B95D /* Settings */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 8EEFC3C42F7A00CC0029B95D /* XCRemoteSwiftPackageReference "MASPreferences" */;
-			productName = MASPreferences;
+			package = 8EEFC3C42F7A00CC0029B95D /* XCRemoteSwiftPackageReference "Settings" */;
+			productName = Settings;
 		};
 		8EEFC3CC2F7A01640029B95D /* Sparkle */ = {
 			isa = XCSwiftPackageProductDependency;
