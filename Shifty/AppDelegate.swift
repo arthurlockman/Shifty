@@ -8,30 +8,34 @@
 
 import Cocoa
 import ServiceManagement
-import MASPreferences
+import Settings
 import AXSwift
 import Logging
 import Sparkle
 import Intents
 
 @NSApplicationMain
-class AppDelegate: NSObject, NSApplicationDelegate {
+class AppDelegate: NSObject, NSApplicationDelegate, SPUStandardUserDriverDelegate, SPUUpdaterDelegate {
 
-    let updaterController = SPUStandardUpdaterController(startingUpdater: false, updaterDelegate: nil, userDriverDelegate: nil)
+    lazy var updaterController = SPUStandardUpdaterController(startingUpdater: false, updaterDelegate: self, userDriverDelegate: self)
     let prefs = UserDefaults.standard
     @IBOutlet weak var statusMenu: NSMenu!
     let statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
     var statusItemClicked: (() -> Void)?
 
-    lazy var preferenceWindowController: PrefWindowController = {
-        return PrefWindowController(
-            viewControllers: [
-                PrefGeneralViewController(),
-                PrefShortcutsViewController(),
-                PrefAppsViewController(),
-                PrefAboutViewController()],
-            title: NSLocalizedString("prefs.title", comment: "Preferences"))
-    }()
+    let generalPane = PrefGeneralViewController()
+    let shortcutsPane = PrefShortcutsViewController()
+
+    lazy var settingsWindowController = SettingsWindowController(
+        panes: [
+            generalPane,
+            shortcutsPane,
+            PrefAppsViewController(),
+            PrefAboutViewController()
+        ],
+        style: .toolbarItems,
+        animated: true
+    )
 
     var setupWindow: NSWindow!
     var setupWindowController: NSWindowController!
@@ -162,6 +166,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         
         NSApplication.shared.activate(ignoringOtherApps: true)
         setupWindowController.showWindow(self)
+        setupWindow.center()
         setupWindow.makeMain()
         
         UserDefaults.standard.set(true, forKey: Keys.hasSetupWindowShown)
@@ -240,7 +245,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     func applicationShouldHandleReopen(_ sender: NSApplication, hasVisibleWindows flag: Bool) -> Bool {
         if !flag {
             NSApp.activate(ignoringOtherApps: true)
-            preferenceWindowController.showWindow(nil)
+            settingsWindowController.show()
         }
         return true
     }
@@ -278,5 +283,27 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             return SetTrueToneStateIntentHandler()
         }
         return nil
+    }
+
+    // MARK: - SPUStandardUserDriverDelegate
+
+    var supportsGentleScheduledUpdateReminders: Bool { true }
+
+    func standardUserDriverWillHandleShowingUpdate(_ handleShowingUpdate: Bool, forUpdate update: SUAppcastItem, state: SPUUserUpdateState) {
+        // Bring the app to the foreground when an update is available
+        // so background-only menu bar apps don't miss the alert.
+        NSApp.setActivationPolicy(.regular)
+        NSApp.activate(ignoringOtherApps: true)
+    }
+
+    func standardUserDriverDidReceiveUserAttention(forUpdate update: SUAppcastItem) {
+        // Return to accessory (menu bar only) mode after the user has seen the update
+        NSApp.setActivationPolicy(.accessory)
+    }
+
+    // MARK: - SPUUpdaterDelegate
+
+    func allowedChannels(for updater: SPUUpdater) -> Set<String> {
+        UserDefaults.standard.bool(forKey: Keys.includeBetaUpdates) ? ["beta"] : []
     }
 }

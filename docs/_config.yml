@@ -14,19 +14,17 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 title: Shifty - Get more control over Night Shift
-email: nate@natethompson.io
+email: arthur@rosafamily.net
 description: A macOS menu bar app that gives you more control over Night Shift. With Shifty, Night Shift becomes a power user feature! Free download
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "http://shifty.natethompson.io" # the base hostname & protocol for your site, e.g. http://example.com
-github_username:  thompsonate
+url: "http://shifty.arosa.dev" # the base hostname & protocol for your site, e.g. http://example.com
+github_username:  arthurlockman
 
-repository_link: https://github.com/thompsonate/Shifty
-github_acct_link: https://github.com/thompsonate
-mainsite_link: https://www.natethompson.io
-mailto_link: mailto:feedback@natethompson.io?subject=Shifty%20feedback
+repository_link: https://github.com/arthurlockman/Shifty
+github_acct_link: https://github.com/arthurlockman
+mainsite_link: https://www.wq6e.com
+mailto_link: mailto:arthur@rosafamily.net?subject=Shifty%20feedback
 license_link: https://www.gnu.org/licenses/gpl.html
-donate_link_usd: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=L5MAQKH9V6DXW
-translate_link: https://crowdin.com/project/shifty
 
 # Build settings
 markdown: kramdown

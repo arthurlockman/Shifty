@@ -32,8 +32,4 @@ Shifty 夜览管家为 macOS 内置的夜览模式赋予更多便捷与自定义
 * 网站色温调节支持 Safari 浏览器、Chrome 和 Vivaldi
 * 需要在[兼容“原彩显示”的 Mac](https://support.apple.com/HT208909) 运行 macOS 10.14 或更高版本才能使用相关功能
 
-<br /> 如果你钟爱并乐于改善 Shifty 夜览管家，[向开发者贡献自己的一份捐助]({{ site.donate_link_usd }})。
-
 Shifty 夜览管家免费且开源，许可证为 [GPLv3]({{ site.license_link }})。 [通过 GitHub 参与开发]({{ site.repository_link }})
-
-如果网站或应用程序中的翻译存在不妥，请考虑通过[这里](/translate)贡献您的翻译。

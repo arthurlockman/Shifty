@@ -62,13 +62,9 @@ class StatusMenuController: NSObject, NSMenuDelegate {
         
         
 
-        let prefWindow = (NSApplication.shared.delegate as? AppDelegate)?.preferenceWindowController
-        prefGeneral = prefWindow?.viewControllers.compactMap { childViewController in
-            return childViewController as? PrefGeneralViewController
-        }.first
-        prefShortcuts = prefWindow?.viewControllers.compactMap { childViewController in
-            return childViewController as? PrefShortcutsViewController
-        }.first
+        let appDelegate = NSApplication.shared.delegate as? AppDelegate
+        prefGeneral = appDelegate?.generalPane
+        prefShortcuts = appDelegate?.shortcutsPane
         
         descriptionMenuItem.isEnabled = false
         sliderMenuItem.view = sliderView
@@ -509,7 +505,7 @@ class StatusMenuController: NSObject, NSMenuDelegate {
 
     @IBAction func preferencesClicked(_ sender: NSMenuItem) {
         NSApp.activate(ignoringOtherApps: true)
-        (NSApp.delegate as? AppDelegate)?.preferenceWindowController.showWindow(sender)
+        (NSApp.delegate as? AppDelegate)?.settingsWindowController.show()
 
         Event.preferencesWindowOpened.record()
     }

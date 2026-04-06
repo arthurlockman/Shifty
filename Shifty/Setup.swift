@@ -8,6 +8,7 @@
 import Cocoa
 import AXSwift
 import Logging
+import SwiftUI
 
 class SetupWindowController: NSWindowController {
     override var storyboard: NSStoryboard {
@@ -100,10 +101,18 @@ class AccessibilityViewController: NSViewController {
     
     @IBOutlet weak var accessibilitySetupView: NSView!
     
-    override func viewWillAppear() {
-        super.viewWillAppear()
-        
-        
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        let hostingView = NSHostingView(rootView: AccessibilityPromptView(showButtons: false))
+        hostingView.translatesAutoresizingMaskIntoConstraints = false
+        accessibilitySetupView.addSubview(hostingView)
+        NSLayoutConstraint.activate([
+            hostingView.centerXAnchor.constraint(equalTo: accessibilitySetupView.centerXAnchor),
+            hostingView.centerYAnchor.constraint(equalTo: accessibilitySetupView.centerYAnchor),
+            hostingView.widthAnchor.constraint(lessThanOrEqualTo: accessibilitySetupView.widthAnchor),
+            hostingView.heightAnchor.constraint(lessThanOrEqualTo: accessibilitySetupView.heightAnchor),
+        ])
     }
     
     override func viewDidAppear() {

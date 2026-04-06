@@ -57,9 +57,23 @@
 "alert.accessibility_disabled_informative" = "Accessibility control must be allowed to enable Website Shifting. Grant access to Shifty in Security & Privacy preferences, located in System Preferences.";
 
 
-"alert.open_preferences" = "Open System Preferences";
+"alert.open_preferences" = "Open System Settings";
 "alert.not_now" = "Not now";
 "alert.close" = "Close";
+
+/* Accessibility prompt */
+"accessibility.title" = "Accessibility Permission Required";
+"accessibility.message" = "Shifty needs Accessibility access to control Night Shift for individual websites.";
+"accessibility.step1" = "Click \"Open System Settings\" below";
+"accessibility.step2" = "Find Shifty in the list and toggle it on";
+"accessibility.step3" = "Return to Shifty — it will detect the change automatically";
+"accessibility.help" = "Need help?";
+"accessibility.drag_hint" = "Drag this icon into the Accessibility list";
+
+/* Custom time window */
+"customtime.title" = "Disable Night Shift for";
+"customtime.hours" = "hours";
+"customtime.minutes" = "minutes";
 
 
 
@@ -113,3 +127,27 @@
 "prefs.shortcuts.toggle_true_tone" = "Toggle True Tone:";
 "prefs.shortcuts.toggle_dark_mode" = "Toggle Dark Mode:";
 
+
+/* About preferences */
+"about.website" = "website:";
+"about.contact" = "contact:";
+"about.checkForUpdates" = "Check for Updates…";
+"about.credits" = "Credits…";
+"about.includeBetaUpdates" = "Include beta updates";
+
+/* General preferences */
+"general.autoLaunch" = "Launch Shifty at login";
+"general.quickToggle" = "Quick Toggle";
+"general.quickToggle.description" = "If enabled, click the Menu Bar icon to toggle Night Shift. Right click to open the menu.";
+"general.iconSwitching" = "Set menu bar icon according to Night Shift";
+"general.websiteShifting" = "Website Shifting";
+"general.websiteShifting.description" = "If enabled, you can set Night Shift to automatically disable when you visit certain websites.";
+"general.trueToneControl" = "True Tone control";
+"general.trueToneControl.description" = "If enabled, Night Shift rules for apps and websites will also affect True Tone.";
+"general.hideMenuBarIcon" = "Hide menu bar icon";
+"general.hideIconAlert.title" = "Hide Menu Bar Icon?";
+"general.hideIconAlert.message" = "You can reopen Shifty from Spotlight or Launchpad. Keyboard shortcuts will continue to work.";
+"general.hideIconAlert.confirm" = "Hide Icon";
+"general.hideIconAlert.cancel" = "Cancel";
+"general.openNightShiftSettings" = "Open Night Shift Settings…";
+"general.quit" = "Quit Shifty";

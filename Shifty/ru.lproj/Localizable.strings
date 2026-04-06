@@ -55,9 +55,23 @@
 "alert.accessibility_disabled_informative" = "Универсальный доступ должен быть предоставлен для использования переключения на сайтах. Обеспечьте Shifty доступ в настройках Защиты и безопасности, расположенных в Системных настройках.";
 
 
-"alert.open_preferences" = "Откройте Системные настройки";
+"alert.open_preferences" = "Открыть Системные настройки";
 "alert.not_now" = "Не сейчас";
 "alert.close" = "Закрыть";
+
+/* Accessibility prompt */
+"accessibility.title" = "Требуется разрешение Универсального доступа";
+"accessibility.message" = "Shifty необходим доступ к Универсальному доступу для управления Night Shift на отдельных сайтах.";
+"accessibility.step1" = "Нажмите «Открыть Системные настройки» ниже";
+"accessibility.step2" = "Найдите Shifty в списке и включите его";
+"accessibility.step3" = "Вернитесь в Shifty — изменение будет обнаружено автоматически";
+"accessibility.help" = "Нужна помощь?";
+"accessibility.drag_hint" = "Перетащите этот значок в список Универсального доступа";
+
+/* Custom time window */
+"customtime.title" = "Выключить Night Shift на";
+"customtime.hours" = "часов";
+"customtime.minutes" = "минут";
 
 
 
@@ -73,3 +87,59 @@
 "analytics.data_usage_list_title" = "Что происходит с данными?";
 "analytics.data_usage_list_1" = "Ничто из этих данных не будет передано третьей стороне (да никому они и не интересны в любом случае)";
 "analytics.data_usage_list_2" = "Помогает решать проблемы и делать Shifty лучше";
+
+/* About preferences */
+"about.website" = "сайт:";
+"about.contact" = "связаться:";
+"about.checkForUpdates" = "Проверить наличие обновлений...";
+"about.credits" = "Сведения об авторах...";
+"about.includeBetaUpdates" = "Включить бета-обновления";
+
+/* General preferences */
+"general.autoLaunch" = "Запускать Shifty при старте";
+"general.quickToggle" = "Быстрое переключение";
+"general.quickToggle.description" = "Если включено, то нажмите на иконку в строку меню, чтобы включить Night Shift. Нажмите правой кнопкой мыши, чтобы открыть меню.";
+"general.iconSwitching" = "Установить значок в боковом меню в соответствии с Night Shift";
+"general.websiteShifting" = "Переключение на сайтах";
+"general.websiteShifting.description" = "Если включено, вы можете указать Night Shift автоматически отключаться при посещении определенных сайтов.";
+"general.trueToneControl" = "Контроль True Tone";
+"general.trueToneControl.description" = "Если включено, то правила Night Shift для приложений и сайтов затронут и True Tone.";
+"general.hideMenuBarIcon" = "Скрыть значок в строке меню";
+"general.hideIconAlert.title" = "Скрыть значок в строке меню?";
+"general.hideIconAlert.message" = "Вы можете снова открыть Shifty через Spotlight или Launchpad. Сочетания клавиш продолжат работать.";
+"general.hideIconAlert.confirm" = "Скрыть значок";
+"general.hideIconAlert.cancel" = "Отмена";
+"general.openNightShiftSettings" = "Открыть настройки Night Shift…";
+"general.quit" = "Завершить Shifty";
+
+/* Shortcuts preferences */
+"prefs.shortcuts.toggle_night_shift" = "Переключить Night Shift:";
+"prefs.shortcuts.increase_color_temp" = "Повысить температуру цвета:";
+"prefs.shortcuts.decrease_color_temp" = "Понизить температуру цвета:";
+"prefs.shortcuts.disable_app" = "Выключить для данного приложения:";
+"prefs.shortcuts.disable_domain" = "Выключить для домена:";
+"prefs.shortcuts.disable_subdomain" = "Выключить для субдоменов:";
+"prefs.shortcuts.disable_hour" = "Выключить на час:";
+"prefs.shortcuts.disable_custom" = "Выключить на своё время:";
+"prefs.shortcuts.toggle_true_tone" = "Переключить True Tone:";
+"prefs.shortcuts.toggle_dark_mode" = "Переключить Тёмный режим:";
+
+/* Apps preferences */
+"prefs.apps" = "Приложения";
+"prefs.apps.segment.app_rules" = "Правила приложений";
+"prefs.apps.segment.browser_rules" = "Правила браузера";
+"prefs.apps.column.name" = "Имя приложения";
+"prefs.apps.column.type" = "Тип правила";
+"prefs.apps.column.domain" = "Домен";
+"prefs.apps.add_app_message" = "Выберите приложение для добавления правила";
+"prefs.apps.rule_type_title" = "Выберите тип правила";
+"prefs.apps.rule_type_info" = "Выберите, когда Night Shift должен быть отключён для этого приложения.";
+"prefs.apps.rule.focused" = "Когда в фокусе";
+"prefs.apps.rule.running" = "Когда запущено";
+"prefs.apps.rule.domain" = "Домен";
+"prefs.apps.rule.subdomain_disabled" = "Субдомен отключён";
+"prefs.apps.rule.subdomain_enabled" = "Субдомен включён";
+"prefs.apps.add" = "Добавить";
+"prefs.apps.cancel" = "Отмена";
+"prefs.apps.add_domain_title" = "Добавить правило домена";
+"prefs.apps.add_domain_info" = "Введите домен, для которого Night Shift будет отключён.";

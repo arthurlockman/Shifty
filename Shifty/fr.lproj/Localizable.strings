@@ -55,9 +55,23 @@
 "alert.accessibility_disabled_informative" = "Les autorisations d’accessibilité doivent être données pour activer la permutation des sites web. Veuillez autoriser Shifty dans les Préférences Système, onglet « Sécurité & Confidentialité ».";
 
 
-"alert.open_preferences" = "Ouvrir les Préférences Système";
+"alert.open_preferences" = "Ouvrir les Réglages Système";
 "alert.not_now" = "Plus tard";
 "alert.close" = "Fermer";
+
+/* Accessibility prompt */
+"accessibility.title" = "Autorisation d'accessibilité requise";
+"accessibility.message" = "Shifty a besoin de l'accès d'accessibilité pour contrôler Night Shift pour chaque site web.";
+"accessibility.step1" = "Cliquez sur « Ouvrir les Réglages Système » ci-dessous";
+"accessibility.step2" = "Trouvez Shifty dans la liste et activez-le";
+"accessibility.step3" = "Revenez à Shifty — le changement sera détecté automatiquement";
+"accessibility.help" = "Besoin d'aide ?";
+"accessibility.drag_hint" = "Glissez cette icône dans la liste Accessibilité";
+
+/* Custom time window */
+"customtime.title" = "Désactiver Night Shift pendant";
+"customtime.hours" = "heures";
+"customtime.minutes" = "minutes";
 
 
 
@@ -73,3 +87,59 @@
 "analytics.data_usage_list_title" = "Qu'arrive-t-il aux données ?";
 "analytics.data_usage_list_1" = "Aucune de ces données n'est vendue (et personne ne voudrait les acheter de toute façon)";
 "analytics.data_usage_list_2" = "Aide à résoudre les problème et à améliorer Shifty";
+
+/* About preferences */
+"about.website" = "Site web :";
+"about.contact" = "Contact :";
+"about.checkForUpdates" = "Rechercher les mises à jour...";
+"about.credits" = "Crédits...";
+"about.includeBetaUpdates" = "Inclure les mises à jour bêta";
+
+/* General preferences */
+"general.autoLaunch" = "Lancer Shifty au démarrage";
+"general.quickToggle" = "Changement rapide";
+"general.quickToggle.description" = "Si activé, un clic sur l'icône dans la barre des menus changera l'état de Night Shift. Un clic droit ouvre le menu.";
+"general.iconSwitching" = "Changer l'icône de la barre des menus selon Night Shift";
+"general.websiteShifting" = "Permutation des sites web";
+"general.websiteShifting.description" = "Si activé, vous pouvez définir Night Shift pour désactiver automatiquement lorsque vous visitez certains sites Web.";
+"general.trueToneControl" = "Contrôle True Tone";
+"general.trueToneControl.description" = "Si activé, les règles Night Shift pour les applications et les sites web affecteront également True Tone.";
+"general.hideMenuBarIcon" = "Masquer l'icône de la barre des menus";
+"general.hideIconAlert.title" = "Masquer l'icône de la barre des menus ?";
+"general.hideIconAlert.message" = "Vous pouvez rouvrir Shifty depuis Spotlight ou le Launchpad. Les raccourcis clavier continueront de fonctionner.";
+"general.hideIconAlert.confirm" = "Masquer l'icône";
+"general.hideIconAlert.cancel" = "Annuler";
+"general.openNightShiftSettings" = "Ouvrir les réglages Night Shift…";
+"general.quit" = "Quitter Shifty";
+
+/* Shortcuts preferences */
+"prefs.shortcuts.toggle_night_shift" = "Activer/désactiver Night Shift :";
+"prefs.shortcuts.increase_color_temp" = "Augmenter la chaleur :";
+"prefs.shortcuts.decrease_color_temp" = "Diminuer la chaleur :";
+"prefs.shortcuts.disable_app" = "Désactiver pour l'app en cours :";
+"prefs.shortcuts.disable_domain" = "Désactiver pour le domaine :";
+"prefs.shortcuts.disable_subdomain" = "Désactiver pour le sous-domaine :";
+"prefs.shortcuts.disable_hour" = "Désactiver pendant une heure :";
+"prefs.shortcuts.disable_custom" = "Personnaliser la désactivation :";
+"prefs.shortcuts.toggle_true_tone" = "Activer/désactiver True Tone:";
+"prefs.shortcuts.toggle_dark_mode" = "Activer/désactiver le mode sombre :";
+
+/* Apps preferences */
+"prefs.apps" = "Apps";
+"prefs.apps.segment.app_rules" = "Règles d'apps";
+"prefs.apps.segment.browser_rules" = "Règles de navigateur";
+"prefs.apps.column.name" = "Nom de l'app";
+"prefs.apps.column.type" = "Type de règle";
+"prefs.apps.column.domain" = "Domaine";
+"prefs.apps.add_app_message" = "Sélectionnez une application pour ajouter une règle";
+"prefs.apps.rule_type_title" = "Choisir le type de règle";
+"prefs.apps.rule_type_info" = "Sélectionnez quand Night Shift doit être désactivé pour cette app.";
+"prefs.apps.rule.focused" = "En premier plan";
+"prefs.apps.rule.running" = "En cours d'exécution";
+"prefs.apps.rule.domain" = "Domaine";
+"prefs.apps.rule.subdomain_disabled" = "Sous-domaine désactivé";
+"prefs.apps.rule.subdomain_enabled" = "Sous-domaine activé";
+"prefs.apps.add" = "Ajouter";
+"prefs.apps.cancel" = "Annuler";
+"prefs.apps.add_domain_title" = "Ajouter une règle de domaine";
+"prefs.apps.add_domain_info" = "Entrez un domaine pour lequel Night Shift doit être désactivé.";

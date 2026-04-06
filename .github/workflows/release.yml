@@ -241,9 +241,13 @@ jobs:
           with open("docs/ShiftyAppcast.xml", "r") as f:
               content = f.read()
 
+          import re
+          is_prerelease = bool(re.search(r'-(alpha|beta|rc)', version, re.IGNORECASE))
+          channel_line = "\n            <sparkle:channel>beta</sparkle:channel>" if is_prerelease else ""
+
           new_item = f"""        <item>
               <title>Version {version}</title>
-              <pubDate>{pub_date}</pubDate>
+              <pubDate>{pub_date}</pubDate>{channel_line}
               <enclosure url="{url}" sparkle:version="{version}" sparkle:shortVersionString="{version}" length="{length}" type="application/octet-stream" sparkle:edSignature="{sig}" />
               <sparkle:minimumSystemVersion>26.0</sparkle:minimumSystemVersion>
           </item>"""

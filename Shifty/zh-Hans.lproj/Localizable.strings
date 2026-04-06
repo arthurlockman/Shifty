@@ -55,9 +55,23 @@
 "alert.accessibility_disabled_informative" = "您必须先授权 Shifty 夜览管家通过“辅助功能”控制您的电脑，才能调节网站色温。您可在系统偏好设置的安全性与隐私面板中提供授权。";
 
 
-"alert.open_preferences" = "打开系统偏好设置";
+"alert.open_preferences" = "打开系统设置";
 "alert.not_now" = "以后再说";
 "alert.close" = "关闭";
+
+/* Accessibility prompt */
+"accessibility.title" = "需要辅助功能权限";
+"accessibility.message" = "Shifty 需要辅助功能访问权限来控制各个网站的“夜览”模式。";
+"accessibility.step1" = "点击下方的“打开系统设置”";
+"accessibility.step2" = "在列表中找到 Shifty 并开启它";
+"accessibility.step3" = "返回 Shifty——它会自动检测更改";
+"accessibility.help" = "需要帮助？";
+"accessibility.drag_hint" = "将此图标拖入辅助功能列表";
+
+/* Custom time window */
+"customtime.title" = "在以下时间内关闭“夜览”模式";
+"customtime.hours" = "小时";
+"customtime.minutes" = "分钟";
 
 
 
@@ -73,3 +87,59 @@
 "analytics.data_usage_list_title" = "收集的数据将有哪些用途？";
 "analytics.data_usage_list_1" = "任何数据都不会被出售至第三方（况且也不会有第三方想要购买）";
 "analytics.data_usage_list_2" = "帮助解决问题并完善 Shifty 夜览管家";
+
+/* About preferences */
+"about.website" = "网站:";
+"about.contact" = "邮箱:";
+"about.checkForUpdates" = "检查更新...";
+"about.credits" = "致谢名单…";
+"about.includeBetaUpdates" = "包含测试版更新";
+
+/* General preferences */
+"general.autoLaunch" = "随登录自动打开 Shifty 夜览管家";
+"general.quickToggle" = "快速切换";
+"general.quickToggle.description" = "启用后，单击菜单栏图标以切换“夜览”模式。辅助点按以打开菜单。";
+"general.iconSwitching" = "随“夜览”模式的开关状态更新菜单栏图标";
+"general.websiteShifting" = "网站色温调节";
+"general.websiteShifting.description" = "开启后，您可以设置在访问特定网站时自动停用“夜览”模式。";
+"general.trueToneControl" = "控制“原彩显示”";
+"general.trueToneControl.description" = "开启后，“夜览”模式对应的应用程序和网站规则将同时适用于“原彩显示”。";
+"general.hideMenuBarIcon" = "隐藏菜单栏图标";
+"general.hideIconAlert.title" = "隐藏菜单栏图标？";
+"general.hideIconAlert.message" = "您可以通过聚焦搜索或启动台重新打开 Shifty。键盘快捷键将继续运作。";
+"general.hideIconAlert.confirm" = "隐藏图标";
+"general.hideIconAlert.cancel" = "取消";
+"general.openNightShiftSettings" = "打开“夜览”模式设置…";
+"general.quit" = "退出 Shifty 夜览管家";
+
+/* Shortcuts preferences */
+"prefs.shortcuts.toggle_night_shift" = "切换“夜览”模式开关:";
+"prefs.shortcuts.increase_color_temp" = "增高色温:";
+"prefs.shortcuts.decrease_color_temp" = "降低色温:";
+"prefs.shortcuts.disable_app" = "为当前应用程序禁用:";
+"prefs.shortcuts.disable_domain" = "为域名禁用:";
+"prefs.shortcuts.disable_subdomain" = "为子域名禁用:";
+"prefs.shortcuts.disable_hour" = "禁用一个小时:";
+"prefs.shortcuts.disable_custom" = "在自定义时间内禁用:";
+"prefs.shortcuts.toggle_true_tone" = "切换“原彩显示”开关:";
+"prefs.shortcuts.toggle_dark_mode" = "切换深色模式开关:";
+
+/* Apps preferences */
+"prefs.apps" = "应用程序";
+"prefs.apps.segment.app_rules" = "应用规则";
+"prefs.apps.segment.browser_rules" = "浏览器规则";
+"prefs.apps.column.name" = "应用名称";
+"prefs.apps.column.type" = "规则类型";
+"prefs.apps.column.domain" = "域名";
+"prefs.apps.add_app_message" = "选择一个应用程序以添加规则";
+"prefs.apps.rule_type_title" = "选择规则类型";
+"prefs.apps.rule_type_info" = "选择何时为此应用程序禁用“夜览”模式。";
+"prefs.apps.rule.focused" = "当聚焦时";
+"prefs.apps.rule.running" = "当运行时";
+"prefs.apps.rule.domain" = "域名";
+"prefs.apps.rule.subdomain_disabled" = "子域名已禁用";
+"prefs.apps.rule.subdomain_enabled" = "子域名已启用";
+"prefs.apps.add" = "添加";
+"prefs.apps.cancel" = "取消";
+"prefs.apps.add_domain_title" = "添加域名规则";
+"prefs.apps.add_domain_info" = "输入一个域名以禁用“夜览”模式。";
