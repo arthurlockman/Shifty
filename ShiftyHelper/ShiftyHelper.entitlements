@@ -2,7 +2,9 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>com.apple.security.app-sandbox</key>
-	<true/>
+	<!-- Intentionally empty. The main Shifty.app is not sandboxed, and a
+	     sandboxed login-item helper cannot LaunchServices-open a non-sandboxed
+	     app without tripping the TCC automation path ("…is not allowed to open
+	     documents in Terminal"). Keep the helper non-sandboxed to match. -->
 </dict>
 </plist>
