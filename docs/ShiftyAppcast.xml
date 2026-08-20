@@ -5,6 +5,12 @@
         <description>Most recent changes with links to updates.</description>
         <language>en</language>
         <item>
+    <title>Version 2.0.1</title>
+    <pubDate>Thu, 20 Aug 2026 06:25:49 +0000</pubDate>
+    <enclosure url="https://github.com/arthurlockman/Shifty/releases/download/v2.0.1/Shifty-2.0.1.zip" sparkle:version="110" sparkle:shortVersionString="2.0.1" length="14331990" type="application/octet-stream" sparkle:edSignature="GdHDADM5y0+QzLOZVAGRYXFHZC3qU+hWJ1cKEGxizBzfAzRMBNZgZ10zXtenAOaeNrrPpgSOY8xFbqAj3T4PCw==" />
+    <sparkle:minimumSystemVersion>26.0</sparkle:minimumSystemVersion>
+</item>
+        <item>
     <title>Version 2.0</title>
     <pubDate>Mon, 06 Apr 2026 01:33:41 +0000</pubDate>
     <enclosure url="https://github.com/arthurlockman/Shifty/releases/download/v2.0/Shifty-2.0.zip" sparkle:version="101" sparkle:shortVersionString="2.0" length="14332540" type="application/octet-stream" sparkle:edSignature="xMmRs4cDMCNuAxFrOv/sV/ChfxkFL4hFyqd0ZQ48WBA0RHz4K/0LZWKyTF1Dck7wjuIv4lO1jRsMxZa/rafqBQ==" />
